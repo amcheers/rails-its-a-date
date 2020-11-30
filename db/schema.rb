@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_202330) do
+ActiveRecord::Schema.define(version: 2020_11_30_202644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 2020_11_30_202330) do
     t.index ["user_id"], name: "index_date_activities_on_user_id"
   end
 
+  create_table "date_activities_packages", force: :cascade do |t|
+    t.bigint "package_id", null: false
+    t.bigint "date_activity_id", null: false
+    t.index ["date_activity_id"], name: "index_date_activities_packages_on_date_activity_id"
+    t.index ["package_id"], name: "index_date_activities_packages_on_package_id"
+  end
+
   create_table "packages", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -65,4 +72,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_202330) do
   add_foreign_key "categories_date_activities", "categories"
   add_foreign_key "categories_date_activities", "date_activities"
   add_foreign_key "date_activities", "users"
+  add_foreign_key "date_activities_packages", "date_activities"
+  add_foreign_key "date_activities_packages", "packages"
 end
