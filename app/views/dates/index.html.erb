@@ -1,0 +1,11 @@
+<h1>Dates in *Location*: Aim for unforgettable!</h1>
+
+<ul>
+  <% @dates.each do |date| %>
+    <li> 
+      <%= date.title %> 
+      <%= date.location %>
+      <%= date.description %>
+    </li>
+  <% end %>
+</ul>
