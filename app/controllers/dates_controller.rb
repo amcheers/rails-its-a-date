@@ -9,4 +9,10 @@ class DatesController < ApplicationController
 
   def show
   end
+
+  def destroy
+    set_date.destroy
+    redirect_to dashboard_dates_path
+  end
+  
 end
