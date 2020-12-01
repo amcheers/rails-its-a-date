@@ -1,5 +1,4 @@
 class PackagesController < ApplicationController
-
   def index
     @packages = Packages.all
   end
@@ -18,5 +17,4 @@ class PackagesController < ApplicationController
     @package_copy.save
     redirect_to packages_path
   end
-
 end
