@@ -3,6 +3,6 @@ class AddColumnToUserTable < ActiveRecord::Migration[6.0]
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
     add_column :users, :address, :string
-    add_column :users, :offering, :boolean
+    add_column :users, :offering, :boolean, default: false
   end
 end
