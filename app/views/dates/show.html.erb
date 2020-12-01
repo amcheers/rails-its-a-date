@@ -1,3 +1,12 @@
-<%= @date.title %> 
+<div>
+  <%= link_to 'Home', root_path  %>
+</div>
+
+<div><%= @date.title %>
 <%= @date.location %>
-<%= @date.description %>
+<%= @date.description %></div>
+
+<%= link_to 'Reviews', reviews_path(@date.class, @date.id) %>
+<div>
+  <%= link_to 'Back', dates_index_path  %>
+</div>
