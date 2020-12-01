@@ -1,5 +1,5 @@
 class DatesController < ApplicationController
   def show
-    set_date
+    @date = Date.find(params[:id])
   end
 end
