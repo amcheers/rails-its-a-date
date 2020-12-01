@@ -78,14 +78,6 @@ ActiveRecord::Schema.define(version: 2020_12_01_101056) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wishlist_items", force: :cascade do |t|
-    t.string "activity_type"
-    t.bigint "activity_id"
-    t.bigint "user_id"
-    t.index ["activity_type", "activity_id"], name: "index_wishlist_items_on_activity_type_and_activity_id"
-    t.index ["user_id"], name: "index_wishlist_items_on_user_id"
-  end
-
   add_foreign_key "categories_date_activities", "categories"
   add_foreign_key "categories_date_activities", "date_activities"
   add_foreign_key "date_activities", "users"
