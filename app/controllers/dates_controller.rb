@@ -6,4 +6,7 @@ class DatesController < ApplicationController
     @dates = DateActivity.all
   end
   
+
+  def show
+  end
 end
