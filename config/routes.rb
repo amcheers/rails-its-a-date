@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :packages, only: [:index, :show, :edit, :update]
   get '/dates', to: 'dates#index', as: 'dates_index'
   get '/dates/:id', to: 'dates#show', as: 'dates_show'
-  get '/activity_type/:activity_id/reviews', to: 'reviews#index'
-  get '/activity_type/:activity_id/reviews/new', to: 'reviews#new'
-  post '/activity_type/:activity_id/reviews', to: 'reviews#create'
-  post '/activity_type/:activity_id/whishlist', to: 'whishlist#create'
-  delete '/activity_type/:activity_id/whishlist', to: 'whishlist#destroy'
+  get '/activity_type/:activity_id/reviews', to: 'reviews#index', as: 'reviews'
+  get '/activity_type/:activity_id/reviews/new', to: 'reviews#new', as: 'new_review'
+  post '/activity_type/:activity_id/reviews', to: 'reviews#create', as: 'create_review'
+  post '/activity_type/:activity_id/whishlist', to: 'whishlist#create', as: 'create_whishlist'
+  delete '/activity_type/:activity_id/whishlist', to: 'whishlist#destroy', as: 'destroy_whishlist'
 end
