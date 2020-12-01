@@ -2,12 +2,11 @@ class DatesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_date, only: [:show, :edit, :update, :destroy]
 
+  def show
+  end
+
   def index
     @dates = DateActivity.all
-  end
-  
-
-  def show
   end
 
   def new
