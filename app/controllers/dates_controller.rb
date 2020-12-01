@@ -1,12 +1,12 @@
 class DatesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_date, only: [:show, :edit, :update, :destroy]
-
-  def show
-  end
-
+  
   def index
     @dates = DateActivity.all
+  end
+
+  def show
   end
 
   def new
@@ -31,6 +31,11 @@ class DatesController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def destroy
+    set_date.destroy
+    redirect_to dashboard_dates_path
+  end
+
   private
 
   def set_date
@@ -40,10 +45,4 @@ class DatesController < ApplicationController
   def date_params
     params.require(:date_activity).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id)
   end
-
-  def destroy
-    set_date.destroy
-    redirect_to dashboard_dates_path
-  end
-  
 end
