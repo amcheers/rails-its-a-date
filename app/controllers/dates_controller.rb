@@ -4,11 +4,11 @@ class DatesController < ApplicationController
   end
 
   def new
-    @date = Dateactivity.new
+    @date = DateActivity.new
   end
 
   def create
-    @date = Dateactivity.new(date_params)
+    @date = DateActivity.new(date_params)
     @date.user = current_user
     if @date.save
       redirect_to date_path(@date)
@@ -28,10 +28,10 @@ class DatesController < ApplicationController
   private
 
   def set_date
-    @date = Dateactivity.find(params[:id])
+    @date = DateActivity.find(params[:id])
   end
 
   def date_params
-    params.require(:date_activitie).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation)
+    params.require(:date_activities).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id)
   end
 end
