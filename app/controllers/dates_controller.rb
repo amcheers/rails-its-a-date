@@ -17,7 +17,7 @@ class DatesController < ApplicationController
     @date = DateActivity.new(date_params)
     @date.user = current_user
     if @date.save
-      redirect_to date_path(@date)
+      redirect_to dashboard_path
     else
       render 'new'
     end
