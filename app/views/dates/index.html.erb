@@ -1,4 +1,5 @@
 <%= link_to 'Home', root_path %>
+
 <div class="container">
   <h2>Filters</h2>
   <%= form_tag dates_index_path, method: :get do %>
@@ -24,13 +25,27 @@
   <h1>Dates Search Results</h1>
 <% end %>
 
-<ul>
-  <% @dates.each do |date| %>
-    <li>
-      <%= date.title %>
-      <%= date.location %>
-      <%= date.description %>
-      <%= link_to 'details', dates_show_path(date) %>
-    </li>
-  <% end %>
-</ul>
+
+<div class="row">
+  <div class="col-12 col-lg-6">
+  <ul>
+    <% @dates.each do |date| %>
+      <li>
+        <%= date.title %>
+        <%= date.location %>
+        <%= date.description %>
+        <%= link_to 'details', dates_show_path(date) %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+
+  <div class="col-12 col-lg-6">
+    <div id="map"
+      style="width: 50vw; height: 100vh; position: sticky; top: 0;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+</div>
