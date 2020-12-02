@@ -3,5 +3,26 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<div class="container">
+  <%= form_tag dates_index_path, method: :get, class: "form-inline" do %>
+    <%= text_field_tag :query_availability,
+      params[:query_availability],
+      class: "form-control",
+      placeholder: "When?"
+    %>
+    <%= text_field_tag :query_location,
+      params[:query_location],
+      class: "form-control",
+      placeholder: "Where?"
+    %>
+     <%= text_field_tag :query_title_description,
+      params[:query_title_description],
+      class: "form-control",
+      placeholder: "What?"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
 <%= link_to 'index page', dates_index_path %>
 

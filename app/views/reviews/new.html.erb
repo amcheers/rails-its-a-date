@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>New Review for <%= @activity.title %> </h1>
+
+  <%= simple_form_for [@activity, @review], url: reviews_path(@activity.class, @activity.id) do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :content %>
+    <%= f.submit %>
+  <% end %>
+</div>
