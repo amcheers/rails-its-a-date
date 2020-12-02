@@ -242,6 +242,7 @@
 </div>
 
 <%= link_to 'Reviews', reviews_path(@date.class, @date.id) %>
+<<<<<<< HEAD
 
 <div>
   <%= link_to 'Back', dates_index_path  %>
@@ -250,3 +251,9 @@
 <div>
   <%= link_to 'Home', root_path  %>
 </div>
+=======
+<%= link_to 'Write a Review', new_review_path(@date.class, @date.id) %>
+<div>
+  <%= link_to 'Back', dates_index_path  %>
+</div>
+>>>>>>> master

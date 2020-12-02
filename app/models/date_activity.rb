@@ -14,4 +14,11 @@ class DateActivity < ApplicationRecord
 
   validates :reservation_url, presence: true, if: :reservation
   validates :contact_email, presence: true, if: :reservation
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+  against: [:title, :description, :location],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
