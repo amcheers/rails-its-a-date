@@ -1,8 +1,10 @@
 class DatesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_date, only: [:show, :edit, :update, :destroy]
+
   def index
-    @dates = DateActivity.all
+    search
+    @categories = Category.all
   end
 
   def show
@@ -34,6 +36,28 @@ class DatesController < ApplicationController
     set_date.destroy
     redirect_to dashboard_dates_path
   end
+
+  def search
+    # @filtered_dates = []
+    @dates = DateActivity.all
+
+     if params[:query_location].present?
+      @dates = @dates.global_search(params[:query_location])
+    end
+
+    if params[:query_title_description].present?
+      @dates = @dates.global_search(params[:query_title_description])
+    end
+
+    if params[:query_price].present?
+      @dates = @dates.where("price <= ?", params[:query_price])
+    end
+
+    if params[:category_ids].present?
+      @dates = @dates.joins(:categories).where(categories: { id: params[:category_ids] })
+    end
+  end
+
 
   private
 

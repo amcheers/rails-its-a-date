@@ -1,10 +1,33 @@
 <%= link_to 'Home', root_path %>
-<h1>Dates in *Location*: Aim for unforgettable!</h1>
+<div class="container">
+  <h2>Filters</h2>
+  <%= form_tag dates_index_path, method: :get do %>
+    <%= hidden_field_tag :query_location,
+      params[:query_location]
+    %>
+    <%= hidden_field_tag :query_title_description,
+      params[:query_title_description]
+    %>
+    <%= label_tag 'Price' %>
+    <%= number_field_tag :query_price,
+      params[:query_price],
+      class: "form-control"
+    %>
+
+    <%= %>
+  <% end %>
+</div>
+
+<% if params[:query_location].present? %>
+  <h1>Dates in <%= params[:query_location] %></h1>
+<% else %>
+  <h1>Dates Search Results</h1>
+<% end %>
 
 <ul>
   <% @dates.each do |date| %>
-    <li> 
-      <%= date.title %> 
+    <li>
+      <%= date.title %>
       <%= date.location %>
       <%= date.description %>
       <%= link_to 'details', dates_show_path(date) %>

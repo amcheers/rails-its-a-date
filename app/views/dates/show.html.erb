@@ -7,6 +7,7 @@
 <%= @date.description %></div>
 
 <%= link_to 'Reviews', reviews_path(@date.class, @date.id) %>
+<%= link_to 'Write a Review', new_review_path(@date.class, @date.id) %>
 <div>
   <%= link_to 'Back', dates_index_path  %>
 </div>
