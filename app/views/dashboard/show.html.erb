@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @user.username %>'s dashboard</h1>
+
+  <div class="d-flex align-items-center">
+    <ul>
+      Uploaded Date Activities
+      <% @user.date_activities.each do |date| %>
+        <li><%= date.title %></li>
+      <% end %>
+    </ul>
+
+    <ul>
+      Past Dates
+      <% @user.date_activities.each do |date| %>
+        <li><%= date.title %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
