@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.activity = @activity
     if @review.save
-      redirect_to reviews_path(@activity)
+      redirect_to reviews_path(@activity.class, @activity.id)
     else
       :new
     end
