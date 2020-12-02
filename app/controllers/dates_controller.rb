@@ -6,6 +6,7 @@ class DatesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
