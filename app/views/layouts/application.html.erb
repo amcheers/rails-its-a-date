@@ -13,7 +13,13 @@
 
 <body>
   <div class="page-container">
-    <div class="navbar-container"><%= render "shared/navbar" %></div>
+    <div class="navbar-container">
+      <% unless params[:controller] == "pages" && params[:action] == "home" %>
+        <%= render "shared/navbar" %>
+      <% else %>
+        <%= render "shared/navbar_home" %>
+      <% end %>
+    </div>
     <div class="content-container"><%= yield %></div>
     <%= render "shared/flashes" %>
     <div class="footer-container"><%= render "shared/footer" %></div>
