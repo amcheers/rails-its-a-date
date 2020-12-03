@@ -5,9 +5,12 @@ class DatesController < ApplicationController
   def index
     search
     @categories = Category.all
+    # @category = :category.first
+    # raise
   end
 
   def show
+
   end
 
   def new
@@ -38,10 +41,9 @@ class DatesController < ApplicationController
   end
 
   def search
-    # @filtered_dates = []
     @dates = DateActivity.all
 
-     if params[:query_location].present?
+    if params[:query_location].present?
       @dates = @dates.global_search(params[:query_location])
     end
 
@@ -57,7 +59,6 @@ class DatesController < ApplicationController
       @dates = @dates.joins(:categories).where(categories: { id: params[:category_ids] })
     end
   end
-
 
   private
 
