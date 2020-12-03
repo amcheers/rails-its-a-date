@@ -17,7 +17,7 @@ class DatesController < ApplicationController
   end
 
   def show
-
+    @marker = [{ lat: @date.latitude, lng: @date.longitude }]
   end
 
   def new
