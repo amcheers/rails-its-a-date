@@ -625,34 +625,39 @@ puts "Creating Packages"
 
 #Wildlife
 puts "Wildlife"
-Package.create(title: "Wildlife", user: User.first)
-Package.find(1).date_activities << DateActivity.find(1)
-Package.find(1).date_activities << DateActivity.find(2)
-Package.find(1).date_activities << DateActivity.find(6)
+wildlife = Package.new(title: "Wildlife", user: test_one)
+wildlife.date_activities << vondel
+wildlife.date_activities << ooster
+wildlife.date_activities << electric
+wildlife.save!
 
 #WinterWonder
 puts "WinterWonder"
-Package.create(title: "WinterWonder", user: User.first)
-Package.find(2).date_activities << DateActivity.find(3)
-Package.find(2).date_activities << DateActivity.find(4)
+winder_wonder = Package.new(title: "WinterWonder", user: test_one)
+winder_wonder.date_activities << drupa
+winder_wonder.date_activities << wonder
+winder_wonder.save!
 
 #Action
 puts "Action"
-Package.create(title: "Action", user: User.first)
-Package.find(3).date_activities << DateActivity.find(7)
-Package.find(3).date_activities << DateActivity.find(8)
+action = Package.new(title: "Action", user: test_one)
+action.date_activities << salsa
+action.date_activities << skydiving
+action.save!
 
 #Drinking
 puts "Drinking"
-Package.create(title: "Drinking", user: User.first)
-Package.find(4).date_activities << DateActivity.find(9)
-Package.find(4).date_activities << DateActivity.find(10)
+drinking = Package.new(title: "Drinking", user: test_one)
+drinking.date_activities << cocktail_one
+drinking.date_activities << cocktail_two
+drinking.save!
 
 #Suprise
 puts "Creating Suprise"
-Package.create(title: "Suprise", user: User.first)
-Package.find(5).date_activities << DateActivity.find(4)
-Package.find(5).date_activities << DateActivity.find(6)
-Package.find(5).date_activities << DateActivity.find(7)
+surprise = Package.new(title: "Suprise", user: test_one)
+surprise.date_activities << wonder
+surprise.date_activities << windmill
+surprise.date_activities << salsa
+surprise.save!
 
 puts "Done!"
