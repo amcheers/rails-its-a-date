@@ -72,9 +72,9 @@ vondel_hash = {
   user_id: test_four.id
 }
 
-vondel_file_one = URI.open('https://unsplash.com/photos/SBiVq9eWEtQ')
-vondel_file_two = URI.open('https://unsplash.com/photos/P9gkfbaxMTU')
-vondel_file_three = URI.open('https://unsplash.com/photos/NsxzcbdF8fU')
+vondel_file_one = URI.open('https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80')
+vondel_file_two = URI.open('https://images.unsplash.com/photo-1568480289356-5a75d0fd47fc?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+vondel_file_three = URI.open('https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
 
 vondel = DateActivity.new(vondel_hash)
 [outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
@@ -100,9 +100,9 @@ ooster_hash = {
   user_id: test_four.id
 }
 
-ooster_file_one = URI.open('https://unsplash.com/photos/W0lNN2WvaEA')
-ooster_file_two = URI.open('https://unsplash.com/photos/zb13N8EDjGE')
-ooster_file_three = URI.open('https://unsplash.com/photos/G3LWwot8ceU')
+ooster_file_one = URI.open('https://images.unsplash.com/photo-1569828740284-df1486353d20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')
+ooster_file_two = URI.open('https://images.unsplash.com/photo-1504810935423-dbbe9a698963?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=282&q=80')
+ooster_file_three = URI.open('https://images.unsplash.com/photo-1445937888010-cc262f556033?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
 
 ooster = DateActivity.new(ooster_hash)
 [outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
@@ -126,10 +126,10 @@ drupa_hash = {
   user_id: test_four.id
 }
 
-drupa_file_one = URI.open('https://unsplash.com/photos/6VhPY27jdps')
-drupa_file_two = URI.open('https://unsplash.com/photos/N3btvQ51dL0')
-drupa_file_three = URI.open('https://unsplash.com/photos/0z0nT8w_y_o')
-drupa_file_four = URI.open('https://unsplash.com/photos/NZMfceSGoQY')
+drupa_file_one = URI.open('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+drupa_file_two = URI.open('https://images.unsplash.com/photo-1522012188892-24beb302783d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80')
+drupa_file_three = URI.open('https://images.unsplash.com/photo-1565636291143-9cc6c6f87445?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+drupa_file_four = URI.open('https://images.unsplash.com/photo-1466337105551-aa3ab7890939?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
 
 drupa = DateActivity.new(drupa_hash)
 
@@ -255,9 +255,9 @@ salsa_hash = {
   user_id: test_four.id
 }
 
-salsa_file_one = URI.open('https://unsplash.com/photos/6Woj_wozqmA')
-salsa_file_two = URI.open('https://unsplash.com/photos/sjP9xrF4JAA')
-salsa_file_three = URI.open('https://unsplash.com/photos/9_D4NtyYHE8')
+salsa_file_one = URI.open('https://images.unsplash.com/photo-1587922342650-955e9760d689?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y291cGxlJTIwZGFuY2luZ3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+salsa_file_two = URI.open('https://images.unsplash.com/photo-1504609813442-a8924e83f76e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+salsa_file_three = URI.open('https://images.unsplash.com/photo-1511804269794-309fade1da5d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=629&q=80')
 
 salsa = DateActivity.new(salsa_hash)
 
@@ -287,8 +287,8 @@ skydiving_hash = {
   user_id: test_four.id
 }
 
-skydiving_file_one = URI.open('https://cityskydive.nl/uploads/headers/51f5d7b5e0346c57ea86618be7c77fb047b2b7c7.jpg')
-skydiving_file_two = URI.open('https://cityskydive.nl/uploads/headers/0da75f00f2801115e66ec6f58a5c871a1942058c.jpg')
+skydiving_file_one = URI.open('https://cityskydive.nl/uploads/headers/0da75f00f2801115e66ec6f58a5c871a1942058c.jpg')
+skydiving_file_two = URI.open('https://cityskydive.nl/uploads/headers/51f5d7b5e0346c57ea86618be7c77fb047b2b7c7.jpg')
 skydiving_file_three = URI.open('https://indoorskydive.com/wp-content/uploads/2020/11/ISR-formatie-skydiven-4-1-scaled.jpg')
 
 skydiving = DateActivity.new(skydiving_hash)
@@ -316,10 +316,9 @@ cocktail_one_hash = {
   user_id: test_four.id
 }
 
-cocktail_one_file_one = URI.open('https://www.door74.net/photos?lightbox=imageidd')
-cocktail_one_file_two = URI.open('https://www.door74.net/photos?lightbox=imagefl5')
-cocktail_one_file_three = URI.open('https://unsplash.com/photos/dmkmrNptMpw')
-cocktail_one_file_four = URI.open('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80')
+cocktail_one_file_one = URI.open('https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=749&q=80')
+cocktail_one_file_two = URI.open('https://unsplash.com/photos/dmOFwtOIhJA')
+cocktail_one_file_three = URI.open('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80')
 
 cocktail_one = DateActivity.new(cocktail_one_hash)
 
@@ -330,7 +329,6 @@ end
 cocktail_one.photos.attach(io: cocktail_one_file_one, filename: 'cocktail_one_1.png', content_type: 'image/png')
 cocktail_one.photos.attach(io: cocktail_one_file_two, filename: 'cocktail_one_2.png', content_type: 'image/png')
 cocktail_one.photos.attach(io: cocktail_one_file_three, filename: 'cocktail_one_3.png', content_type: 'image/png')
-cocktail_one.photos.attach(io: cocktail_one_file_four, filename: 'cocktail_one_4.png', content_type: 'image/png')
 cocktail_one.save!
 
 
@@ -350,7 +348,7 @@ cocktail_two_hash = {
 cocktail_two_file_one = URI.open('https://www.barmokum.nl/wp-content/uploads/8-klein-683x1024.jpg')
 cocktail_two_file_two = URI.open('https://www.barmokum.nl/wp-content/uploads/15-klein-683x1024.jpg')
 cocktail_two_file_three = URI.open('https://www.barmokum.nl/wp-content/uploads/19-klein-1024x683.jpg')
-cocktail_two_file_four = URI.open('https://unsplash.com/photos/EOnHT42R1a8')
+cocktail_two_file_four = URI.open('https://images.unsplash.com/photo-1468465236047-6aac20937e92?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=331&q=80')
 
 cocktail_two = DateActivity.new(cocktail_two_hash)
 
