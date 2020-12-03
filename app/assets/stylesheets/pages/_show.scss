@@ -48,15 +48,30 @@
   color: white;
   border-radius: 10px;
   padding: 3px;
+  margin-right: 2px;
 }
 
-// AVATAR
+// AVATAR REVIEWS
 .avatar.avatar-xl {
-    width: 7rem;
-    height: 7rem;
+  width: 7rem;
+  height: 7rem;
 }
 
-// CONTACT BUTTON
+.avatar{
+  display: inline-block;
+  position: relative;
+  /* width: 3rem; */
+  height: 3rem;
+  text-align: center;
+  border: #dee2e6;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+  line-height: 3rem;
+}
+
+
+// CONTACT BUTTON CARD CONTACT
 .button-contact-show{
   display: block;
   border: 1px solid #167FFB;
@@ -70,7 +85,29 @@
   }
 }
 
-//  ALL TEXT BLOCKS FOR ABOUT/LOCATION/GALLERY/AMENITIES/REVIEWS
+// ICONS CARDS CLOCK AND ADDRESS BOOK
+.far.fa-clock{
+  opacity: 0.7;
+}
+.far.fa-address-book{
+  opacity: 0.7;
+}
+
+// REVIEW BLOCK
+.review {
+  padding-top: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.text-block-review {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+// ALL TEXT BLOCKS FOR ABOUT/LOCATION/GALLERY/AMENITIES
 .text-block{
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -79,4 +116,8 @@
 
 body{
   background-color: #fff;
+}
+
+h3, h4{
+  opacity: 0.7;
 }
