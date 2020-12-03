@@ -9,11 +9,35 @@
 }
 
 .filter-container {
-  background-color: #85C3DC;
-  margin: 10px 20px;
-  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 0.2px solid lightgrey;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 10px;
+  width: 80%;
+  h2 {
+    margin-bottom: 0px;
+    font-size: 30px;
+  }
 }
+
+.filter-heading {
+  font-size: 20px;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+}
+
+.categories-boxes {
+  display: flex;
+}
+
+.category-name {
+  font-size: 13px;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
 
 .price-search {
   padding: 10px;
@@ -24,5 +48,10 @@
   padding: 10px;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.filter-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
