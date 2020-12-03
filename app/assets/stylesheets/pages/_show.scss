@@ -24,12 +24,12 @@
   }
 }
 
-// STAR COLOR
+// STAR COLOR REVIEW
 .fa.fa-xs.fa-star{
   color: #FACD66;
 }
 
-// CARD-BODY
+// CARD-BODY OPENING HOURS/CONTACT
 .card-show{
   border-radius: 10px;
 }
@@ -70,6 +70,12 @@
   }
 }
 
+//  ALL TEXT BLOCKS FOR ABOUT/LOCATION/GALLERY/AMENITIES/REVIEWS
+.text-block{
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
 
 body{
   background-color: #fff;
