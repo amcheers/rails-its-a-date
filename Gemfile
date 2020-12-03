@@ -33,7 +33,9 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-group :development, :test do  gem 'pry-byebug'
+
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
@@ -61,10 +63,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'dotenv-rails', groups: [:development, :test]
+
 
 # cloudinary
 gem 'cloudinary', '~> 1.16.0'
 
 # pg search
 gem 'pg_search', '~> 2.3.0'
+
+# geocoder
+gem 'geocoder'
