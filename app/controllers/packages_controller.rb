@@ -17,6 +17,12 @@ class PackagesController < ApplicationController
     redirect_to packages_path
   end
 
+  def destroy
+    @package = Package.find(params[:id])
+    @package.destroy
+    redirect_to dashboard_path
+  end
+
   private
 
   def package_params
