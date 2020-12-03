@@ -1,0 +1,8 @@
+<h1>Create a Package</h1>
+
+Choose up to 3 categories:
+<%= simple_form_for @package do |f| %>
+  <%= f.input :category, collection:  Category.all, as: :check_boxes%>
+  <%= f.submit "Add Package"%>
+<% end %>
+

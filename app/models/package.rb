@@ -3,5 +3,6 @@ class Package < ApplicationRecord
   has_many :reviews, as: :activity
   has_many :wishlists, as: :activity
   belongs_to :user
+  attr_accessor :category
 
 end
