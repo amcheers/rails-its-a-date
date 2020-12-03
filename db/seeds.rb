@@ -605,6 +605,41 @@ cocktail_one_three = Review.new(
   )
 cocktail_one_three.activity = cocktail_one
 cocktail_one_three.save!
+# -----------------------------------------------------
+# Packages
 
+puts "Creating Packages"
+
+#Wildlife
+puts "Wildlife"
+Package.create(title: "Wildlife")
+Package.find(1).date_activities << DateActivity.find(1)
+Package.find(1).date_activities << DateActivity.find(2)
+Package.find(1).date_activities << DateActivity.find(6)
+
+#WinterWonder
+puts "WinterWonder"
+Package.create(title: "WinterWonder")
+Package.find(2).date_activities << DateActivity.find(3)
+Package.find(2).date_activities << DateActivity.find(4)
+
+#Action
+puts "Action"
+Package.create(title: "Action")
+Package.find(3).date_activities << DateActivity.find(7)
+Package.find(3).date_activities << DateActivity.find(8)
+
+#Drinking
+puts "Drinking"
+Package.create(title: "Drinking")
+Package.find(4).date_activities << DateActivity.find(9)
+Package.find(4).date_activities << DateActivity.find(10)
+
+#Suprise
+puts "Creating Suprise"
+Package.create(title: "Suprise")
+Package.find(5).date_activities << DateActivity.find(4)
+Package.find(5).date_activities << DateActivity.find(6)
+Package.find(5).date_activities << DateActivity.find(7)
 
 puts "Done!"

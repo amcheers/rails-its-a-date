@@ -1,0 +1,7 @@
+<ul>
+  <% @packages.each do |package| %>
+    <li>
+      <%= link_to package.title, package_path(package) %>
+    </li>
+  <% end %>
+</ul>
