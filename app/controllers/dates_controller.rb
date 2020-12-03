@@ -14,6 +14,7 @@ class DatesController < ApplicationController
       }
     end
     @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
+    # raise
   end
 
   def show

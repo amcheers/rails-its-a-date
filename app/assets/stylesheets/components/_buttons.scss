@@ -1,0 +1,16 @@
+.date-btn {
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  background-color: #85C3DC;
+  border: 0.2px solid grey;
+  opacity: 07;
+  transition: 0.2s;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: grey;
+  }
+}
