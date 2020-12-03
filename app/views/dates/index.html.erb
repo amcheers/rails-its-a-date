@@ -9,13 +9,20 @@
     <%= hidden_field_tag :query_title_description,
       params[:query_title_description]
     %>
+
     <%= label_tag 'Price' %>
     <%= number_field_tag :query_price,
       params[:query_price],
       class: "form-control"
     %>
 
-    <%= %>
+<!-- "category-#{category.id}" -->
+  <% @categories.each do |category| %>
+      <%= label_tag "not working", category.name %>
+      <%= check_box_tag "category_ids[]", category.id %>
+    <% end %>
+
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 </div>
 
