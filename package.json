@@ -7,8 +7,8 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
     "bootstrap": "^4.5.3",
+    "fslightbox": "^3.2.2",
     "jquery": "^3.5.1",
-    "lightbox2": "^2.11.3",
     "mapbox-gl": "^1.13.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
