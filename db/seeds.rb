@@ -12,10 +12,22 @@ User.destroy_all
 # USERS
 puts "Creating Users"
 
-test_one = User.create!(email: "test@user1.com", username: "Fred1", password: "123456")
-test_two = User.create!(email: "test@user2.com", username: "Laura2", password: "123456")
-test_three = User.create!(email: "test@user3.com", username: "Hanna3", password: "123456")
-test_four = User.create!(
+test_one = User.new(email: "test@user1.com", username: "Fred1", password: "123456")
+photo_user_one = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010825/ahmad_h2emuj.png")
+test_one.photo.attach(io: photo_user_one, filename: 'user_1.png', content_type: 'image/png')
+test_one.save!
+
+test_two = User.new(email: "test@user2.com", username: "Laura2", password: "123456")
+photo_user_two = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010839/81CA077C-8FDE-4302-BB1E-EE8C946EC011_anhzc2.jpg")
+test_two.photo.attach(io: photo_user_two, filename: 'user_2.png', content_type: 'image/png')
+test_two.save!
+
+test_three = User.new(email: "test@user3.com", username: "Hanna3", password: "123456")
+photo_user_three = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010937/Screenshot_2020-12-03_at_16.55.16_jcwcwl.png")
+test_three.photo.attach(io: photo_user_three, filename: 'user_3.png', content_type: 'image/png')
+test_three.save!
+
+test_four = User.new(
   email: "test@user4.com",
   password: "123456",
   username: "tommy",
@@ -24,6 +36,9 @@ test_four = User.create!(
   last_name: "Miller",
   address: "IJsbaanpad 9, 1076 CV Amsterdam"
 )
+photo_user_four = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010805/brent_nz9duz.png")
+test_four.photo.attach(io: photo_user_four, filename: 'user_4.png', content_type: 'image/png')
+test_four.save!
 
 
 puts "Done!"
