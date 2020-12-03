@@ -12,10 +12,22 @@ User.destroy_all
 # USERS
 puts "Creating Users"
 
-test_one = User.create!(email: "test@user1.com", username: "Admin", password: "123456")
-test_two = User.create!(email: "test@user2.com", username: "Laura2", password: "123456")
-test_three = User.create!(email: "test@user3.com", username: "Hanna3", password: "123456")
-test_four = User.create!(
+test_one = User.new(email: "test@user1.com", username: "Fred1", password: "123456")
+photo_user_one = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010825/ahmad_h2emuj.png")
+test_one.photo.attach(io: photo_user_one, filename: 'user_1.png', content_type: 'image/png')
+test_one.save!
+
+test_two = User.new(email: "test@user2.com", username: "Laura2", password: "123456")
+photo_user_two = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010839/81CA077C-8FDE-4302-BB1E-EE8C946EC011_anhzc2.jpg")
+test_two.photo.attach(io: photo_user_two, filename: 'user_2.png', content_type: 'image/png')
+test_two.save!
+
+test_three = User.new(email: "test@user3.com", username: "Hanna3", password: "123456")
+photo_user_three = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010937/Screenshot_2020-12-03_at_16.55.16_jcwcwl.png")
+test_three.photo.attach(io: photo_user_three, filename: 'user_3.png', content_type: 'image/png')
+test_three.save!
+
+test_four = User.new(
   email: "test@user4.com",
   password: "123456",
   username: "tommy",
@@ -24,6 +36,9 @@ test_four = User.create!(
   last_name: "Miller",
   address: "IJsbaanpad 9, 1076 CV Amsterdam"
 )
+photo_user_four = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010805/brent_nz9duz.png")
+test_four.photo.attach(io: photo_user_four, filename: 'user_4.png', content_type: 'image/png')
+test_four.save!
 
 
 puts "Done!"
@@ -42,7 +57,7 @@ active = Category.create!(name: "active")
 passive = Category.create!(name: "passive")
 educational = Category.create!(name: "educational")
 for_free = Category.create!(name: "for free")
-first_date = Category.create!(name: "good for first date")
+first_date = Category.create!(name: "first date")
 morning = Category.create!(name: "morning")
 lunch = Category.create!(name: "lunch")
 afternoon = Category.create!(name: "afternoon")
@@ -610,34 +625,39 @@ puts "Creating Packages"
 
 #Wildlife
 puts "Wildlife"
-Package.create(title: "Wildlife", user: User.first)
-Package.find(1).date_activities << DateActivity.find(1)
-Package.find(1).date_activities << DateActivity.find(2)
-Package.find(1).date_activities << DateActivity.find(6)
+wildlife = Package.new(title: "Wildlife", user: test_one)
+wildlife.date_activities << vondel
+wildlife.date_activities << ooster
+wildlife.date_activities << electric
+wildlife.save!
 
 #WinterWonder
 puts "WinterWonder"
-Package.create(title: "WinterWonder", user: User.first)
-Package.find(2).date_activities << DateActivity.find(3)
-Package.find(2).date_activities << DateActivity.find(4)
+winder_wonder = Package.new(title: "WinterWonder", user: test_one)
+winder_wonder.date_activities << drupa
+winder_wonder.date_activities << wonder
+winder_wonder.save!
 
 #Action
 puts "Action"
-Package.create(title: "Action", user: User.first)
-Package.find(3).date_activities << DateActivity.find(7)
-Package.find(3).date_activities << DateActivity.find(8)
+action = Package.new(title: "Action", user: test_one)
+action.date_activities << salsa
+action.date_activities << skydiving
+action.save!
 
 #Drinking
 puts "Drinking"
-Package.create(title: "Drinking", user: User.first)
-Package.find(4).date_activities << DateActivity.find(9)
-Package.find(4).date_activities << DateActivity.find(10)
+drinking = Package.new(title: "Drinking", user: test_one)
+drinking.date_activities << cocktail_one
+drinking.date_activities << cocktail_two
+drinking.save!
 
 #Suprise
 puts "Creating Suprise"
-Package.create(title: "Suprise", user: User.first)
-Package.find(5).date_activities << DateActivity.find(4)
-Package.find(5).date_activities << DateActivity.find(6)
-Package.find(5).date_activities << DateActivity.find(7)
+surprise = Package.new(title: "Suprise", user: test_one)
+surprise.date_activities << wonder
+surprise.date_activities << windmill
+surprise.date_activities << salsa
+surprise.save!
 
 puts "Done!"

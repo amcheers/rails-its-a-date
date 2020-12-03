@@ -77,12 +77,12 @@
 // CONTACT BUTTON CARD CONTACT
 .button-contact-show{
   display: block;
-  border: 1px solid #4E66F8;
-  color: #4E66F8;
+  border: 1px solid #85C3DC;
+  color: #85C3DC;
   padding: 10px;
   border-radius: 10px;
   &:hover{
-    background-color: #4E66F8;
+    background-color: #85C3DC;
     text-decoration: none;
     color: white;
   }
@@ -93,7 +93,7 @@
   margin-bottom: 0;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #4E66F8;
+  color: #85C3DC;
   font-weight: bold;
 }
 
@@ -112,7 +112,7 @@
 
 // ICONS INSIDE CONTACT BLOCK
 .icon{
-  color: #4E66F8;
+  color: #85C3DC;
 }
 
 // ADD TO WHISHLIST
@@ -146,12 +146,13 @@ a.text-secondary{
 .button-contact-show-2{
   background-color: white;
   display: block;
-  border: 1px solid #4E66F8;
-  color: #4E66F8;
+  border: 1px solid #85C3DC;
+  color: #85C3DC;
   padding: 10px;
   border-radius: 10px;
   &:hover{
-    background-color: #4E66F8;
+    background-color: #85C3DC;
+    border: 1px solid #85C3DC;
     text-decoration: none;
     color: white;
   }

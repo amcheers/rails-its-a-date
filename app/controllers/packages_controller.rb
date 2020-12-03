@@ -38,7 +38,7 @@ class PackagesController < ApplicationController
     @package_copy.user = current_user
     @package_copy.save
     @package_copy.update(package_params)
-    redirect_to packages_path
+    redirect_to dashboard_path
   end
 
   def destroy
