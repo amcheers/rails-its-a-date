@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show], controller: :dashboard do
     resources :dates, only: [:new, :create, :edit, :update, :destroy]
   end
-  resources :packages, only: [:index, :show, :edit, :update]
+  resources :packages, only: [:index, :show, :edit, :update, :destroy]
   get '/dates', to: 'dates#index', as: 'dates_index'
   get '/dates/:id', to: 'dates#show', as: 'dates_show'
   get '/:activity_type/:activity_id/reviews', to: 'reviews#index', as: 'reviews'

@@ -14,10 +14,11 @@ class DatesController < ApplicationController
       }
     end
     @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
+    # raise
   end
 
   def show
-
+    @marker = [{ lat: @date.latitude, lng: @date.longitude }]
   end
 
   def new
@@ -74,6 +75,6 @@ class DatesController < ApplicationController
   end
 
   def date_params
-    params.require(:date_activity).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id)
+    params.require(:date_activity).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id, :photo)
   end
 end

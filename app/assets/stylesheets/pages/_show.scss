@@ -5,6 +5,12 @@
   height: 50vh;
   background-position: center;
   background-size: 100%;
+  // position: relative;
+}
+
+// Text on banner
+.text-shadow {
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.1);
 }
 
 // button banner left top
@@ -24,32 +30,149 @@
   }
 }
 
+// STAR COLOR REVIEW
 .fa.fa-xs.fa-star{
   color: #FACD66;
 }
 
+// CARD-BODY OPENING HOURS/CONTACT
+.card-show{
+  border-radius: 10px;
+}
+
 // MAP
-.map{
-  background-color: #FACD66;
-  width: 730px;
-  height: 200px;
+.map-show {
   border-radius: 10px;
 }
 
 // ICONS Amenities
 .fa.fa-check{
-  background-color: #F07B89;
+  background-color: #ADDACF;
   color: white;
   border-radius: 10px;
   padding: 3px;
+  margin-right: 2px;
 }
 
-// AVATAR
+// AVATAR REVIEWS
 .avatar.avatar-xl {
-    width: 7rem;
-    height: 7rem;
+  width: 7rem;
+  height: 7rem;
 }
 
-body{
+.avatar{
+  display: inline-block;
+  position: relative;
+  /* width: 3rem; */
+  height: 3rem;
+  text-align: center;
+  border: #dee2e6;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+  line-height: 3rem;
+}
+
+
+// CONTACT BUTTON CARD CONTACT
+.button-contact-show{
+  display: block;
+  border: 1px solid #4E66F8;
+  color: #4E66F8;
+  padding: 10px;
+  border-radius: 10px;
+  &:hover{
+    background-color: #4E66F8;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// SUBTITLE INSIDE CARDS
+.subtitle {
+  margin-bottom: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #4E66F8;
+  font-weight: bold;
+}
+
+// SUBTITLE
+.media-body h4{
+  opacity: 0.6;
+}
+
+// ICONS CARDS CLOCK AND ADDRESS BOOK
+.far.fa-clock{
+  opacity: 0.7;
+}
+.far.fa-address-book{
+  opacity: 0.7;
+}
+
+// ICONS INSIDE CONTACT BLOCK
+.icon{
+  color: #4E66F8;
+}
+
+// ADD TO WHISHLIST
+a.text-secondary{
+  // position: absolute;
+  // top: 10px;
+  // right: 100px;
+  color: #f07b89 !important;
+  font-size: 20px;
+  &:hover{
+    text-decoration: none;
+    color: #f07b89 !important;
+  }
+}
+
+// REVIEW BLOCK
+.review {
+  padding-top: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.text-block-review {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+// REVIEW BUTTON
+.button-contact-show-2{
+  background-color: white;
+  display: block;
+  border: 1px solid #4E66F8;
+  color: #4E66F8;
+  padding: 10px;
+  border-radius: 10px;
+  &:hover{
+    background-color: #4E66F8;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+// ALL TEXT BLOCKS FOR ABOUT/LOCATION/GALLERY/AMENITIES
+.text-block{
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+.table.opening-times{
+  th{
+    padding-left: 0px;
+    border: 0 !important;
+  }
+}
+
+
+.body-show{
   background-color: #fff;
 }
+
+
