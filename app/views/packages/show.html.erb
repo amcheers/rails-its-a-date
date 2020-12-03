@@ -1,0 +1,16 @@
+<%= simple_form_for [@package] do |f| %>
+<%= f.input :title %>
+<fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
+    <legend class="col-form-label pt-0">Date activities</legend>
+    <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
+        <% @package.date_activities.each do |date| %>
+        <div class="category-item" style="background-image: url('<%= cl_image_path date.photos.first.key%>')"><input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" /><label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>"><%= date.title %></label></div>
+        <% end %>
+    </div>
+</fieldset>
+<%= f.submit "Add Package"%>
+<% end %>
+
+<%= link_to "Back", packages_path %>
+
+<%console %>

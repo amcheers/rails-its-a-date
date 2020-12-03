@@ -38,25 +38,34 @@
 
 
 <% if params[:query_location].present? %>
-<h1>Dates in <%= params[:query_location] %></h1>
+<h1 class="search-results">Dates in <%= params[:query_location] %></h1>
 <% else %>
-<h1>Dates Search Results</h1>
+<h1 class="search-results">Dates Search Results</h1>
 <% end %>
 
 
 <div class="row">
   <div class="col-12 col-lg-6">
     <div class="container">
-      <ul class="list-group">
         <% @dates.each do |date| %>
-        <li class="list-group-item">
-          <%= date.title %>
-          <%= date.location %>
-          <%= date.description %>
-          <%= link_to 'details', dates_show_path(date) %>
-        </li>
+        <div class="index-card">
+          <div class="date-photo">
+            <%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
+          </div>
+          <div class="date-info">
+            <div class="date-categories">
+              <% date.categories.take(3).each do |c| %>
+              <div class="date-category"><%= c.name %></div>
+              <% end %>
+            </div>
+            <div class="date-title"><%= date.title %></div>
+            <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
+            <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
+            <%= link_to 'details', dates_show_path(date), class: "date-btn" %>
+          </div>
+
+        </div>
         <% end %>
-      </ul>
     </div>
   </div>
 

@@ -1,0 +1,60 @@
+.index-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 20px;
+  border: 0.5px solid grey;
+}
+
+.date-photo {
+  flex-grow: 1;
+}
+
+.photo-centered {
+  background-position: center;
+  border-radius: 10px;
+}
+
+.date-info {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.date-categories {
+  display: flex;
+  align-items: center;
+}
+
+.date-category {
+  padding: 2px 5px;
+  margin: 5px;
+  background-color: #F07B89;
+  color: white;
+  font-size: 10px;
+  border: 0.2px solid grey;
+}
+
+.date-title {
+  margin: 5px;
+  color: grey;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.date-location {
+  margin: 5px;
+  color: lightgrey;
+  font-size: 15px;
+  font-weight: lighter;
+  .date-detail-marker {
+    color: #F07B89;
+    font-size: 20px;
+  }
+}
+
+.date-reviews {
+  margin: 5px;
+  color: #F07B89;
+  font-size: 15px;
+}
