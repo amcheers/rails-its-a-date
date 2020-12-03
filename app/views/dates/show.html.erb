@@ -1,259 +1,275 @@
-<div class="bannershow pt-7 pb-5 d-flex align-items-end dark-overlay bg-cover" style="background-image:url('<%= image_path("https://d19m59y37dris4.cloudfront.net/directory/1-6/img/photo/restaurant-1515164783716-8e6920f3e77c.jpg", ) %>')">
-  <div class="container overlay-content">
-    <div class="d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-end">
-      <div class="text-white mb-4 mb-lg-0">
-        <div class="badge badge-pill badge-transparent px-3 py-2 mb-4"><%= @date.title %></div>
-        <h1 class="text-shadow verified"><%= @date.title %></h1>
-        <p>
-          <i class="fa-map-marker-alt fas mr-2">
-          </i>
-          <%= @date.location %>
-        </p>
-        <p class="mb-0 d-flex align-items-center">
-          <i class="fa fa-xs fa-star"></i>
-          <i class="fa fa-xs fa-star"></i>
-          <i class="fa fa-xs fa-star"></i>
-          <i class="fa fa-xs fa-star"></i>
-          <i class="fa fa-xs fa-star text-gray-200 mr-4"></i>
-        </p>
-      </div>
-      <div class="calltoactions">
-        <a href="" class="button-review">Leave a Review</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-8">
-      <!-- Description Date -->
-      <div class="text-block">
-        <h3 class="mb-3">About</h3>
-        <p class="text-muted">
-          <%= @date.description %>
-        </p>
-        <p class="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, illo, labore deleniti minus nihil nisi cupiditate natus repellendus voluptas dolor.
-        </p>
-      </div>
-      <!-- MAP -->
-      <div class="text-block">
-        <h3 class="mb-5">Location</h3>
-        <div class="map mb-5">
-
-        </div>
-      </div>
-      <!-- GALLERY -->
-      <div class="text-block">
-        <h3 class="mb-5">Gallery</h3>
-        <div class="row gallery ml-n1 mr-n1 mb-5">
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background5.jpg", class:"img-fluid") %>
+<div class="body-show">
+  <div class="bannershow pt-5 pb-5 d-flex align-items-end dark-overlay bg-cover" style="background-image:url('<%= image_path("https://d19m59y37dris4.cloudfront.net/directory/1-6/img/photo/restaurant-1515164783716-8e6920f3e77c.jpg", ) %>')">
+    <div class="container overlay-content">
+      <div class="d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-end">
+        <div class="text-white mb-4 mb-lg-0">
+          <% @date.categories.each do |cat|%>
+          <div class="badge badge-pill badge-transparent px-3 py-2 mb-4">
+            <%= cat.name %>
           </div>
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background4.jpg", class:"img-fluid") %>
-          </div>
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background3.jpg", class:"img-fluid") %>
-          </div>
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background2.jpg", class:"img-fluid") %>
-          </div>
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background.jpg", class:"img-fluid") %>
-          </div>
-          <div class="col-lg-4 col-6 px-1 mb-2">
-            <%= image_tag("background6.jpg", class:"img-fluid") %>
-          </div>
-        </div>
-      </div>
-      <!-- AMENITIES -->
-      <div class="text-block">
-        <h3 class="mb-5">Amenities</h3>
-        <ul class="amenities-list list-inline">
-          <li class="list-inline-item mb-3">
-            <div class="d-flex align-items-center">
-              <i class="fa fa-check"></i>
-              <span>Wifi</span>
-            </div>
-          </li>
-          <li class="list-inline-item mb-3">
-            <div class="d-flex align-items-center">
-              <i class="fa fa-check"></i>
-              <span>Vegan friendly</span>
-            </div>
-          </li>
-          <li class="list-inline-item mb-3">
-            <div class="d-flex align-items-center">
-              <i class="fa fa-check"></i>
-              <span>Alcohol served</span>
-            </div>
-          </li>
-          <li class="list-inline-item mb-3">
-            <div class="d-flex align-items-center">
-              <i class="fa fa-check"></i>
-              <span>Parking spaces</span>
-            </div>
-          </li>
-          <li class="list-inline-item mb-3">
-            <div class="d-flex align-items-center">
-              <i class="fa fa-check"></i>
-              <span>No smoking</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <!-- REVIEWS -->
-      <div class="text-block">
-        <h3 class="mb-5 mt-5">Reviews</h3>
-        <div class="media d-block d-sm-flex review">
-          <div class="text-md-center mr-5 mr-xl-5">
-            <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
-            <span class="text-uppercase text-muted text-sm">Dec 2018</span>
-          </div>
-          <div class="media-body">
-            <h6 class="mt-4 mb-1">Brent Van Holder</h6>
-            <div class="mb-2">
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
-            </div>
-            <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
-            </p>
-          </div>
-        </div>
-        <div class="media d-block d-sm-flex review">
-          <div class="text-md-center mr-5 mr-xl-5">
-            <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
-            <span class="text-uppercase text-muted text-sm">Dec 2018</span>
-          </div>
-          <div class="media-body">
-            <h6 class="mt-4 mb-1">Brent Van Holder</h6>
-            <div class="mb-2">
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
-            </div>
-            <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
-            </p>
-          </div>
-        </div>
-        <div class="media d-block d-sm-flex review">
-          <div class="text-md-center mr-5 mr-xl-5">
-            <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
-            <span class="text-uppercase text-muted text-sm">Dec 2018</span>
-          </div>
-          <div class="media-body">
-            <h6 class="mt-4 mb-1">Brent Van Holder</h6>
-            <div class="mb-2">
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star"></i>
-              <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
-            </div>
-            <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Opening Hours -->
-    <div class="col-lg-4">
-      <div class="pl-xl-4">
-        <div class="card border-0 shadow mb-5">
-          <div class="card-header bg-gray-100 py-4 border-0">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="subtitle text-sm text-primary">Opening in 5 minutes</p>
-                <h4 class="mb-0">Opening Hours </h4>
-              </div>
-              <div class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-muted">
-
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <table class="table text-sm mb-0">
-              <tbody>
-                <tr>
-                  <th class="pl-0 border-0">Sunday</th>
-                  <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <!-- Contact -->
-        <div class="card border-0 shadow mb-5">
-          <div class="card-header bg-gray-100 py-4 border-0">
-            <div class="media align-items-center">
-              <div class="media-body">
-                <p class="subtitle text-sm text-primary">Drop us a line</p>
-                <h4 class="mb-0">Contact </h4>
-              </div>
-              <div class="svg-icon svg-icon svg-icon-light w-3rem h-3rem ml-3 text-muted">
-
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <ul class="list-unstyled mb-4">
-              <li class="mb-2">
-                <a class="text-gray-00 text-sm text-decoration-none" href="">
-                  <i class="fa fa-phone mr-3"></i>
-                  <span class="text-muted">(020) 123 456 789</span>
-                </a>
-              </li>
-               <li class="mb-2">
-                <a class="text-gray-00 text-sm text-decoration-none" href="">
-                  <i class="fa fa-phone mr-3"></i>
-                  <span class="text-muted">(020) 123 456 789</span>
-                </a>
-              </li>
-               <li class="mb-2">
-                <a class="text-gray-00 text-sm text-decoration-none" href="">
-                  <i class="fa fa-phone mr-3"></i>
-                  <span class="text-muted">(020) 123 456 789</span>
-                </a>
-              </li>
-              <div class="text-center">
-                <a class="btn btn-outline-primary btn-block" href="">
-                  <i class="far fa-paper-plane mr-2"></i>
-                  Send a message
-                </a>
-              </div>
-            </ul>
-          </div>
-        </div>
-        <div class="text-center">
+          <% end %>
+          <h1 class="text-shadow verified"><%= @date.title %></h1>
           <p>
-            <a class="text-secondary" href=""></a>
+            <i class="fa-map-marker-alt fas mr-2">
+            </i>
+            <%= @date.location %>
+          </p>
+          <p class="mb-0 d-flex align-items-center">
+            <i class="fa fa-xs fa-star"></i>
+            <i class="fa fa-xs fa-star"></i>
+            <i class="fa fa-xs fa-star"></i>
+            <i class="fa fa-xs fa-star"></i>
+            <i class="fa fa-xs fa-star text-gray-200 mr-4"></i>
           </p>
         </div>
+        <div class="calltoactions">
+          <a href="" class="button-review">Leave a Review</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<%= link_to 'Reviews', reviews_path(@date.class, @date.id) %>
-<<<<<<< HEAD
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Description Date -->
+        <div class="text-block">
+          <h3 class="mb-3"><strong>About</strong></h3>
+          <p class="text-muted">
+            <%= @date.description %>
+          </p>
+          <p class="text-muted">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, illo, labore deleniti minus nihil nisi cupiditate natus repellendus voluptas dolor.
+          </p>
+        </div>
+        <!-- MAP -->
+        <div class="text-block">
+          <h3 class="mb-3"><strong>Location</strong></h3>
 
-<div>
-  <%= link_to 'Back', dates_index_path  %>
-</div>
+          <div id="map" class="map-show mb-3"
+            style="width: 100%; height: 300px;"
+            data-markers="<%= @marker.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
 
-<div>
-  <%= link_to 'Home', root_path  %>
+        </div>
+        <!-- GALLERY -->
+        <div class="text-block">
+          <h3 class="mb-4"><strong>Gallery</strong></h3>
+          <div class="row gallery ml-n1 mr-n1 mb-3">
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background5.jpg", class:"img-fluid") %>
+            </div>
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background4.jpg", class:"img-fluid") %>
+            </div>
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background5.jpg", class:"img-fluid") %>
+            </div>
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background4.jpg", class:"img-fluid") %>
+            </div>
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background5.jpg", class:"img-fluid") %>
+            </div>
+            <div class="col-lg-4 col-6 px-1 mb-2">
+              <%= image_tag("background4.jpg", class:"img-fluid") %>
+            </div>
+          </div>
+        </div>
+        <!-- AMENITIES -->
+        <div class="text-block">
+          <h3 class="mb-4"><strong>Amenities</strong></h3>
+          <ul class="amenities-list list-inline">
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>Wifi</span>
+              </div>
+            </li>
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>Vegan friendly</span>
+              </div>
+            </li>
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>Alcohol served</span>
+              </div>
+            </li>
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>Parking spaces</span>
+              </div>
+            </li>
+            <br>
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>No smoking</span>
+              </div>
+            </li>
+            <li class="list-inline-item mb-3">
+              <div class="d-flex align-items-center">
+                <i class="fa fa-check"></i>
+                <span>Children allowed</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- REVIEWS -->
+        <div class="text-block-review">
+          <h3 class="mt-2"><strong>Reviews</strong></h3>
+          <div class="media d-block d-sm-flex review">
+            <div class="text-md-center mr-5 mr-xl-5">
+              <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
+              <span class="text-uppercase text-muted text-sm">Dec 2018</span>
+            </div>
+            <div class="media-body">
+              <h6 class="mt-2 mb-1"><strong>Brent Van Holder</strong></h6>
+              <div class="mb-2">
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
+              </div>
+              <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
+              </p>
+            </div>
+          </div>
+          <div class="media d-block d-sm-flex review">
+            <div class="text-md-center mr-5 mr-xl-5">
+              <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
+              <span class="text-uppercase text-muted text-sm">Dec 2018</span>
+            </div>
+            <div class="media-body">
+              <h6 class="mt-2 mb-1"><strong>Brent Van Holder</strong></h6>
+              <div class="mb-2">
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
+              </div>
+              <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
+              </p>
+            </div>
+          </div>
+          <div class="media d-block d-sm-flex review">
+            <div class="text-md-center mr-5 mr-xl-5">
+              <%= image_tag("background5.jpg", class:"d-block avatar avatar-xl p-2 mb-2") %>
+              <span class="text-uppercase text-muted text-sm">Dec 2018</span>
+            </div>
+            <div class="media-body">
+              <h6 class="mt-2 mb-1"><strong>Brent Van Holder</strong></h6>
+              <div class="mb-2">
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star"></i>
+                <i class="fa fa-xs fa-star text-gray-200 mr-5"></i>
+              </div>
+              <p class="text-muted text-sm">Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Earum alias vero facere praesentium aut labore recusandae numquam cum enim beatae!
+              </p>
+            </div>
+          </div>
+          <div class="py-3">
+            <button class="button-contact-show-2 px-3">Leave a Review</button>
+          </div>
+        </div>
+      </div>
+      <!-- Opening Hours -->
+      <div class="col-lg-4">
+        <div class="pl-xl-4">
+          <div class="card-show border-0 shadow mb-5">
+            <div class="card-header bg-gray-100 py-4 border-0">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <p class="subtitle text-sm">Opening in 5 minutes</p>
+                  <h4 class="mb-0"><strong>Opening Hours</strong></h4>
+                </div>
+                  <i class="far fa-clock mr-3 mt-2" style="font-size:54px"></i>
+              </div>
+            </div>
+            <%= render "components/opening_times" %>
+          </div>
+          <!-- Contact -->
+          <div class="card-show border-0 shadow mb-5">
+            <div class="card-header bg-gray-100 py-4 border-0">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <p class="subtitle text-sm">Drop us a line</p>
+                  <h4 class="mb-0"><strong>Contact</strong></h4>
+                </div>
+                  <i class="far fa-address-book mr-3 mt-2" style="font-size:54px"></i>
+              </div>
+            </div>
+            <div class="card-body pb-2">
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3">
+                  <a class="text-gray-00 text-sm text-decoration-none" href="">
+                    <i class="fa fa-phone mr-3 icon"></i>
+                    <span class="text-muted">(020) 123 456 789</span>
+                  </a>
+                </li>
+                 <li class="mb-3">
+                  <a class="text-gray-00 text-sm text-decoration-none" href="">
+                    <i class="fa fa-envelope mr-3 icon"></i>
+                    <span class="text-muted">info@restaurantloetje.com</span>
+                  </a>
+                </li>
+                 <li class="mb-3">
+                  <a class="text-gray-00 text-sm text-decoration-none" href="">
+                    <i class="fa fa-globe mr-3 icon"></i>
+                    <span class="text-muted">www.loetjeamsterdam.com</span>
+                  </a>
+                </li>
+                 <li class="mb-3">
+                  <a class="text-gray-00 text-sm text-decoration-none" href="">
+                    <i class="fab fa-facebook mr-3 icon"></i>
+                    <span class="text-muted">Loetje</span>
+                  </a>
+                </li>
+                <li class="mb-3">
+                  <a class="text-gray-00 text-sm text-decoration-none" href="">
+                    <i class="fab fa-instagram mr-3 icon"></i>
+                    <span class="text-muted">Loetje</span>
+                  </a>
+                </li>
+                <div class="text-center mt-4">
+                  <a class="button-contact-show" href="">
+                    <i class="far fa-paper-plane"></i>
+                    Send a message
+                  </a>
+                </div>
+              </ul>
+            </div>
+          </div>
+          <div class="text-center">
+            <p>
+              <a class="text-secondary" href="">
+                <i class="fa fa-heart"></i>
+                Add To Whishlist
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to 'Reviews', reviews_path(@date.class, @date.id) %>
+
+  <div>
+    <%= link_to 'Home', root_path  %>
+  </div>
+
+  <%= link_to 'Write a Review', new_review_path(@date.class, @date.id) %>
+
+  <div>
+    <%= link_to 'Back', dates_index_path  %>
+  </div>
 </div>
-=======
-<%= link_to 'Write a Review', new_review_path(@date.class, @date.id) %>
-<div>
-  <%= link_to 'Back', dates_index_path  %>
-</div>
->>>>>>> master

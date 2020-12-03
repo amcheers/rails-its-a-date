@@ -57,7 +57,7 @@ active = Category.create!(name: "active")
 passive = Category.create!(name: "passive")
 educational = Category.create!(name: "educational")
 for_free = Category.create!(name: "for free")
-first_date = Category.create!(name: "good for first date")
+first_date = Category.create!(name: "first date")
 morning = Category.create!(name: "morning")
 lunch = Category.create!(name: "lunch")
 afternoon = Category.create!(name: "afternoon")
@@ -618,6 +618,41 @@ cocktail_one_three = Review.new(
   )
 cocktail_one_three.activity = cocktail_one
 cocktail_one_three.save!
+# -----------------------------------------------------
+# Packages
 
+puts "Creating Packages"
+
+#Wildlife
+puts "Wildlife"
+Package.create(title: "Wildlife", user: User.first)
+Package.find(1).date_activities << DateActivity.find(1)
+Package.find(1).date_activities << DateActivity.find(2)
+Package.find(1).date_activities << DateActivity.find(6)
+
+#WinterWonder
+puts "WinterWonder"
+Package.create(title: "WinterWonder", user: User.first)
+Package.find(2).date_activities << DateActivity.find(3)
+Package.find(2).date_activities << DateActivity.find(4)
+
+#Action
+puts "Action"
+Package.create(title: "Action", user: User.first)
+Package.find(3).date_activities << DateActivity.find(7)
+Package.find(3).date_activities << DateActivity.find(8)
+
+#Drinking
+puts "Drinking"
+Package.create(title: "Drinking", user: User.first)
+Package.find(4).date_activities << DateActivity.find(9)
+Package.find(4).date_activities << DateActivity.find(10)
+
+#Suprise
+puts "Creating Suprise"
+Package.create(title: "Suprise", user: User.first)
+Package.find(5).date_activities << DateActivity.find(4)
+Package.find(5).date_activities << DateActivity.find(6)
+Package.find(5).date_activities << DateActivity.find(7)
 
 puts "Done!"

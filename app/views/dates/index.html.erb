@@ -4,7 +4,7 @@
   <h2>Filters</h2>
   <div class="filter">
     <div class="price-search">
-      <p>Budget:</p>
+      <p class="filter-heading">Budget:</p>
       <%= form_tag dates_index_path, method: :get do %>
       <%= hidden_field_tag :query_location,
       params[:query_location]
@@ -14,21 +14,24 @@
       %>
 
       <%= number_field_tag :query_price,
-      params[:query_price],
-      class: "form-control"
+      params[:query_price]
         %>
       </div>
 
 
       <div class="category-search">
-       <p>Categories:</p>
+       <p class="filter-heading">Categories:</p>
+       <div class="filter-categories">
        <% @categories.each do |category| %>
-       <%= label_tag "not working", category.name %>
-       <%= check_box_tag "category_ids[]", category.id %>
+         <div class="categories-boxes">
+           <div><%= check_box_tag "category_ids[]", category.id %></div>
+           <div class="category-name"><%= label_tag "not working", category.name %></div>
+         </div>
        <% end %>
+       </div>
      </div>
      <div>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%= submit_tag "Search", class: "date-btn" %>
      </div>
       <% end %>
 
@@ -61,7 +64,7 @@
             <div class="date-title"><%= date.title %></div>
             <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
             <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
-            <%= link_to 'details', dates_show_path(date), class: "date-btn" %>
+            <%= link_to 'Details', dates_show_path(date), class: "date-btn" %>
           </div>
 
         </div>
@@ -74,6 +77,5 @@
   style="width: 100%; height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
+  </div>
 </div>
