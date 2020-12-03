@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-container {
+  background-color: #85C3DC;
+  margin: 10px 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.price-search {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.category-search {
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
