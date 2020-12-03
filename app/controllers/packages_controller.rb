@@ -16,13 +16,16 @@ class PackagesController < ApplicationController
   def create
     @package = Package.new
     @package.user = current_user
-    package_params[:category]
-    raise
+    chosen_categories = params[:package][:category]
+    # sample_activities = []
+    chosen_categories.each do |category_id|
+      if Category.find(category_id).date_activities.any?
+        @package.date_activities << Category.find(category_id).date_activities.sample
+      end
+    end
     @package.save
     redirect_to dashboard_path
   end
-  
-  
 
   def edit
     @package = Package.find(params[:id])
