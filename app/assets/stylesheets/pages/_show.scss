@@ -24,8 +24,14 @@
   }
 }
 
+// STAR COLOR
 .fa.fa-xs.fa-star{
   color: #FACD66;
+}
+
+// CARD-BODY
+.card-show{
+  border-radius: 10px;
 }
 
 // MAP
@@ -38,7 +44,7 @@
 
 // ICONS Amenities
 .fa.fa-check{
-  background-color: #F07B89;
+  background-color: #ADDACF;
   color: white;
   border-radius: 10px;
   padding: 3px;
@@ -49,6 +55,21 @@
     width: 7rem;
     height: 7rem;
 }
+
+// CONTACT BUTTON
+.button-contact-show{
+  display: block;
+  border: 1px solid #167FFB;
+  color: #167FFB;
+  padding: 10px;
+  border-radius: 5px;
+  &:hover{
+    background-color: #167FFB;
+    text-decoration: none;
+    color: white;
+  }
+}
+
 
 body{
   background-color: #fff;
