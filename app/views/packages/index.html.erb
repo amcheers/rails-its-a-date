@@ -1,7 +1,9 @@
 <ul>
   <% @packages.each do |package| %>
+    <% if package.user.id == 1 %>
     <li>
       <%= link_to package.title, package_path(package) %>
     </li>
+    <% end %>
   <% end %>
 </ul>

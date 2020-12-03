@@ -12,7 +12,7 @@ User.destroy_all
 # USERS
 puts "Creating Users"
 
-test_one = User.create!(email: "test@user1.com", username: "Fred1", password: "123456")
+test_one = User.create!(email: "test@user1.com", username: "Admin", password: "123456")
 test_two = User.create!(email: "test@user2.com", username: "Laura2", password: "123456")
 test_three = User.create!(email: "test@user3.com", username: "Hanna3", password: "123456")
 test_four = User.create!(
@@ -612,32 +612,32 @@ puts "Creating Packages"
 
 #Wildlife
 puts "Wildlife"
-Package.create(title: "Wildlife")
+Package.create(title: "Wildlife", user: User.first)
 Package.find(1).date_activities << DateActivity.find(1)
 Package.find(1).date_activities << DateActivity.find(2)
 Package.find(1).date_activities << DateActivity.find(6)
 
 #WinterWonder
 puts "WinterWonder"
-Package.create(title: "WinterWonder")
+Package.create(title: "WinterWonder", user: User.first)
 Package.find(2).date_activities << DateActivity.find(3)
 Package.find(2).date_activities << DateActivity.find(4)
 
 #Action
 puts "Action"
-Package.create(title: "Action")
+Package.create(title: "Action", user: User.first)
 Package.find(3).date_activities << DateActivity.find(7)
 Package.find(3).date_activities << DateActivity.find(8)
 
 #Drinking
 puts "Drinking"
-Package.create(title: "Drinking")
+Package.create(title: "Drinking", user: User.first)
 Package.find(4).date_activities << DateActivity.find(9)
 Package.find(4).date_activities << DateActivity.find(10)
 
 #Suprise
 puts "Creating Suprise"
-Package.create(title: "Suprise")
+Package.create(title: "Suprise", user: User.first)
 Package.find(5).date_activities << DateActivity.find(4)
 Package.find(5).date_activities << DateActivity.find(6)
 Package.find(5).date_activities << DateActivity.find(7)
