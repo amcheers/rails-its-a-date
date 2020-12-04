@@ -1,0 +1,133 @@
+.category-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .category-item {
+    flex: 0 0 30%;
+  }
+  
+  .category-selector {
+    position: absolute;
+    transform: scale(0);
+  }
+  
+  .category-selector + label {
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 20px 10px 30px 10px;
+    border: solid;
+    border-width: 1px;
+    min-height: 560px;
+    border-color: rgb(0, 0, 0);
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+  
+  .category-selector:checked + label {
+    color: rgb(0, 0, 0) !important;
+    filter: none;
+  }
+
+  .category-selector + label {
+    color: rgb(0, 0, 0) !important;
+    filter: grayscale(100%);
+  }
+
+.btn-package-show {
+  border-radius: 15px;
+  background-color: white;
+  position: absolute;
+  left: 46.5%;
+  bottom: -25px;
+  margin-top: 50px;
+  height: 50px;
+  border-width: 1px;
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+.title-input {
+  border-radius: 15px;
+  position: relative;
+  left: 33.5%;
+  margin-top: 0px;
+  height: 50px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+  width: 500px;
+  padding-right: 5px;
+}
+
+.form-control.is-valid {
+  background-image: none;
+  border-color: #F4F4F4;
+  text-align: center;
+  font-size: 40px;
+  padding-right: 5px;
+  border-color: rgb(0, 0, 0);
+}
+
+.link-back {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  margin-top: 20px;
+  &:hover {
+    color: rgb(163, 163, 163);
+    text-decoration: none;
+}
+}
+
+.image-package-show {
+  height: 250px;
+  width: 400px;
+  border-radius: 15px;
+}
+
+.title-show-package {
+  margin: 10px 10px;
+  font-size: 20px;
+}
+
+.category-show-package {
+  padding: 2px 5px;
+  margin: 5px;
+  background-color: #F07B89;
+  color: white;
+  font-size: 10px;
+  border: 0.2px solid grey;
+}
+
+.categories-show-package {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.description-package-show {
+  font-size: 12px;
+}
+
+.package-location-show{
+  margin: 5px;
+  color: lightgrey;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.show-package-body{
+  padding-top: 10px;
+  background-color:  #ffffff;
+  font-family: "Nunito", "Helvetica", "sans-serif";
+}
