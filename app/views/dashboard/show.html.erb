@@ -21,7 +21,7 @@
   <% @packages.each do |package| %>
     <% if package.user.id == current_user.id %>
     <li>
-      <%= package.title %>
+      <%= link_to package.title, package_path(package) %>
       <%= link_to 'delete', package_path(package), method: :delete %>
     </li>
     <% end %>

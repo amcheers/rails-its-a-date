@@ -1,0 +1,36 @@
+<div class="show-package-body">
+<%= simple_form_for [@package] do |f| %>
+<%= f.input :title, label: false, input_html: { class: "title-input" } %>
+<fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
+    <legend class="col-form-label pt-0"></legend>
+    <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
+        <% @package.date_activities.each do |date| %>
+        <div class="category-item">
+            <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
+            <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
+                <%= cl_image_tag  date.photos.first.key, :class => "image-package-show" %>
+                <div class="categories-show-package"><% date.categories.take(3).each do |category|%>
+                    <div class="category-show-package">
+                        <%= category.name %>
+                    </div>
+                    <% end %>
+                </div>
+                <div class="title-show-package">
+                    <%= date.title %>
+                </div>
+                <div class="package-location-show">
+                    <%= date.location %>
+                </div>
+                <div class="description-package-show">
+                    <%= date.description %>
+                </div>
+            </label>
+        </div>
+        <% end %>
+    </div>
+</fieldset>
+<%= f.submit "Add Package", class: 'btn-package-show'%>
+<% end %>
+
+<%= link_to "Back", packages_path, class: "link-back" %>
+</div>
