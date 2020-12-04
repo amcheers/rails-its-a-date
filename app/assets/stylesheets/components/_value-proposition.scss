@@ -1,0 +1,45 @@
+.value-prop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.value-prop-heading {
+  color: #85C3DC;
+  font-weight: 500;
+  padding-top: 50px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.value-prop-item {
+  border: 1px solid #85C3DC;
+  background-color: white;
+  margin: 20px;
+  width: 350px;
+  height: 300px;
+  color: grey;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  transition: 0.5s;
+  &:hover {
+    border: 1px solid grey;
+  }
+}
+
+.value-prop-icon {
+  font-size: 40px;
+  color: white;
+  background-color: #85C3DC;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.value-prop-text {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
+}
