@@ -145,11 +145,10 @@ a.text-secondary{
 // REVIEW BUTTON
 .button-contact-show-2{
   background-color: white;
-  display: block;
   border: 1px solid #85C3DC;
-  color: #85C3DC;
   padding: 10px;
   border-radius: 10px;
+  color: #85C3DC;
   &:hover{
     background-color: #85C3DC;
     border: 1px solid #85C3DC;
@@ -157,6 +156,7 @@ a.text-secondary{
     color: white;
   }
 }
+
 
 // ALL TEXT BLOCKS FOR ABOUT/LOCATION/GALLERY/AMENITIES
 .text-block{
@@ -169,6 +169,11 @@ a.text-secondary{
     padding-left: 0px;
     border: 0 !important;
   }
+  td{
+    padding-right: 0px;
+    text-align: right;
+    border: 0 !important;
+  }
 }
 
 
@@ -176,4 +181,14 @@ a.text-secondary{
   background-color: #fff;
 }
 
+// PICTURES GALLERY
+.gallery-photos{
+  width: 230px;
+  height: 150px;
+  background-size: 100%;
+  background-position: center;
+}
 
+.position{
+  margin-left: 1px;
+}
