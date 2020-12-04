@@ -1,9 +1,24 @@
-<ul>
-  <% @packages.each do |package| %>
-    <% if package.user.id == 1 %>
-    <li>
-      <%= link_to package.title, package_path(package) %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
+ <div class="package-show-header">
+     Packages
+ </div>
+ <div class="wrapper">
+     <% @packages.each do |package| %>
+     <% if package.user.id == 1 %>
+     <div class="row-index">
+         <%= link_to package_path(package), class: "link-to-package" do%>
+         <div class="title-package-index">
+             <%= package.title%>
+         </div>
+         <div class="dates-index-package">
+             <% package.date_activities.each do |date| %>
+             <div class="date-index-package" style="background-image: url('<%= cl_image_path  date.photos.first.key %>')">
+                 <%= date.title %>
+             </div>
+             <% end %>
+         </div>
+         <% end %>
+     </div>
+     <% end %>
+     <% end %>
+ </div>
+ <%= link_to 'Back', root_path, class: "link-back" %>
