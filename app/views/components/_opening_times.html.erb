@@ -1,34 +1,21 @@
+<div class="card-header bg-gray-100 py-4 border-0">
+  <div class="media align-items-center">
+    <div class="media-body">
+      <p class="subtitle text-sm">Opening in 5 minutes</p>
+      <h4 class="mb-0"><strong>Opening Hours</strong></h4>
+    </div>
+    <i class="far fa-clock mr-3 mt-2" style="font-size:54px"></i>
+  </div>
+</div>
 <div class="card-body">
   <table class="table opening-times text-sm mb-0">
     <tbody>
+      <% date.availability.each do |day, hours| %>
       <tr>
-        <th>Monday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
+        <th><%= day %></th>
+        <td><%= hours %></td>
       </tr>
-      <tr>
-        <th>Tuesday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-      </tr>
-      <tr>
-        <th>Wednesday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-      </tr>
-      <tr>
-        <th>Thursday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-      </tr>
-      <tr>
-        <th>Friday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-      </tr>
-      <tr>
-        <th>Saterday</th>
-        <td class="pr-0 text-right border-0">8:00 am - 6:00 pm</td>
-      </tr>
-      <tr>
-        <th>Sunday</th>
-        <td class="pr-0 text-right border-0">Closed</td>
-      </tr>
+      <%end %>
     </tbody>
   </table>
 </div>
