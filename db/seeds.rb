@@ -625,39 +625,44 @@ puts "Creating Packages"
 
 #Wildlife
 puts "Wildlife"
-wildlife = Package.new(title: "Wildlife", user: test_one)
+wildlife = Package.new(title: "Wildlife")
 wildlife.date_activities << vondel
 wildlife.date_activities << ooster
 wildlife.date_activities << electric
+wildlife.user = test_four
 wildlife.save!
 
 #WinterWonder
 puts "WinterWonder"
-winder_wonder = Package.new(title: "WinterWonder", user: test_one)
+winder_wonder = Package.new(title: "WinterWonder")
 winder_wonder.date_activities << drupa
 winder_wonder.date_activities << wonder
+winder_wonder.user = test_four
 winder_wonder.save!
 
 #Action
 puts "Action"
-action = Package.new(title: "Action", user: test_one)
+action = Package.new(title: "Action")
 action.date_activities << salsa
 action.date_activities << skydiving
+action.user = test_four
 action.save!
 
 #Drinking
 puts "Drinking"
-drinking = Package.new(title: "Drinking", user: test_one)
+drinking = Package.new(title: "Drinking")
 drinking.date_activities << cocktail_one
 drinking.date_activities << cocktail_two
+drinking.user = test_four
 drinking.save!
 
 #Suprise
 puts "Creating Suprise"
-surprise = Package.new(title: "Suprise", user: test_one)
+surprise = Package.new(title: "Suprise")
 surprise.date_activities << wonder
 surprise.date_activities << windmill
 surprise.date_activities << salsa
+surprise.user = test_four
 surprise.save!
 
 puts "Done!"
