@@ -1,0 +1,23 @@
+.dashboard-heading {
+  font-family: 'Nerko One', cursive;
+  font-size: x-large;
+  text-align: center;
+}
+
+.dashboard-heading.dashboard-title {
+  font-size: xx-large;
+  text-align: center;
+}
+
+.dashboard-column-container {
+  border-radius: 15px;
+  border: black solid 5px;
+  margin: 10px;
+  height: 100%;
+  background-color: white;
+}
+
+.dashboard-container {
+  background-color: #ADDACF;
+  min-height: calc(100vh - 100px - 65px); //Minus footer and navbar height
+}

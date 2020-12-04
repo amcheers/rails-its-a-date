@@ -14,7 +14,7 @@ class PackagesController < ApplicationController
   end
 
   def create
-    @package = Package.new
+    @package = Package.new(package_params)
     @package.user = current_user
     chosen_categories = params[:package][:category]
     # sample_activities = []
@@ -24,7 +24,7 @@ class PackagesController < ApplicationController
       end
     end
     @package.save
-    redirect_to dashboard_path
+    redirect_to package_path(@package)
   end
 
   def edit
@@ -50,6 +50,6 @@ class PackagesController < ApplicationController
   private
 
   def package_params
-    params.require(:package).permit(:title, :category)
+    params.require(:package).permit(:title)
   end
 end
