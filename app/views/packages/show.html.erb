@@ -4,7 +4,27 @@
     <legend class="col-form-label pt-0"></legend>
     <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
         <% @package.date_activities.each do |date| %>
-        <div class="category-item" ><input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" /><label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>" style="background-image: url('<%= cl_image_path date.photos.first.key%>')"><%= date.title %></label></div>
+        <div class="category-item">
+            <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
+            <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
+                <%= cl_image_tag  date.photos.first.key, :class => "image-package-show" %>
+                <div class="categories-show-package"><% date.categories.take(3).each do |category|%>
+                    <div class="category-show-package">
+                        <%= category.name %>
+                    </div>
+                    <% end %>
+                </div>
+                <div class="title-show-package">
+                    <%= date.title %>
+                </div>
+                <div class="package-location-show">
+                    <%= date.location %>
+                </div>
+                <div class="description-package-show">
+                    <%= date.description %>
+                </div>
+            </label>
+        </div>
         <% end %>
     </div>
 </fieldset>

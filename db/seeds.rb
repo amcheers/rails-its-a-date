@@ -12,17 +12,17 @@ User.destroy_all
 # USERS
 puts "Creating Users"
 
-test_one = User.new(email: "test@user1.com", username: "Fred1", password: "123456")
+test_one = User.new(email: "test@user1.com", username: "Fred1", password: "123456", first_name: "Fred", last_name: "Austin" )
 photo_user_one = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010825/ahmad_h2emuj.png")
 test_one.photo.attach(io: photo_user_one, filename: 'user_1.png', content_type: 'image/png')
 test_one.save!
 
-test_two = User.new(email: "test@user2.com", username: "Laura2", password: "123456")
+test_two = User.new(email: "test@user2.com", username: "Laura2", password: "123456", first_name: "Laura", last_name: "Deany")
 photo_user_two = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010839/81CA077C-8FDE-4302-BB1E-EE8C946EC011_anhzc2.jpg")
 test_two.photo.attach(io: photo_user_two, filename: 'user_2.png', content_type: 'image/png')
 test_two.save!
 
-test_three = User.new(email: "test@user3.com", username: "Hanna3", password: "123456")
+test_three = User.new(email: "test@user3.com", username: "Hanna3", password: "123456", first_name: "Hanna", last_name: "Seys")
 photo_user_three = URI.open("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607010937/Screenshot_2020-12-03_at_16.55.16_jcwcwl.png")
 test_three.photo.attach(io: photo_user_three, filename: 'user_3.png', content_type: 'image/png')
 test_three.save!

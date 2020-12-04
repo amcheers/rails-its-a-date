@@ -16,4 +16,8 @@ class User < ApplicationRecord
   validates :first_name, presence: true, if: :offering
   validates :last_name, presence: true, if: :offering
   validates :address, presence: true, if: :offering
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end
