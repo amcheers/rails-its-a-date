@@ -1,0 +1,37 @@
+.search-bar-home {
+  position: absolute;
+  right: 500px;
+  bottom: 100px;
+  background-color: white;
+  padding-left: 25px;
+  border-radius: 50px;
+}
+
+#btn-search {
+  border-radius: 50px;
+  padding: 20px 20px;
+  border: none;
+  color: white;
+  background-color: #85C3DC;
+  transition: 0.5s;
+  &:hover {
+    color: #85C3DC;
+    border: 0.5px solid #85C3DC;
+    background-color: white;
+  }
+}
+
+#calendar-icon {
+  font-size: 25px;
+  color: grey;
+  padding-right: 10px;
+}
+
+.search-field {
+  background-color: white;
+  margin: 0px 15px;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  border: none;
+  color: grey;
+}
