@@ -1,0 +1,12 @@
+<div class="dashboard-column-container">
+      <div class="dashboard-column">
+        <div class="dashboard-heading">
+          Past Dates
+        </div>
+        <ul>
+          <% @user.date_activities.each do |date| %>
+            <li><%= link_to date.title, dates_show_path(date) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
