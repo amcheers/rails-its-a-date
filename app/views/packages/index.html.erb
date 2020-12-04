@@ -4,7 +4,7 @@
  </div>
  <div class="wrapper">
      <% @packages.each do |package| %>
-     <% if package.user.id == 1 %>
+     <% if package.user.id == 4 %>
      <div class="row-index">
          <%= link_to edit_package_path(package), class: "link-to-package" do%>
          <div class="title-package-index">
