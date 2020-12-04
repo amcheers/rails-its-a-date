@@ -1,6 +1,54 @@
 
-<div class="banner" style="background-image:url('<%= image_path("background.jpg", ) %>')">
-  <h1 class="banner-text">Make a date with the unexpected</h1>
+<div class="banner" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607078081/nathan-dumlao-EdULZpOKsUE-unsplash_n2sxii.jpg", ) %>')">
+  <h1 class="banner-text-one">Uncomplicate the Unforgettable</h1>
+  <h1 class="banner-text-two">Find unique Activities for Dates</h1>
+  <div class="search-bar-home">
+    <%= form_tag dates_index_path, method: :get, class: "form-inline" do %>
+      <div id="calendar-icon"><i class="far fa-calendar-alt"></i></div>
+      <%= text_field_tag :query_location,
+      params[:query_location],
+    class: "search-field",
+      placeholder: "Where?"
+      %>
+      <%= text_field_tag :query_title_description,
+      params[:query_title_description],
+    class: "search-field",
+      placeholder: "What?"
+      %>
+    <%= submit_tag "Search", id: "btn-search" %>
+          <% end %>
+  </div>
+</div>
+
+<div class="mission-container">
+  <div class="row mx-0">
+    <h2 class="mission-heading mx-auto">How it works</h2>
+  </div>
+
+  <div class="row ml-0">
+    <div class="col-4 d-flex">
+
+        <div class="mission-number">1</div>
+        <div class="text-mission">Enter the day and/or city where you want to go on a date on.</div>
+
+    </div>
+    <div class="col-4 d-flex ">
+
+        <div class="mission-number">2</div>
+        <div class="text-mission">Refine your search with the filters, for example set your budget.</div>
+
+    </div>
+    <div class="col-4 d-flex ">
+
+        <div class="mission-number">3</div>
+        <div class="text-mission">Choose between single date activities and date activity packages.</div>
+
+    </div>
+
+  </div>
+  <div class="row ml-0">
+    <h2 class="mission-outro mx-auto">Enjoy your Dates!</h2>
+  </div>
 </div>
 
 <div class="container">
@@ -26,7 +74,6 @@
   <div class="row mb-5">
     <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
       <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background2.jpg", ) %>')">
-        <a class="tile-link" href="category.html"></a>
         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
           <h3 class="text-button text-uppercase text-shadow mb-0">Dancing</h3>
         </div>
@@ -51,28 +98,29 @@
   </div>
 </div>
 
+</div>
 
-  <%= form_tag dates_index_path, method: :get, class: "form-inline" do %>
-    <%= text_field_tag :query_availability,
-      params[:query_availability],
-      class: "form-control",
-      placeholder: "When?"
-    %>
-    <%= text_field_tag :query_location,
-      params[:query_location],
-      class: "form-control",
-      placeholder: "Where?"
-    %>
-     <%= text_field_tag :query_title_description,
-      params[:query_title_description],
-      class: "form-control",
-      placeholder: "What?"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<h2 class="value-prop-heading">Our Mission</h2>
+<div class="value-prop">
+  <div class="value-prop-item">
+    <div class="value-prop-icon"><i class="far fa-clock"></i></div>
+    <div class="value-prop-text">Finding the right thing to do on a date can be hard and time consuming, which might even diminish the pleasant anticipation for the date itself.</div>
+  </div>
+  <div class="value-prop-item">
+    <div class="value-prop-icon"><i class="far fa-lightbulb"></i></div>
+    <div class="value-prop-text">We, at <i>It's a Date</i> believe that everything about a date should be a pleasant experience. Therefore, we have made it our value-prop to help you find the date activities that are perfect for you!</div>
+  </div>
+  <div class="value-prop-item">
+    <div class="value-prop-icon"><i class="far fa-gem"></i></div>
+    <div class="value-prop-text">Whether you prefer to be active on your date, enjoy delicious food, or get a little tipsy, <i>It's a Date</i> has date activity ideas for everyone!</div>
+  </div>
+  <div class="value-prop-item">
+    <div class="value-prop-icon"><i class="far fa-check-circle"></i></div>
+    <div class="value-prop-text">So, let us take care of the planning part of your date, so that you can focus on what is important!</div>
+  </div>
 </div>
 
 
-<%= link_to 'Dates', dates_index_path %>
-<%= link_to "Packages", packages_path %>
+    <%= link_to 'Dates', dates_index_path %>
+    <%= link_to "Packages", packages_path %>
 
