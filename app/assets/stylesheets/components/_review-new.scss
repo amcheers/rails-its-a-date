@@ -1,0 +1,23 @@
+.new-review-container {
+  width: 100vw;
+}
+
+.new-review-form {
+  width: 60%;
+  padding: 20px;
+  background-color: white;
+  border: 0.5px solid #85C3DC;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  transition: 0.2s;
+  margin-left: 150px;
+  margin-top: 40px;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    border: 0.5px solid grey;
+  }
+}
+
+.new-review-img {
+
+}
