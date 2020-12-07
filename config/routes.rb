@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   post '/:activity_type/:activity_id/reviews', to: 'reviews#create', as: 'create_review'
   post '/:activity_type/:activity_id/whishlist', to: 'whishlist#create', as: 'create_whishlist'
   delete '/:activity_type/:activity_id/whishlist', to: 'whishlist#destroy', as: 'destroy_whishlist'
+
+  post 'favorite_activities/:activity_type/:activity_id', to: 'favorite_activities#like_unlike', as: 'like_unlike'
 end
