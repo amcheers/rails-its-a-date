@@ -114,7 +114,7 @@
         <div class="text-block-review">
           <h3 class="mt-2"><strong>Reviews</strong></h3>
 
-          <% @date.reviews.each do |review|%>
+          <% @date.reviews.take(3).each do |review|%>
           <div class="media d-block d-sm-flex review">
             <div class="text-md-center mr-5 mr-xl-5">
               <%= cl_image_tag review.user.photo.key, class:"d-block avatar avatar-xl p-2 mb-2" %>
@@ -134,9 +134,10 @@
           </div>
           <% end %>
           <div class="py-3 mt-2 mb-5">
-           <a href="" >
-            <%= link_to 'Write a Review', new_review_path(@date.class, @date.id), class:"button-contact-show-2" %>
-            </a>
+           <div>
+            <%= link_to 'All Reviews', reviews_path(@date.class, @date.id), class: "button-contact-show-2" %>
+            <%= link_to 'Write a Review', new_review_path(@date.class, @date.id), class: "button-contact-show-2" %>
+            </div>
           </div>
         </div>
       </div>

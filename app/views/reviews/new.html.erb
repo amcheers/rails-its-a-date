@@ -1,9 +1,22 @@
-<div class="container">
-  <h1>New Review for <%= @activity.title %> </h1>
+<div class="new-review-container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <div class="new-review-form">
+        <h1>New Review for <%= @activity.title %></h1>
 
-  <%= simple_form_for [@activity, @review], url: reviews_path(@activity.class, @activity.id) do |f| %>
-    <%= f.input :rating %>
-    <%= f.input :content %>
-    <%= f.submit %>
-  <% end %>
+        <%= simple_form_for [@activity, @review], url: reviews_path(@activity.class, @activity.id) do |f| %>
+          <%= f.input :rating %>
+          <%= f.input :content %>
+          <%= f.submit class: "date-btn" %>
+        <% end %>
+      </div>
+      <div class="link-back"><%= link_to "Back", dates_show_path(@activity.class.find(@activity.id)), class: "button-contact-show-2" %></div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="new-review-img">
+      <%= cl_image_tag @activity.photos.first.key, crop: :fill %>
+      </div>
+    </div>
+  </div>
 </div>
+
