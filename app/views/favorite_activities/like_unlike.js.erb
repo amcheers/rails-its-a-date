@@ -1,0 +1,4 @@
+var heartCheckbox = document.getElementById('checkbox-<%= @fav_activity.activity.class%>-<%=@fav_activity.activity.id %>');
+
+if (heartCheckbox)
+  {heartCheckbox.checked = !heartCheckbox.checked};
