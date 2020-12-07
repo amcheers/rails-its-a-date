@@ -17,14 +17,13 @@ class PackagesController < ApplicationController
     @package = Package.new(package_params)
     @package.user = current_user
     chosen_categories = params[:package][:category]
-    # sample_activities = []
     chosen_categories.each do |category_id|
       if Category.find(category_id).date_activities.any?
         @package.date_activities << Category.find(category_id).date_activities.sample
       end
     end
     @package.save
-    redirect_to package_path(@package)
+    redirect_to edit_package_path(@package)
   end
 
   def edit
@@ -45,7 +44,9 @@ class PackagesController < ApplicationController
     @package_copy.date_activity_ids = params[:package][:date_activity_ids]
     @package_copy.user = current_user
     @package_copy.save
-    @package_copy.update(package_params)
+    if @package_copy.user == @package.user
+      @package.destroy
+    end
     redirect_to dashboard_path
   end
 
