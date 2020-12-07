@@ -26,12 +26,15 @@
               <%= hidden_field_tag :query_title_description,
               params[:query_title_description]
               %>
-              <%= f.input :category_id, collection: @categories, as: :check_boxes %>
+              <%= f.input :category_id, collection: @categories, as: :check_boxes, input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
 
-              <button class="date-btn-2" type="submit">
-                <i class="fas fa-search mr-1"></i>
-                Search
-              </button>
+              <div class="submit-new-review-btn">
+                <button class="date-btn-2 mt-3" type="submit">
+                  <i class="fas fa-search mr-1"></i>
+                  Search
+                </button>
+              </div>
               <% end %>
             </div>
           </div>

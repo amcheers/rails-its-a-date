@@ -61,31 +61,38 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.my-class{
+.simple_form.search .form-check {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
   position: absolute;
   transform: scale(0);
 }
 
-.my-class + label{
+.tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   border-radius: 50rem;
-  padding: 5px;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
+  padding: 0.2rem 0.9rem;
+  background-color: white;
+  color: #F07B89;
+  border: 1px solid #F07B89;
   margin-right: 0.6rem;
   margin-bottom: 0.4rem;
 }
 
-.my-class:checked + label{
-  cursor: pointer;
-  background-color: #7E73FF;
+.tag-selector:checked + label {
+  background-color: #F07B89;
   color: white;
 }
 
-.simple_form.search .form-check {
-  display: inline-block;
-  margin-right: 10px;
+.form-control{
+  background-color: white !important;
 }
