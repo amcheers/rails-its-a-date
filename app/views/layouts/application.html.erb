@@ -30,7 +30,7 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 </head>
 
-<body>
+<body class="<%= params[:controller] %>-<%= params[:action] %>">
   <div class="page-container">
     <div class="navbar-container">
       <% unless params[:controller] == "pages" && params[:action] == "home" %>
