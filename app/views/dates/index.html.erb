@@ -1,53 +1,74 @@
-<div class="filter-container">
-  <h2>Filters</h2>
-  <div class="filter">
-    <div class="price-search">
-      <p class="filter-heading">Budget:</p>
-      <%= form_tag dates_index_path, method: :get do %>
-      <%= hidden_field_tag :query_location,
-      params[:query_location]
-      %>
-      <%= hidden_field_tag :query_title_description,
-      params[:query_title_description]
-      %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6 py-5 p-xl-5">
+      <h2 class="mb-4"><strong>Dates in Amsterdam</strong></h2>
+      <hr class="my-4">
+      <form action="" autocomplete="off">
+        <div class="row">
+          <div class="col-xl-4 col-md-6 mb-4">
+            <label class="form-label" for="form_dates">Dates</label>
+            <div class="datepicker-container datepicker-container-left">
+              <input class="form-control" type="text" name="bookingDate" id="form_dates" placeholder="Choose your dates">
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <label class="form-label" for="form_category">Category</label>
+            <div class="dropdown bootstrap-select show-tick form-control dropup">
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+            <label class="form-label" for="form_budget">Budget</label>
+            <div class="dropdown bootstrap-select show-tick form-control dropup">
+              <div class="price-search">
+                <%= form_tag dates_index_path, method: :get do %>
+                <%= hidden_field_tag :query_location,
+                params[:query_location]
+                %>
+                <%= hidden_field_tag :query_title_description,
+                params[:query_title_description]
+                %>
 
-      <%= number_field_tag :query_price,
-      params[:query_price]
-        %>
-      </div>
+                <%= number_field_tag :query_price,
+                params[:query_price]
+                %>
+              </div>
+          </div>
+        </div>
+      </form>
+    <div class="filter">
+
 
 
       <div class="category-search">
        <p class="filter-heading">Categories:</p>
        <div class="filter-categories">
-       <% @categories.each do |category| %>
+         <% @categories.each do |category| %>
          <div class="categories-boxes">
            <div><%= check_box_tag "category_ids[]", category.id %></div>
            <div class="category-name"><%= label_tag "not working", category.name %></div>
          </div>
-       <% end %>
+         <% end %>
        </div>
      </div>
      <div>
       <%= submit_tag "Search", class: "date-btn" %>
-     </div>
-      <% end %>
+    </div>
+    <% end %>
 
 
   </div>
-</div>
 
 
-<% if params[:query_location].present? %>
-<h1 class="search-results">Dates in <%= params[:query_location] %></h1>
-<% else %>
-<h1 class="search-results">Dates Search Results</h1>
-<% end %>
+  <% if params[:query_location].present? %>
+  <h1 class="search-results">Dates in <%= params[:query_location] %></h1>
+  <% else %>
+  <h1 class="search-results">Dates Search Results</h1>
+  <% end %>
 
 
-<div class="row mx-0">
-  <div class="col-12 col-lg-6">
-    <div class="container">
+  <div class="row mx-0">
+    <div class="col-12 col-lg-6">
+      <div class="container">
         <% @dates.each do |date| %>
         <div class="index-card">
           <div class="date-photo">
@@ -67,13 +88,17 @@
 
         </div>
         <% end %>
+      </div>
     </div>
   </div>
 
-
+</div>
+<div class="col-lg-6 map-side-lg pr-lg-0">
   <div id="map" class="col-12 col-lg-6 map-wrapper"
   style="width: 100%; height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+</div>
+</div>
+</div>
 </div>
