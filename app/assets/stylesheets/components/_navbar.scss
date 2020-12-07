@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,10 +16,25 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #F4F4F4;
+  background-color: white;
   z-index: 10;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .transparant{
   background: none;
+  box-shadow: none;
+}
+
+.nav-item {
+  color: grey;
+  font-family: 'Raleway', sans-serif;
+  &:hover {
+    color: black;
+    border-bottom: 0.5px solid black;
+  }
+  .active {
+    color: black;
+    border-bottom: 0.5px solid black;
+  }
 }

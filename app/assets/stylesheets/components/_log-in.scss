@@ -1,0 +1,28 @@
+.log-container {
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-in-form {
+  width: 30%;
+  height: 50vh;
+  padding: 20px;
+  border: 0.5px solid grey;
+  background-color: white;
+}
+
+.sign-up-form {
+  width: 30%;
+  height: 60vh;
+  padding: 20px;
+  border: 0.5px solid grey;
+  background-color: white;
+}
+
+.links {
+  font-size: 12px;
+}

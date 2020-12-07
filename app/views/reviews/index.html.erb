@@ -1,15 +1,18 @@
-<div class="container">
+<div class="reviews-container">
   <h1>Reviews for <%= @activity.title  %> </h1>
 
   <ul class="list-group">
   <% @reviews.each do |review| %>
     <li class="list-group-item">
-    <p><%= review.user.username %></p>
-    <p>Rating: <%= review.rating %>/5</p>
-    <p><%= review.content %></p>
+      <p><%= review.user.username %></p>
+      <p> <% 5.times do |number| %>
+          <i class="fa<%= review.rating < number ? "r" : "s" %> fa-star text-warning"></i>
+        <% end %></p>
+      <p><%= review.content %></p>
     </li>
   <% end %>
   </ul>
-
-  <%= link_to 'Back', dates_show_path(@activity.class.find(@activity.id)) %>
+  <div class="link-back">
+    <%= link_to 'Back', dates_show_path(@activity.class.find(@activity.id)), class: "button-contact-show-2" %>
+  </div>
 </div>
