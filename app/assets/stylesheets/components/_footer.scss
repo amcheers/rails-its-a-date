@@ -1,7 +1,12 @@
 .page-container {
   display: grid;
   min-height: 100vh;
+  width: 100vw;
   grid-template-rows: auto 1fr auto;
+}
+
+.content-container {
+  width: 100vw;
 }
 
 .footer{

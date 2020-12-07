@@ -2,7 +2,7 @@
   font-weight: bolder;
   font-size: 15px;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   color: white;
   background-color: #85C3DC;
   border: 0.2px solid grey;
@@ -12,6 +12,11 @@
   &:hover {
     opacity: 1;
     text-decoration: none;
-    color: grey;
+    color: #85C3DC;
+    background-color: white;
   }
+}
+
+.date-btn-lg {
+  font-size: 20px;
 }
