@@ -1,7 +1,8 @@
 .category-wrapper {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    left: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px 20px;
   }
   
   .category-item {
@@ -12,19 +13,26 @@
     position: absolute;
     transform: scale(0);
   }
+
+  .map-edit{
+    height: 600px;
+    margin-right: 10px;
+  }
   
   .category-selector + label {
     display: block;
     cursor: pointer;
+    position: relative;
     box-sizing: border-box;
-    width: 100%;
+    width: 300px;
     font-size: 20px;
     text-align: center;
-    margin-bottom: 100px;
-    padding: 20px 10px 30px 10px;
+    background-color: white;
     border: solid;
-    border-width: 1px;
-    min-height: 560px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    border-width: 0px;
+    height: 350px;
     border-color: rgb(0, 0, 0);
     &:hover {
       transform: scale(1.01);
@@ -45,8 +53,8 @@
   border-radius: 15px;
   background-color: white;
   position: absolute;
-  left: 46.5%;
-  bottom: -25px;
+  right: 44%;
+  top: 36px;
   margin-top: 50px;
   height: 50px;
   border-width: 1px;
@@ -58,7 +66,7 @@
 .title-input {
   border-radius: 15px;
   position: relative;
-  left: 33.5%;
+  left: 14%;
   margin-top: 0px;
   height: 50px;
   background-color: #ffffff;
@@ -79,8 +87,11 @@
 
 .link-back {
   font-size: 30px;
-  color: rgb(0, 0, 0);
+  color: black;
   margin-top: 20px;
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 10px;
   &:hover {
     color: rgb(163, 163, 163);
     text-decoration: none;
@@ -88,9 +99,11 @@
 }
 
 .image-package-show {
-  height: 250px;
-  width: 400px;
-  border-radius: 15px;
+  height: 150px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  background-position: center;
 }
 
 .title-show-package {
@@ -103,7 +116,7 @@
   margin: 5px;
   background-color: #F07B89;
   color: white;
-  font-size: 10px;
+  font-size: 6px;
   border: 0.2px solid grey;
 }
 
@@ -115,10 +128,6 @@
   margin-right: 5px;
 }
 
-.description-package-show {
-  font-size: 12px;
-}
-
 .package-location-show{
   margin: 5px;
   color: lightgrey;
@@ -127,7 +136,29 @@
 }
 
 .show-package-body{
-  padding-top: 10px;
-  background-color:  #ffffff;
+  padding-top: 20px;
+  background-color: #F4F4F4;
   font-family: "Nunito", "Helvetica", "sans-serif";
+  display: flex;
+}
+
+.link-package-date-edit{
+  position: absolute;
+  bottom: 10px;
+  left: 39%;
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  background-color: #85C3DC;
+  border: 0.2px solid grey;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  opacity: 07;
+  transition: 0.2s;
+  &:hover{
+    opacity: 1;
+    text-decoration: none;
+    color: grey;
+  }
 }

@@ -1,6 +1,7 @@
 <div class="show-package-body">
 <%= simple_form_for [@package] do |f| %>
 <%= f.input :title, label: false, input_html: { class: "title-input" } %>
+<%= f.submit "Add Package", class: 'btn-package-show'%>
 <fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
     <legend class="col-form-label pt-0"></legend>
     <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
@@ -21,16 +22,17 @@
                 <div class="package-location-show">
                     <%= date.location %>
                 </div>
-                <div class="description-package-show">
-                    <%= date.description %>
-                </div>
+                <%= link_to 'Details', dates_show_path(date), class: "link-package-date-edit",target: "_blank" %>
             </label>
         </div>
         <% end %>
     </div>
 </fieldset>
-<%= f.submit "Add Package", class: 'btn-package-show'%>
 <% end %>
-
-<%= link_to "Back", packages_path, class: "link-back" %>
+  <div id="map" class="map-edit map-wrapper"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
+<%= link_to "Back", packages_path, class: "link-back" %>
