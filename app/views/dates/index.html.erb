@@ -1,22 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-6 py-5 p-xl-5">
-      <h2 class="mb-4"><strong>Dates in Amsterdam</strong></h2>
+<div class="container-fluid px-0">
+  <div class="row mx-0">
+    <div class="col-lg-6 p-xl-5">
+      <% if params[:query_location].present? %>
+      <h1 class="search-results ml-0"><h2><strong>Dates in <%= params[:query_location] %> </strong></h2>
+      <% else %>
+      <% end %>
       <hr class="my-4">
       <form action="" autocomplete="off">
         <div class="row">
-          <div class="col-xl-4 col-md-6 mb-4">
+          <div class="col-xl-6 col-md-6">
             <label class="form-label" for="form_dates">Dates</label>
             <div class="datepicker-container datepicker-container-left">
               <input class="form-control" type="text" name="bookingDate" id="form_dates" placeholder="Choose your dates">
             </div>
           </div>
-          <div class="col-xl-4 col-md-6 mb-4">
-            <label class="form-label" for="form_category">Category</label>
-            <div class="dropdown bootstrap-select show-tick form-control dropup">
-            </div>
-          </div>
-          <div class="col-xl-4 col-md-6 mb-4">
+
+          <div class="col-xl-6 col-md-6 mb-3">
             <label class="form-label" for="form_budget">Budget</label>
             <div class="dropdown bootstrap-select show-tick form-control dropup">
               <div class="price-search">
@@ -31,74 +30,72 @@
                 <%= number_field_tag :query_price,
                 params[:query_price]
                 %>
+                <% end %>
               </div>
+            </div>
+          </div>
+          <div class="col-12 mb-4">
+            <label class="form-label">Categories</label>
+            <ul class="list-inline mb-0">
+              <% @categories.each do |category| %>
+              <li class="list-inline-item">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="type_0" name="type[]">
+                  <label class="custom-control-label" for="type_0"><%= label_tag "not working", category.name %></label>
+                </div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-6 mb-2">
+            <button class="date-btn-2" type="submit">
+              <i class="fas fa-search mr-1"></i>
+              Search
+            </button>
           </div>
         </div>
       </form>
-    <div class="filter">
-
-
-
-      <div class="category-search">
-       <p class="filter-heading">Categories:</p>
-       <div class="filter-categories">
-         <% @categories.each do |category| %>
-         <div class="categories-boxes">
-           <div><%= check_box_tag "category_ids[]", category.id %></div>
-           <div class="category-name"><%= label_tag "not working", category.name %></div>
-         </div>
-         <% end %>
-       </div>
-     </div>
-     <div>
-      <%= submit_tag "Search", class: "date-btn" %>
-    </div>
-    <% end %>
-
-
-  </div>
-
-
-  <% if params[:query_location].present? %>
-  <h1 class="search-results">Dates in <%= params[:query_location] %></h1>
-  <% else %>
-  <h1 class="search-results">Dates Search Results</h1>
-  <% end %>
-
-
-  <div class="row mx-0">
-    <div class="col-12 col-lg-6">
-      <div class="container">
-        <% @dates.each do |date| %>
-        <div class="index-card">
-          <div class="date-photo">
-            <%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
-          </div>
-          <div class="date-info">
-            <div class="date-categories">
-              <% date.categories.take(3).each do |c| %>
-              <div class="date-category"><%= c.name %></div>
-              <% end %>
-            </div>
-            <div class="date-title"><%= date.title %></div>
-            <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
-            <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
-            <%= link_to 'Details', dates_show_path(date), class: "date-btn" %>
-          </div>
-
+      <hr class="my-3">
+      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4">
+        <div class="mr-3">
+          <p class="mb-2 mb-md-0">
+            <strong><%= @dates.count %></strong>
+            results found
+          </p>
         </div>
-        <% end %>
+        <div>
+          <label class="form-label mr-2" for="form_sort">Sort by</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 hover-animate">
+          <% @dates.each do |date| %>
+          <div class="index-card shadow">
+            <div class="date-photo">
+              <%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
+            </div>
+            <div class="date-info">
+              <div class="date-categories">
+                <% date.categories.take(3).each do |c| %>
+                <div class="date-category"><%= c.name %></div>
+                <% end %>
+              </div>
+              <div class="date-title"><%= date.title %></div>
+              <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
+              <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
+              <%= link_to 'Details', dates_show_path(date), class: "date-btn" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
-</div>
-<div class="col-lg-6 map-side-lg pr-lg-0">
-  <div id="map" class="col-12 col-lg-6 map-wrapper"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-</div>
-</div>
-</div>
+
+    <div class="col-lg-6 map-side-lg pr-lg-0">
+      <div id="map" class="map-index shadow-left"
+      style="width: 100%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
