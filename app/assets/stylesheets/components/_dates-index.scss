@@ -48,7 +48,6 @@
 
 .price-search {
   padding: 10px;
-  margin-right: 10px;
 }
 
 .category-search {
@@ -62,3 +61,31 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+.my-class{
+  position: absolute;
+  transform: scale(0);
+}
+
+.my-class + label{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 5px;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.my-class:checked + label{
+  cursor: pointer;
+  background-color: #7E73FF;
+  color: white;
+}
+
+.simple_form.search .form-check {
+  display: inline-block;
+  margin-right: 10px;
+}

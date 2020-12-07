@@ -8,12 +8,14 @@
       <%= text_field_tag :query_location,
       params[:query_location],
     class: "search-field",
-      placeholder: "Where?"
+      placeholder: "Where?",
+      name: "search[query_location]"
       %>
       <%= text_field_tag :query_title_description,
       params[:query_title_description],
     class: "search-field",
-      placeholder: "What?"
+      placeholder: "What?",
+      name: "search[query_title_description]"
       %>
     <%= submit_tag "Search", id: "btn-search" %>
           <% end %>
