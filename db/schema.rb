@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_135626) do
+ActiveRecord::Schema.define(version: 2020_12_07_134732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,16 @@ ActiveRecord::Schema.define(version: 2020_12_03_135626) do
     t.index ["package_id"], name: "index_date_activities_packages_on_package_id"
   end
 
+  create_table "favorite_activities", force: :cascade do |t|
+    t.string "activity_type"
+    t.bigint "activity_id"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_type", "activity_id"], name: "index_favorite_activities_on_activity_type_and_activity_id"
+    t.index ["user_id"], name: "index_favorite_activities_on_user_id"
+  end
+
   create_table "packages", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
@@ -111,23 +121,13 @@ ActiveRecord::Schema.define(version: 2020_12_03_135626) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "wishlists", force: :cascade do |t|
-    t.string "activity_type"
-    t.bigint "activity_id"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["activity_type", "activity_id"], name: "index_wishlists_on_activity_type_and_activity_id"
-    t.index ["user_id"], name: "index_wishlists_on_user_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories_date_activities", "categories"
   add_foreign_key "categories_date_activities", "date_activities"
   add_foreign_key "date_activities", "users"
   add_foreign_key "date_activities_packages", "date_activities"
   add_foreign_key "date_activities_packages", "packages"
+  add_foreign_key "favorite_activities", "users"
   add_foreign_key "packages", "users"
   add_foreign_key "reviews", "users"
-  add_foreign_key "wishlists", "users"
 end

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :reviews
-  has_many :wishlists
+  has_many :favorite_activities
   # The below relation is for Users that are offering dates and have uploaded them
   has_many :date_activities
   has_one_attached :photo
