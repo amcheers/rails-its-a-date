@@ -7,6 +7,7 @@
 .row-index {
     margin: 30px 20px 30px 20px;
     width: 40%;
+    border-radius: 10px;
     text-align: center;
     border: 0.5px solid grey;
     background-color:  #ffffff;
@@ -24,11 +25,13 @@
 .date-index-package {
     text-align: center;
     height: 200px;
+    border-radius: 10px;
     background-position: center;
     background-size: 100%;
     font-size: 30px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     color: white;
 }
 
@@ -63,6 +66,6 @@
   }
 
   .index-package-body{
-      background-color:  #ffffff;
+    background-color: #F4F4F4;
       font-family: "Nunito", "Helvetica", "sans-serif";
   }
