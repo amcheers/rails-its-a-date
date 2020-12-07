@@ -5,7 +5,7 @@
 }
 
 .dashboard-heading.dashboard-title {
-  font-size: xx-large;
+  font-size: 100px;
   text-align: center;
 }
 
@@ -14,12 +14,40 @@
   border: black solid 5px;
   margin: 10px;
   height: 100%;
+  // width: 50%;
   background-color: white;
   background-size: 100vh;
 }
 
 .dashboard-container {
-  background-color: #ADDACF;
-  height: 100vh;
-  //min-height: calc(100vh - 100px - 65px); //Minus footer and navbar height
+  background-image: url('cupid_2.jpg');
+  min-height: calc(100vh - 100px - 65px); //Minus footer and navbar height
+}
+
+.dashboard-column ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.dashboard-column li {
+  padding-left: 1.3em;
+}
+.dashboard-column li:before {
+  content: "\f073"; /* FontAwesome Unicode */
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.dashboard-package {
+      margin: 30px 20px 30px 20px;
+    width: 95%;
+    text-align: center;
+    border: 0.5px solid grey;
+    background-color:  #ffffff;
+    &:hover {
+        transform: scale(1.01);
+      }
 }

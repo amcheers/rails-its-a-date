@@ -36,7 +36,9 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { checkCheckbox } from '../plugins/heart';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  checkCheckbox();
 })
