@@ -5,4 +5,7 @@ class Package < ApplicationRecord
   belongs_to :user
   attr_accessor :category
 
+  scope :default_packages, -> { joins(:user).where(users: {email: 'test@user4.com'})}
+  # Ex:- scope :active, -> {where(:active => true)}
+
 end
