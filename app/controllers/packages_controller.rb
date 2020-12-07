@@ -1,6 +1,6 @@
 class PackagesController < ApplicationController
   def index
-    @packages = Package.default_packages
+    @packages = Package.all
   end
 
   def show

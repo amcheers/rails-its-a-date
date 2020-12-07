@@ -6,22 +6,10 @@
         <ul>
           <% @packages.each do |package| %>
             <% if package.user.id == current_user.id %>
-              <li>
-                <div class="dashboard-package">
-                  <%= link_to edit_package_path(package), class: "link-to-package" do%>
-                    <div class="title-package-index">
-                        <%= package.title%>
-                    </div>
-                    <div class="dates-index-package">
-                        <% package.date_activities.each do |date| %>
-                          <div class="date-index-package" style="background-image: url('<%= cl_image_path  date.photos.first.key %>')">
-                            <%= date.title %>
-                          </div>
-                        <% end %>
-                    </div>
-                  <% end %>
-                </div>
-              </li>
+            <li>
+              <%= link_to package.title, package_path(package) %>
+              <%= link_to 'delete', package_path(package), method: :delete %>
+            </li>
             <% end %>
           <% end %>
         </ul>

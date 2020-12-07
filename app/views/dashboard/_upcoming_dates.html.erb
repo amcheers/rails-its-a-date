@@ -6,24 +6,7 @@
     	  </div>
     	  <ul>
     	    <% @user.date_activities.each do |date| %>
-    	      <li>
-							<div class="index-card">
-								<div class="date-photo">
-									<%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
-								</div>
-								<div class="date-info">
-									<div class="date-categories">
-										<% date.categories.take(3).each do |c| %>
-										<div class="date-category"><%= c.name %></div>
-										<% end %>
-									</div>
-									<div class="date-title"><%= date.title %></div>
-									<div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
-									<div class="date-reviews"><%= date.reviews.count %> Reviews</div>
-									<%= link_to 'Details', dates_show_path(date), class: "date-btn" %>
-								</div>
-        			</div>
-						</li>
+    	      <li><%= link_to date.title, dates_show_path(date) %></li>
     	    <% end %>
     	  </ul>
     	</div>
