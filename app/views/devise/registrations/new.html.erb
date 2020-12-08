@@ -5,11 +5,14 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs form-input">
+    <div class="form-inputs form-input sign-up">
       <%= f.input :email,
       required: true,
       autofocus: true,
       input_html: { autocomplete: "email" }%>
+      <%= f.input :username,
+      required: true,
+      autofocus: true %>
       <%= f.input :password,
       required: true,
       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -17,6 +20,7 @@
       <%= f.input :password_confirmation,
       required: true,
       input_html: { autocomplete: "new-password" } %>
+      <%= f.input :photo, as: :file %>
     </div>
 
     <div class="form-actions submit-new-review-btn">
