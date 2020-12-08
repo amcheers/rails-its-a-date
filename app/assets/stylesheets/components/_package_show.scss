@@ -28,6 +28,22 @@
   background-color: #F4F4F4;
 }
 
+.package-show-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.package-call-to-action {
+  position: relative;
+  width: 18%;
+  background-color: white;
+  color: #85C3DC;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  text-align: end;
+}
+
 .date_activity-edit {
   width: 450px;
   font-size: 20px;
@@ -86,6 +102,7 @@
   border-color: rgb(0, 0, 0);
   width: 500px;
   padding-right: 5px;
+  padding-top: 20px;
   align-items: center;
   text-align: center;
   display: flex;

@@ -28,6 +28,8 @@ svg{
 }
 #heart-package-show {
   position: absolute;
+  top: -7px;
+  right: 179px;
 }
 .heart-checkbox:checked + label svg{
     #heart{transform:scale(.2); fill:#85C3DC; animation:animateHeart .3s linear forwards .25s;}

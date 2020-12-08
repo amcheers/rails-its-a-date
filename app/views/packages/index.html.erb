@@ -5,7 +5,7 @@
  <div class="wrapper">
      <% @packages.each do |package| %>
      <div class="row-index">
-         <%= link_to edit_package_path(package), class: "link-to-package" do%>
+         <%= link_to package_path(package), class: "link-to-package" do%>
          <div class="title-package-index">
              <div><%= package.title%></div>
              <% if user_signed_in? %>
