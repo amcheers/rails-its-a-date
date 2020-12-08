@@ -24,7 +24,7 @@
   box-shadow: none;
 }
 
-.nav-item {
+.nav-item-special {
   color: grey;
   font-family: 'Raleway', sans-serif;
   &:hover {
@@ -34,5 +34,18 @@
   .active {
     color: black;
     border-bottom: 0.5px solid black;
+  }
+}
+
+.log-in {
+  padding: 5px 10px;
+  background: #85C3DC;
+  border: 0.5px solid grey;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bolder;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.01);
   }
 }
