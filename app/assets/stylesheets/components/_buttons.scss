@@ -20,3 +20,22 @@
 .date-btn-lg {
   font-size: 20px;
 }
+
+.date-btn-2{
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 7px 14px;
+  color: white;
+  border-radius: .4rem;
+  background-color: #85C3DC;
+  border: 0.2px solid grey;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  opacity: 07;
+  transition: 0.2s;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #85C3DC;
+    background-color: white;
+  }
+}

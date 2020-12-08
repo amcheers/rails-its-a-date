@@ -1,3 +1,7 @@
+.container-fluid{
+  background-color: white;
+}
+
 .search-results {
   margin-left: 30px;
 }
@@ -32,6 +36,7 @@
 
 .categories-boxes {
   display: flex;
+  padding: 2px;
 }
 
 .category-name {
@@ -43,7 +48,6 @@
 
 .price-search {
   padding: 10px;
-  margin-right: 10px;
 }
 
 .category-search {
@@ -57,3 +61,38 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
+.simple_form.search .form-check {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.9rem;
+  border-radius: 50rem;
+  padding: 0.2rem 0.9rem;
+  background-color: white;
+  color: #F07B89;
+  border: 1px solid #F07B89;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: #F07B89;
+  color: white;
+}
+
+.form-control{
+  background-color: white !important;
+}

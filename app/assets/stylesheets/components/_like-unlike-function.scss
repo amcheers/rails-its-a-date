@@ -1,3 +1,7 @@
+.show-like-unlike {
+  display: flex;
+}
+
 svg{
   cursor:pointer; overflow:visible; width:60px;
   #heart{transform-origin:center; animation:animateHeartOut .3s linear forwards;}
@@ -11,13 +15,14 @@ svg{
   top: 10px;
   right: 10px;
 }
+
 #heart-show {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 172px;
+  right: 279px;
 }
 .heart-checkbox:checked + label svg{
-    #heart{transform:scale(.2); fill:#E2264D; animation:animateHeart .3s linear forwards .25s;}
+    #heart{transform:scale(.2); fill:#85C3DC; animation:animateHeart .3s linear forwards .25s;}
     #main-circ{transition:all 2s; animation:animateCircle .3s linear forwards; opacity:1;}
     #grp1{
       opacity:1; transition:.1s all .3s;
@@ -104,13 +109,13 @@ svg{
     #grp7{opacity:1; transition:.1s opacity .3s;}
 }
 @keyframes animateCircle{
-  40%{transform:scale(10); opacity:1; fill:#DD4688;}
-  55%{transform:scale(11); opacity:1; fill:#D46ABF;}
-  65%{transform:scale(12); opacity:1; fill:#CC8EF5;}
-  75%{transform:scale(13); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.5;}
-  85%{transform:scale(17); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.2;}
-  95%{transform:scale(18); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.1;}
-  100%{transform:scale(19); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:0;}
+  40%{transform:scale(10); opacity:1; fill:#31A8DF;}
+  55%{transform:scale(11); opacity:1; fill:#8CFBF0;}
+  65%{transform:scale(12); opacity:1; fill:#8CFBFF;}
+  75%{transform:scale(13); opacity:1; fill:transparent; stroke:#8CFBFF; stroke-width:.5;}
+  85%{transform:scale(17); opacity:1; fill:transparent; stroke:#8CFBFF; stroke-width:.2;}
+  95%{transform:scale(18); opacity:1; fill:transparent; stroke:#8CFBFF; stroke-width:.1;}
+  100%{transform:scale(19); opacity:1; fill:transparent; stroke:#8CFBFF; stroke-width:0;}
 }
 @keyframes animateHeart{
   0%{transform:scale(.2);}
