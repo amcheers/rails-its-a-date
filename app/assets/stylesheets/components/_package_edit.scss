@@ -20,23 +20,7 @@
   }
   
   .category-selector + label {
-    display: block;
     cursor: pointer;
-    position: relative;
-    box-sizing: border-box;
-    width: 300px;
-    font-size: 20px;
-    text-align: center;
-    background-color: white;
-    border: solid;
-    margin: 10px 10px;
-    border-radius: 10px;
-    border-width: 0px;
-    height: 350px;
-    border-color: rgb(0, 0, 0);
-    &:hover {
-      transform: scale(1.01);
-    }
   }
   
   .category-selector:checked + label {
@@ -47,6 +31,29 @@
   .category-selector + label {
     color: rgb(0, 0, 0) !important;
     filter: grayscale(100%);
+  }
+
+  .btn-edit{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    &:hover {
+      transform: scale(1.01);
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .card{
+    height: 400px;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    &:hover{
+    transform:translateY(-5px);
+    }
   }
 
 .btn-package-show {
@@ -202,6 +209,19 @@
 }
 
 #searchWrapper{
-margin: 10px 0px 10px 300px;
+margin: 10px 0px 10px 10px;
 
+}
+
+.close{
+  color: #85C3DC;
+  opacity: inherit;
+  &:hover{
+    color: #85C3DC;
+  }
+}
+
+.modal-body{
+  align-items: center;
+  text-align: center;
 }
