@@ -7,14 +7,14 @@
             <fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
                 <legend class="col-form-label pt-0"></legend>
                 <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
-                    <button type="button" class="btn btn-primary btn-edit card mx-3 border-0 shadow" data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <button type="button" class="btn btn-primary btn-edit card-date mx-3 border-0 shadow" data-toggle="modal" data-target=".bd-example-modal-lg">
                       <h1>Add a Date</h1>
                     </button>
                     <% @package.date_activities.each do |date| %>
                     <div class="category-item">
                         <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" checked="checked" value="<%= date.id %>" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
                         <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
-                            <div class="card mx-3 border-0 shadow">
+                            <div class="card-date mx-3 border-0 shadow">
                                 <div>
                                     <%= cl_image_tag date.photos.first.key, height: 250, width: 300,crop: :fill, class: "image-center" %>
                                 </div>
@@ -50,7 +50,7 @@
                                         <div class="category-item category-search">
                                             <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
                                             <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
-                                                <div class="card mx-3 border-0 shadow">
+                                                <div class="card-date mx-3 border-0 shadow">
                                                     <div>
                                                         <%= cl_image_tag date.photos.first.key, height: 250, width: 300,crop: :fill, class: "image-center" %>
                                                     </div>

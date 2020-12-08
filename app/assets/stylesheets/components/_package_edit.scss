@@ -39,6 +39,7 @@
     justify-content: center;
     align-items: center;
     padding: 0px;
+    background-color: white;
     &:hover {
       transform: scale(1.01);
       background-color: white;
@@ -46,9 +47,10 @@
     }
   }
 
-  .card{
+  .card-date{
     height: 400px;
     width: 300px;
+    margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
     &:hover{
@@ -172,7 +174,7 @@
 .modal-body-dates{
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns:  1fr 1fr;
 }
 
 .choosing-edit{
