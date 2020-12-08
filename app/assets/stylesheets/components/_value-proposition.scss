@@ -17,17 +17,14 @@
 }
 
 .value-prop-item {
-  border: 1px solid #85C3DC;
+  overflow: hidden;
+  border-radius: 10px;
   background-color: white;
   width: 25%;
   margin: 10px;
   height: 300px;
   color: grey;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   transition: 0.5s;
-  &:hover {
-    border: 1px solid grey;
-  }
 }
 
 .value-prop-icon {
