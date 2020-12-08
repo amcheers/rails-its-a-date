@@ -22,10 +22,53 @@
             <i class="fa fa-xs fa-star text-gray-200 mr-4"></i>
           </p>
         </div>
-        <div class="calltoactions">
-          <a href="" >
-            <%= link_to 'Leave a Review', new_review_path(@date.class, @date.id), class:"button-review" %>
-          </a>
+          <div class="calltoactions">
+            <% if user_signed_in? %>
+          <% @date_ids = current_user.favorite_activities.where(activity_type: "DateActivity").pluck(:activity_id) %>
+          <div id="heart-show">
+            <%= link_to like_unlike_path(activity_type: "date_activity", activity_id: @date.id), remote: true, method: 'post' do %>
+
+            <input type="checkbox" id="checkbox-<%= @date.class %>-<%= @date.id %>" class="heart-checkbox" <%= "checked" if @date_ids.include?(@date.id)%> >
+            <label for="checkbox-<%= @date.id %>">
+              <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+                <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                  <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+                  <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+                  <g id="grp7" opacity="0" transform="translate(7 6)">
+                    <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+                    <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+                  </g>
+                  <g id="grp6" opacity="0" transform="translate(0 28)">
+                    <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+                    <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+                  </g>
+                  <g id="grp3" opacity="0" transform="translate(52 28)">
+                    <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+                    <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+                  </g>
+                  <g id="grp2" opacity="0" transform="translate(44 6)">
+                    <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
+                    <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
+                  </g>
+                  <g id="grp5" opacity="0" transform="translate(14 50)">
+                    <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
+                    <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
+                  </g>
+                  <g id="grp4" opacity="0" transform="translate(35 50)">
+                    <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
+                    <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
+                  </g>
+                  <g id="grp1" opacity="0" transform="translate(24)">
+                    <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
+                    <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
+                  </g>
+                </g>
+              </svg>
+            </label>
+            <% end %>
+          </div>
+          <% end %>
+          <div class="add-wish-show">Add to Wishlist</div>
         </div>
       </div>
     </div>
@@ -159,14 +202,6 @@
               </div>
             </div>
             <%= render "components/contact_form" ,date: @date %>
-          </div>
-          <div class="text-center">
-            <p>
-              <a class="text-secondary" href="">
-                <i class="fa fa-heart"></i>
-                Add To Whishlist
-              </a>
-            </p>
           </div>
         </div>
       </div>
