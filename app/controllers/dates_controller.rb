@@ -67,7 +67,7 @@ class DatesController < ApplicationController
       @dates = @dates.joins(:categories).where(categories: { id: params.dig(:search, "category_id") })
     end
 
-    if params.dig(:search, "date")
+    if params.dig(:search, "date") && !params.dig(:search, "date").empty?
       weekday = Date.parse(params.dig(:search, "date")).strftime("%A")
       @dates = @dates.where("availability->>? != 'closed'", weekday)
     end
