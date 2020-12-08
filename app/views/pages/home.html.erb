@@ -1,121 +1,204 @@
-
 <div class="banner" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607078081/nathan-dumlao-EdULZpOKsUE-unsplash_n2sxii.jpg", ) %>')">
   <h1 class="banner-text-one">Uncomplicate the Unforgettable</h1>
   <h1 class="banner-text-two">Find unique Activities for Dates</h1>
   <div class="search-bar-home">
     <%= form_tag dates_index_path, method: :get, class: "form-inline" do %>
-      <div id="calendar-icon"><i class="far fa-calendar-alt"></i></div>
-      <%= text_field_tag :query_location,
-      params[:query_location],
+    <div id="calendar-icon"><i class="far fa-calendar-alt"></i></div>
+    <%= text_field_tag :query_location,
+    params[:query_location],
     class: "search-field",
       placeholder: "Where?"
       %>
       <%= text_field_tag :query_title_description,
       params[:query_title_description],
-    class: "search-field",
-      placeholder: "What?"
-      %>
-    <%= submit_tag "Search", id: "btn-search" %>
-          <% end %>
-  </div>
-</div>
-
-<div class="mission-container">
-  <div class="row mx-0">
-    <h2 class="mission-heading mx-auto">How it works</h2>
-  </div>
-
-  <div class="row ml-0">
-    <div class="col-4 d-flex">
-
-        <div class="mission-number">1</div>
-        <div class="text-mission">Enter the day and/or city where you want to go on a date on.</div>
-
-    </div>
-    <div class="col-4 d-flex ">
-
-        <div class="mission-number">2</div>
-        <div class="text-mission">Refine your search with the filters, for example set your budget.</div>
-
-    </div>
-    <div class="col-4 d-flex ">
-
-        <div class="mission-number">3</div>
-        <div class="text-mission">Choose between single date activities and date activity packages.</div>
-
+      class: "search-field",
+        placeholder: "What?"
+        %>
+        <%= submit_tag "Search", id: "btn-search" %>
+        <% end %>
+      </div>
     </div>
 
-  </div>
-  <div class="row ml-0">
-    <h2 class="mission-outro mx-auto">Enjoy your Dates!</h2>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row mt-5">
-    <div class="d-flex align-items-lg-stretch mb-4 col-lg-8">
-      <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background5.jpg", ) %>')">
-        <a class="tile-link" href="category.html"></a>
-        <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-          <h3 class="text-button text-uppercase text-shadow mb-0">Cooking</h3>
+    <div class="py-5">
+      <div class="container">
+        <div class="text-center pb-lg-4">
+          <p class="subtitle text-secondary">One-of-a-kind date advice</p>
+          <h2 class="mb-5">Choose your date experience</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+            <div class="px-0 px-lg-3">
+              <div class="icon-rounded bg-primary-light mb-3">
+                <i class="fas fa-lightbulb home-icon"></i>
+              </div>
+              <h3 class="h5">Search for inspiration</h3>
+              <p class="text-muted">Enter the day and/or city where you want to go on a date on.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+            <div class="px-0 px-lg-3">
+              <div class="icon-rounded bg-primary-light mb-3">
+                <i class="fas fa-search home-icon" ></i>
+              </div>
+              <h3 class="h5">Find the perfect date</h3>
+              <p class="text-muted">Refine your search with the filters, for example set your budget.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-3 mb-lg-0 text-center">
+            <div class="px-0 px-lg-3">
+              <div class="icon-rounded bg-primary-light mb-3">
+                <i class="fas fa-heart home-icon" ></i>
+              </div>
+              <h3 class="h5">Enjoy your date</h3>
+              <p class="text-muted">Choose between single date activities and date activity packages.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="d-flex align-items-lg-stretch mb-4 col-lg-4" >
-      <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background1.jpg", ) %>')">
-        <a class="tile-link" href="category.html"></a>
-        <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-          <h3 class="text-button text-uppercase text-shadow mb-0">Chill</h3>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="row mb-5">
-    <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-      <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background2.jpg", ) %>')">
-        <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-          <h3 class="text-button text-uppercase text-shadow mb-0">Dancing</h3>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-      <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background3.jpg", ) %>')">
-        <a class="tile-link" href="category.html"></a>
-        <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-          <h3 class="text-button text-uppercase text-shadow mb-0">Outdoor</h3>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-      <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background4.jpg", ) %>')">
-        <a class="tile-link" href="category.html"></a>
-        <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-          <h3 class="text-button text-uppercase text-shadow  mb-0">Cosy</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-</div>
+    <div class="color-part2">
+      <div class="container mt-5 mb-5" style="">
+        <div class="col-md-8">
+          <h3>Check out our dates!</h3>
+          <h2>Most popular</h2>
+        </div>
+      </div>
 
-<h2 class="value-prop-heading">Our Mission</h2>
-<div class="value-prop">
-  <div class="value-prop-item">
-    <div class="value-prop-icon"><i class="far fa-clock"></i></div>
-    <div class="value-prop-text">Finding the right thing to do on a date can be hard and time consuming, which might even diminish the pleasant anticipation for the date itself.</div>
-  </div>
-  <div class="value-prop-item">
-    <div class="value-prop-icon"><i class="far fa-lightbulb"></i></div>
-    <div class="value-prop-text">We, at <i>It's a Date</i> believe that everything about a date should be a pleasant experience. Therefore, we have made it our value-prop to help you find the date activities that are perfect for you!</div>
-  </div>
-  <div class="value-prop-item">
-    <div class="value-prop-icon"><i class="far fa-gem"></i></div>
-    <div class="value-prop-text">Whether you prefer to be active on your date, enjoy delicious food, or get a little tipsy, <i>It's a Date</i> has date activity ideas for everyone!</div>
-  </div>
-  <div class="value-prop-item">
-    <div class="value-prop-icon"><i class="far fa-check-circle"></i></div>
-    <div class="value-prop-text">So, let us take care of the planning part of your date, so that you can focus on what is important!</div>
-  </div>
-</div>
+      <div class="container d-flex">
+        <% @dates.take(4).each do |date| %>
+        <div class="card mx-3 border-0 shadow">
+          <div>
+            <%= cl_image_tag date.photos.first.key, height: 250, width: 300,crop: :fill, class: "image-center" %>
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <div class="w-100">
+              <h6 class="card-title mt-3"><%= date.title %></h6>
+              <p class="date-location card-subtitle mb-2">
+                <i class="fas fa-map-marker date-detail-marker"></i>
+                <%= date.location %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="color-part">
+      <div class="container mt-5 mb-4">
+        <div class="col-md-8">
+          <h3>For our dear customers</h3>
+          <h2>Our Mission</h2>
+        </div>
+      </div>
+      <div class="value-prop">
+        <div class="container d-flex">
+          <div class="value-prop-item shadow">
+            <div class="value-prop-icon"><i class="far fa-clock"></i></div>
+            <div class="value-prop-text">Finding the right thing to do on a date can be hard and time consuming, which might even diminish the pleasant anticipation for the date itself.</div>
+          </div>
+          <div class="value-prop-item shadow">
+            <div class="value-prop-icon"><i class="far fa-lightbulb"></i></div>
+            <div class="value-prop-text">We, at <i>It's a Date</i> believe that everything about a date should be a pleasant experience. Therefore, we have made it our value-prop to help you find the date activities that are perfect for you!</div>
+          </div>
+          <div class="value-prop-item shadow">
+            <div class="value-prop-icon"><i class="far fa-gem"></i></div>
+            <div class="value-prop-text">Whether you prefer to be active on your date, enjoy delicious food, or get a little tipsy, <i>It's a Date</i> has date activity ideas for everyone!</div>
+          </div>
+          <div class="value-prop-item shadow">
+            <div class="value-prop-icon"><i class="far fa-check-circle"></i></div>
+            <div class="value-prop-text">So, let us take care of the planning part of your date, so that you can focus on what is important!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="color-part2">
+      <div class="py-5">
+        <div class="container">
+          <div class="text-center pb-lg-4">
+            <p class="subtitle text-secondary">Testimonials</p>
+            <h2 class="mb-5">What are customers said about us</h2>
+          </div>
+        </div>
+        <div class="container d-flex">
+          <div class="card-review mx-3 border-0 shadow">
+            <div class="text">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, ratione.</p>
+              <strong>Brentinho</strong>
+            </div>
+          </div>
+          <div class="card-review mx-3 border-0 shadow">
+            <div class="text">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, ratione.</p>
+              <strong>Brentinho</strong>
+            </div>
+          </div>
+          <div class="card-review mx-3 border-0 shadow">
+            <div class="text">
+              <div class="testimonial-quote">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, ratione.</p>
+              <strong>Brentinho</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="row mt-5">
+        <div class="d-flex align-items-lg-stretch mb-4 col-lg-8">
+          <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background5.jpg", ) %>')">
+            <a class="tile-link" href="category.html"></a>
+            <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
+              <h3 class="text-button text-uppercase text-shadow mb-0">Cooking</h3>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-lg-stretch mb-4 col-lg-4" >
+          <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background1.jpg", ) %>')">
+            <a class="tile-link" href="category.html"></a>
+            <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
+              <h3 class="text-button text-uppercase text-shadow mb-0">Chill</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
+          <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background2.jpg", ) %>')">
+            <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
+              <h3 class="text-button text-uppercase text-shadow mb-0">Dancing</h3>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
+          <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background3.jpg", ) %>')">
+            <a class="tile-link" href="category.html"></a>
+            <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
+              <h3 class="text-button text-uppercase text-shadow mb-0">Outdoor</h3>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
+          <div class="card-home shadow-lg border-0 w-100 border-0 hover-animate" style="background-image:url('<%= image_path("background4.jpg", ) %>')">
+            <a class="tile-link" href="category.html"></a>
+            <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
+              <h3 class="text-button text-uppercase text-shadow  mb-0">Cosy</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
