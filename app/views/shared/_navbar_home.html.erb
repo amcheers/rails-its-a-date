@@ -23,6 +23,11 @@
             <li class="nav-item">
                 <%= link_to "About Us", "#", class: "nav-link" %>
             </li>
+            <% if current_user.admin? %>
+            <li class="nav-item">
+                <%= link_to "Admin Page", rails_admin_path, class: "nav-link" %>
+            </li>
+            <% end %>
             <li class="nav-item">
                 <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
             </li>
