@@ -1,3 +1,13 @@
+.package-show-banner-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.package-show-banner-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .date-activities-package-edit{
   display: flex;
   justify-content: space-around;
@@ -25,7 +35,7 @@
 }
 
 .edit-package-body{
-  background-color: #F4F4F4;
+  margin-top: 50px;
 }
 
 .package-show-container {
@@ -89,25 +99,30 @@
   font-size: 20px;
 }
 
-.package-edit-header{
-  border-radius: 15px;
-  position: relative;
-  left: 33.5%;
-  margin-top: 0px;
-  margin-bottom: 20px;
+.package-show-header {
   font-size: 40px;
-  height: 60px;
-  background-color: #F4F4F4;
-  border-width: 1px;
-  border-color: rgb(0, 0, 0);
-  width: 500px;
-  padding-right: 5px;
-  padding-top: 20px;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  color: white;
 }
+
+// .package-edit-header{
+//   border-radius: 15px;
+//   position: relative;
+//   left: 33.5%;
+//   margin-top: 0px;
+//   margin-bottom: 20px;
+//   font-size: 40px;
+//   height: 60px;
+//   background-color: #F4F4F4;
+//   border-width: 1px;
+//   border-color: rgb(0, 0, 0);
+//   width: 500px;
+//   padding-right: 5px;
+//   padding-top: 20px;
+//   align-items: center;
+//   text-align: center;
+//   display: flex;
+//   justify-content: center;
+// }
 
 .location-date-activity-edit{
   margin: 5px;

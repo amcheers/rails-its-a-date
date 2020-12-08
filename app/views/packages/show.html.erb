@@ -1,7 +1,18 @@
 <div class="edit-package-body">
   <div class="package-show-container">
-      <div class="package-edit-header">
-          <div><%= @package.title %></div>
+        <% if @package.date_activities.count == 3 %>
+          <div class="package-show-banner-3">
+            <div> <%= cl_image_tag @package.date_activities[0].photos.second.key %></div>
+            <div> <%= cl_image_tag @package.date_activities[1].photos.second.key %></div>
+            <div> <%= cl_image_tag @package.date_activities[2].photos.second.key %></div>
+        <% else %>
+          <div class="package-show-banner-2">
+            <div> <%= cl_image_tag @package.date_activities[0].photos.second.key %></div>
+            <div> <%= cl_image_tag @package.date_activities[1].photos.second.key %></div>
+        <% end %>
+        <div class="package-show-header" >
+            <div><%= @package.title %></div>
+        </div>
       </div>
       <div class="package-call-to-action">
         <% if user_signed_in? %>
