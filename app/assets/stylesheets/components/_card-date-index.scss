@@ -10,8 +10,7 @@
   background-color: white;
   border-radius: 10px;
   &:hover {
-    border: 0.5px solid #85C3DC;
-    transition: all 0.2s ease-in-out;
+  transform: translateX(1em);
   }
 }
 
@@ -30,12 +29,16 @@
 }
 
 .date-category {
-  padding: 2px 5px;
-  margin: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.4rem;
   background-color: #F07B89;
   color: white;
-  font-size: 10px;
-  border: 0.2px solid grey;
+  border: 1px solid #F07B89;
+  margin-right: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .date-title {
@@ -43,6 +46,15 @@
   color: grey;
   font-size: 20px;
   font-weight: bold;
+}
+
+.date-price{
+  position: absolute;
+  right: 25px;
+  bottom: 20px;
+  //font-weight: bold;
+  font-size: 23px;
+  color: grey;
 }
 
 .date-location {
@@ -62,4 +74,23 @@
   margin-left: 5px;
   color: #F07B89;
   font-size: 12px;
+}
+
+.date-btn-3 {
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 4px 8px;
+  color: white;
+  border-radius: .4rem;
+  background-color: #85C3DC;
+  border: 0.2px solid grey;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  opacity: 07;
+  transition: 0.2s;
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #85C3DC;
+    background-color: white;
+  }
 }

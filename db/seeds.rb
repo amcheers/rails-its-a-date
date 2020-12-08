@@ -260,10 +260,7 @@ salsa_hash = {
   description: "Do you fancy a Cuban salsa course together with your other half? - Everyone is welcome for the salsa courses of El Punto Cubano, to discover the real Cuban Salsa. Each lesson starts with a relaxed and rhythmic warming up in which you get to know different (Afro) Cuban rhythms like Son, Rumba, Pilon, Chachacha, etc. Then you learn in pairs to apply the basic figures and rhythms in the dance. Thereby the pleasure in dancing is the most important. All our lessons are always offered by a Cuban teacher. A course consist of 10 lessons of 60 minutes and costs 100€.",
   location: "Borgerstraat 112, 1053PX Amsterdam",
   price: 100,
-  availability: {
-      "Monday": {"beginners": "19:00 - 20:00", "average": "20:00 - 21:00", "semi/advance": "21:00 - 22:00"},
-      "Thursday": { "beginners": "19:00 - 20:00", "average": "20:00 - 21:00", "semi/advance": "21:00 - 22:00" }
-    },
+  availability: { "Monday": "19:00 - 22:00", "Tuesday": "19:00 - 22:00", "Wednesday": "closed", "Thursday": "19:00 - 22:00", "Friday": "19:00 - 22:00", "Saturday": "closed", "Sunday": "closed" },
   reservation: true,
   reservation_url: "http://www.puntocubano.nl/",
   contact_email: "info@puntocubano.nl",
