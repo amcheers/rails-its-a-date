@@ -2,13 +2,13 @@
  <div class="package-show-header">
      Date Packages
  </div>
- <div class="d-flex justify-content-start"><%= link_to 'Create a package', new_package_path, class: 'date-btn date-btn-lg' %></div>
+ <div class="d-flex justify-content-end link-to-new-package"><%= link_to 'Create a package', new_package_path, class: 'date-btn date-btn-lg' %></div>
  <div class="wrapper">
      <% @packages.each do |package| %>
      <div class="row-index">
          <%= link_to package_path(package), class: "link-to-package" do%>
          <div class="title-package-index">
-             <div><%= package.title%></div>
+             <div class="package-title"><%= package.title%></div>
              <% if user_signed_in? %>
             <% @package_ids = current_user.favorite_activities.where(activity_type: "Package").pluck(:activity_id) %>
             <div id="heart-package">
@@ -17,7 +17,7 @@
               <label for="checkbox-<%= package.id %>">
                 <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
                   <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                    <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+                    <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="white" stroke="grey"/>
                     <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
                     <g id="grp7" opacity="0" transform="translate(7 6)">
                       <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
@@ -53,17 +53,28 @@
               <% end  %>
             </div>
             <% end %>
+            <div><%= link_to "Customize", edit_package_path(package), class: "customize-btn" %></div>
          </div>
-         <div class="dates-index-package">
-             <% package.date_activities.each do |date| %>
-             <div class="date-index-package" style="background-image: url('<%= cl_image_path  date.photos.first.key %>')">
-                 <%= date.title %>
-             </div>
-             <% end %>
+         <div class="package-info">
+           <div class="nr-of-activities"><i class="fas fa-clipboard-list package-icons"></i> <%= package.date_activities.count %> Actvities</div>
+            <% price_sum = 0 %>
+            <% package.date_activities.each { |activity| price_sum += activity.price } %>
+           <div class="total-price"><i class="fas fa-tags package-icons"></i>  <%= price_sum %> <i class="fas fa-euro-sign"></i> in total</div>
+         </div>
+         <% if package.date_activities.count == 3 %>
+            <div class="dates-index-package-3">
+          <% else %>
+            <div class="dates-index-package-2">
+          <% end %>
+           <% package.date_activities.each do |date| %>
+              <div class="date-index-package" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path  date.photos.first.key %>')">
+                <%= date.title %>
+              </div>
+           <% end %>
          </div>
          <% end %>
      </div>
      <% end %>
  </div>
- <%= link_to 'Back', root_path, class: "link-back" %>
+ <div class="back-link"><%= link_to 'Back to Date Actvities', dates_index_path, class: "button-contact-show-2" %></div>
 </div>

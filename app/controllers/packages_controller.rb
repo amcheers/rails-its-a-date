@@ -57,6 +57,7 @@ class PackagesController < ApplicationController
     redirect_to dashboard_path
   end
 
+
   private
 
   def package_params

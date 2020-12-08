@@ -2,8 +2,11 @@
   <div class="row mx-0">
     <div class="col-lg-6 p-xl-5">
       <% if params[:query_location].present? %>
-      <h2 class="search-results ml-0"><strong>Dates in <%= params[:query_location] %> </strong></h2>
+        <h2 class="search-results">Date Activities in <%= params[:query_location] %></h2>
+      <% elsif params[:query_title_description].present? %>
+        <h2 class="search-results">Date Activities including <%= params[:query_title_description] %></h2>
       <% else %>
+        <h2 class="search-results">Date Activities</h2>
       <% end %>
       <hr class="my-4">
       <div class="row">
