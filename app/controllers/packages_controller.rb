@@ -27,6 +27,7 @@ class PackagesController < ApplicationController
   end
 
   def edit
+    @dates = DateActivity.all
     @package = Package.find(params[:id])
     @markers = @package.date_activities.geocoded.map do |date|
       {
