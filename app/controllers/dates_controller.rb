@@ -51,20 +51,20 @@ class DatesController < ApplicationController
   def search
     @dates = DateActivity.all
 
-    if params[:query_location].present?
-      @dates = @dates.global_search(params[:query_location])
+    if params.dig(:search, "query_location")
+      @dates = @dates.global_search(params.dig(:search, "query_location"))
     end
 
-    if params[:query_title_description].present?
-      @dates = @dates.global_search(params[:query_title_description])
+    if params.dig(:search, "query_title_description")
+      @dates = @dates.global_search(params.dig(:search, "query_title_description"))
     end
 
-    if params[:query_price].present?
-      @dates = @dates.where("price <= ?", params[:query_price])
+    if params.dig(:search, "price") && !params.dig(:search, "price").empty?
+      @dates = @dates.where("price <= ?", params.dig(:search, "price"))
     end
 
-    if params[:category_ids].present?
-      @dates = @dates.joins(:categories).where(categories: { id: params[:category_ids] })
+    if params.dig(:search, "category_id")
+      @dates = @dates.joins(:categories).where(categories: { id: params.dig(:search, "category_id") })
     end
   end
 
