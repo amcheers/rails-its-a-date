@@ -21,6 +21,16 @@ svg{
   top: 273px;
   right: 279px;
 }
+#heart-package {
+  position: absolute;
+  top: -6px;
+  right: 10px;
+}
+#heart-package-show {
+  position: absolute;
+  top: -7px;
+  right: 179px;
+}
 .heart-checkbox:checked + label svg{
     #heart{transform:scale(.2); fill:#85C3DC; animation:animateHeart .3s linear forwards .25s;}
     #main-circ{transition:all 2s; animation:animateCircle .3s linear forwards; opacity:1;}
