@@ -16,7 +16,7 @@
               </div>
               <div class="col-6">
 
-                <%= f.input :price, as: :integer, input_html: { value: params[:price] } %>
+                <%= f.input :price, label: "Max Price", as: :integer, input_html: { value: params[:price] } %>
               </div>
             </div>
             <%= hidden_field_tag :query_location,
