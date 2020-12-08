@@ -2,8 +2,11 @@
   <div class="row mx-0">
     <div class="col-lg-6 p-xl-5">
       <% if params[:query_location].present? %>
-      <h2 class="search-results ml-0"><strong>Dates in <%= params[:query_location] %> </strong></h2>
+        <h2 class="search-results">Date Activities in <%= params[:query_location] %></h2>
+      <% elsif params[:query_title_description].present? %>
+        <h2 class="search-results">Date Activities including <%= params[:query_title_description] %></h2>
       <% else %>
+        <h2 class="search-results">Date Activities</h2>
       <% end %>
       <hr class="my-4">
       <div class="row">
@@ -55,7 +58,7 @@
             <% if user_signed_in? %>
             <% @date_ids = current_user.favorite_activities.where(activity_type: "DateActivity").pluck(:activity_id) %>
             <div id="heart">
-              <%= link_to like_unlike_path(activity_type: "date_activity", activity_id: date.id), remote: true, method: 'post' do %>
+              <%= link_to like_unlike_path(activity_type: "DateActivity", activity_id: date.id), remote: true, method: 'post' do %>
               <input type="checkbox" id="checkbox-<%= date.class %>-<%= date.id %>" class="heart-checkbox" <%= "checked" if @date_ids.include?(date.id)%> >
               <label for="checkbox-<%= date.id %>">
                 <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">

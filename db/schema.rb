@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_140305) do
+ActiveRecord::Schema.define(version: 2020_12_08_095648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2020_12_07_140305) do
   create_table "date_activities", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.boolean "confirmed"
+    t.boolean "confirmed", default: false
     t.string "location"
     t.integer "price"
     t.json "availability"
-    t.boolean "reservation"
+    t.boolean "reservation", default: false
     t.string "reservation_url"
     t.string "contact_email"
     t.bigint "user_id", null: false
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_140305) do
     t.string "first_name"
     t.string "last_name"
     t.string "address"
-    t.boolean "offering"
+    t.boolean "offering", default: false
     t.string "username"
     t.boolean "admin"
     t.index ["email"], name: "index_users_on_email", unique: true

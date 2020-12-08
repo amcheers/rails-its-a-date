@@ -16,7 +16,7 @@
 
   .map-edit{
     height: 600px;
-    margin-right: 10px;
+    margin-bottom: 20px;
   }
   
   .category-selector + label {
@@ -52,9 +52,9 @@
 .btn-package-show {
   border-radius: 15px;
   background-color: white;
-  position: absolute;
-  right: 44%;
-  top: 36px;
+  position: relative;
+  top: -115px;
+  left: 800px;
   margin-top: 50px;
   height: 50px;
   border-width: 1px;
@@ -85,7 +85,7 @@
   border-color: rgb(0, 0, 0);
 }
 
-.link-back {
+.link-back-edit {
   font-size: 30px;
   color: black;
   margin-top: 20px;
@@ -139,7 +139,6 @@
   padding-top: 20px;
   background-color: #F4F4F4;
   font-family: "Nunito", "Helvetica", "sans-serif";
-  display: flex;
 }
 
 .link-package-date-edit{
@@ -161,4 +160,48 @@
     text-decoration: none;
     color: grey;
   }
+}
+
+.modal-body-dates{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.choosing-edit{
+  width: 200px;
+  border-radius: 10px;
+  height: 200px;
+  margin: 5px;
+  &:hover {
+    transform: scale(1.01);
+  }
+}
+
+.image-package-button-show{
+  width: 200px;
+  height: 100px;
+}
+
+.link-package-date-edit-button{
+  font-weight: bolder;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  background-color: #85C3DC;
+  border: 0.2px solid grey;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  opacity: 07;
+  transition: 0.2s;
+  &:hover{
+    opacity: 1;
+    text-decoration: none;
+    color: grey;
+  }
+}
+
+#searchWrapper{
+margin: 10px 0px 10px 300px;
+
 }

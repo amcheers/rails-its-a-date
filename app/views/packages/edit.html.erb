@@ -1,38 +1,77 @@
 <div class="show-package-body">
-<%= simple_form_for [@package] do |f| %>
-<%= f.input :title, label: false, input_html: { class: "title-input" } %>
-<%= f.submit "Add Package", class: 'btn-package-show'%>
-<fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
-    <legend class="col-form-label pt-0"></legend>
-    <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
-        <% @package.date_activities.each do |date| %>
-        <div class="category-item">
-            <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
-            <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
-                <%= cl_image_tag  date.photos.first.key, :class => "image-package-show" %>
-                <div class="categories-show-package"><% date.categories.take(3).each do |category|%>
-                    <div class="category-show-package">
-                        <%= category.name %>
+    <div class="row mx-auto">
+        <div class="col-8 px-0">
+            <%= simple_form_for [@package] do |f| %>
+            <%= f.input :title, label: false, input_html: { class: "title-input" } %>
+            <%= f.submit "Add Package", class: 'btn-package-show'%>
+            <fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
+                <legend class="col-form-label pt-0"></legend>
+                <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
+                    <% @package.date_activities.each do |date| %>
+                    <div class="category-item">
+                        <input class="form-check-input is-valid check_boxes optional category-selector" type="checkbox" value="<%= date.id %>" checked="checked" name="package[date_activity_ids][]" id="package_date_activity_ids_<%= date.id %>" />
+                        <label class="form-check-label collection_check_boxes" for="package_date_activity_ids_<%= date.id %>">
+                            <%= cl_image_tag  date.photos.first.key, :class => "image-package-show" %>
+                            <div class="categories-show-package"><% date.categories.take(3).each do |category|%>
+                                <div class="category-show-package">
+                                    <%= category.name %>
+                                </div>
+                                <% end %>
+                            </div>
+                            <div class="title-show-package">
+                                <%= date.title %>
+                            </div>
+                            <div class="package-location-show">
+                                <%= date.location %>
+                            </div>
+                            <%= link_to 'Details', dates_show_path(date), class: "link-package-date-edit",target: "_blank" %>
+                        </label>
                     </div>
                     <% end %>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        Add a Date +
+                    </button>
                 </div>
-                <div class="title-show-package">
-                    <%= date.title %>
-                </div>
-                <div class="package-location-show">
-                    <%= date.location %>
-                </div>
-                <%= link_to 'Details', dates_show_path(date), class: "link-package-date-edit",target: "_blank" %>
-            </label>
+            </fieldset>
+            <% end %>
         </div>
-        <% end %>
+
+        <div class="col-4 px-0">
+            <div id="map" class="map-edit map-wrapper" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+        </div>
     </div>
-</fieldset>
-<% end %>
-  <div id="map" class="map-edit map-wrapper"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
 <%= link_to "Back", packages_path, class: "link-back" %>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div id="searchWrapper">
+                    <input type="text" name="searchBar" id="searchBar" placeholder="search for a character" />
+                </div>
+                <div class="modal-body-dates">
+                    <% @dates.each do |date|%>
+                    <button type="button" class="choosing-edit">
+                        <%= cl_image_tag  date.photos.first.key, :class => "image-package-button-show" %>
+                        <div class="title-to-search">
+                            <%= date.title%>
+                        </div>
+                        <%= link_to 'Details', dates_show_path(date), class: "link-package-date-edit-button",target: "_blank" %>
+                    </button>
+                    <% end %>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Add Date +</button>
+            </div>
+        </div>
+    </div>
+</div>
