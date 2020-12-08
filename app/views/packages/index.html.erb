@@ -2,7 +2,7 @@
  <div class="package-show-header">
      Date Packages
  </div>
- <div class="d-flex justify-content-start"><%= link_to 'Create a package', new_package_path, class: 'date-btn date-btn-lg' %></div>
+ <div class="d-flex justify-content-end link-to-new-package"><%= link_to 'Create a package', new_package_path, class: 'date-btn date-btn-lg' %></div>
  <div class="wrapper">
      <% @packages.each do |package| %>
      <div class="row-index">
