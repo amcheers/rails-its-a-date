@@ -1,0 +1,43 @@
+.dates-new-form{
+  display: flex;
+  text-align: center;
+  width: 500px;
+  justify-content: center;
+  border: solid 3px #85c3dc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+.h1-date-new{
+  color: #85c3dc;
+  font-weight: bold;
+  background-color:rgba(255, 255, 255, 0.493);
+  border-radius: 10px;
+}
+
+.container-dates-new-form{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-position: center;
+  background-size: 100%;
+}
+.btn-date-new{
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 7px 14px;
+    color: white;
+    border-radius: .4rem;
+    background-color: #85C3DC;
+    border: 0.2px solid grey;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    opacity: 07;
+    transition: 0.2s;
+    &:hover{
+        opacity: 1;
+        text-decoration: none;
+        color: #85C3DC;
+        background-color: white;
+    }
+}
