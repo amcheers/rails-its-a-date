@@ -9,6 +9,13 @@
   background-color:rgba(255, 255, 255, 0.5);
 }
 
+.h1-date-new{
+  color: #85c3dc;
+  font-weight: bold;
+  background-color:rgba(255, 255, 255, 0.493);
+  border-radius: 10px;
+}
+
 .container-dates-new-form{
   display: flex;
   justify-content: center;
@@ -16,11 +23,6 @@
   background-position: center;
   background-size: 100%;
 }
-
-.header-new-date{
-    color: #85c3dc;
-}
-
 .btn-date-new{
     font-weight: bolder;
     font-size: 20px;

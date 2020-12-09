@@ -1,7 +1,7 @@
-<div class="container-dates-new-form" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607347650/cupid_2_yekvt8.jpg", ) %>')">
+<div class="container-dates-new-form" style="background-image:url('<%= cl_image_path("https://cdn.pixabay.com/photo/2015/07/15/21/27/cupid-846939_960_720.jpg", ) %>')">
 <div class="dates-new-form">
 <%= simple_form_for @date, url: dashboard_dates_path do |f| %>
-  <div class="header-new-date"><h1>Create a new Date:</h1></div>
+  <h1 class="h1-date-new">Create a new Date</h1>
   <%= f.input :title, placeholder: "Enter title..." %>
   <%= f.input :description, placeholder: "Enter description..." %>
   <%= f.input :location, placeholder: "Enter address..." %>
