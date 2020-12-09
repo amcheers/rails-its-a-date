@@ -1,9 +1,20 @@
-<h1>Create a Package</h1>
-
-Choose up to 3 categories:
-<%= simple_form_for @package do |f| %>
-  <%= f.input :title %>
-  <%= f.input :category, collection:  Category.all, as: :check_boxes, include_hidden: false%>
-  <%= f.submit "Add Package"%>
-<% end %>
+<div class="col-sm-12 col-lg-12 ">
+  <div class="d-flex justify-content-center">
+    <h1 class="new-package-header">Create a Package</h1>
+  </div>
+  
+    Choose up to 3 categories:
+  
+    <%= simple_form_for @package do |f| %>
+    
+      <div class="mx-100">
+        <%= f.input :title %>
+      </div>
+      <%= f.input :category, collection:  Category.all, as: :check_boxes, input_html: { class: "tag-selector" },
+                item_wrapper_class: 'tag-item', include_hidden: false%>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Add Package", class: 'date-btn-2'%>
+      </div>
+    <% end %>
+</div>
 
