@@ -48,7 +48,7 @@
   }
 
   .card-date{
-    height: 400px;
+    height: 430px;
     width: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -150,25 +150,11 @@
   font-family: "Nunito", "Helvetica", "sans-serif";
 }
 
-.link-package-date-edit{
+.detail-link-pacakge-edit{
+  text-align: center;
   position: absolute;
-  bottom: 10px;
-  left: 39%;
-  font-weight: bolder;
-  font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  color: white;
-  background-color: #85C3DC;
-  border: 0.2px solid grey;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  opacity: 07;
-  transition: 0.2s;
-  &:hover{
-    opacity: 1;
-    text-decoration: none;
-    color: grey;
-  }
+  bottom: 40px;
+  left: 115px;
 }
 
 .modal-body-dates{
@@ -210,9 +196,13 @@
   }
 }
 
+.date-card-edit{
+  height: 430px;
+  position: relative;
+}
+
 #searchWrapper{
 margin: 10px 0px 10px 10px;
-
 }
 
 .close{
@@ -226,4 +216,9 @@ margin: 10px 0px 10px 10px;
 .modal-body{
   align-items: center;
   text-align: center;
+}
+
+#searchBar{
+  border-radius: 10px;
+  font-size: 20px;
 }
