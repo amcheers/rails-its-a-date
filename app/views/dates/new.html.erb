@@ -1,6 +1,8 @@
-<%= simple_form_for [@date] do |f| %>
+<%= simple_form_for @date, url: dashboard_dates_path do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
+  <%= f.input :location %>
+  <%= f.input :availability %>
   <%= f.input :price %>
   <%= f.input :reservation_url %>
   <%= f.input :contact_email %>

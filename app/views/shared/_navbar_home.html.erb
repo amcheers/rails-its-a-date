@@ -21,6 +21,9 @@
         <%= link_to "Packages", packages_path, class: "nav-link" %>
       </li>
       <li class="nav-item-special">
+        <%= link_to "Upload your Date", new_dashboard_date_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item-special">
         <%= link_to "About Us", "#", class: "nav-link" %>
       </li>
       <% if current_user.admin? %>

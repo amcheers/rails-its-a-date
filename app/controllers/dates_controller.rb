@@ -5,7 +5,7 @@ class DatesController < ApplicationController
   def index
     search
     @categories = Category.all
-
+    @dates = DateActivity.all.paginate(page: params[:page], per_page: 10)
     @markers = @dates.geocoded.map do |date|
       {
         lat: date.latitude,
@@ -14,7 +14,6 @@ class DatesController < ApplicationController
       }
     end
     @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
-    # raise
   end
 
   def show
@@ -28,7 +27,9 @@ class DatesController < ApplicationController
   def create
     @date = DateActivity.new(date_params)
     @date.user = current_user
-    if @date.save
+    if @date.save!
+      UserMailer.create(@date.user).deliver_now
+      UserMailer.developer(@date.user).deliver_now
       redirect_to dashboard_path
     else
       render 'new'
