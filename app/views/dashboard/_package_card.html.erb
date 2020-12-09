@@ -1,0 +1,22 @@
+<li>
+            <div class="dashboard-package">
+              <%= link_to package_path(package), class: "link-to-package" do%>
+                <div class="title-package-index">
+                    <%= package.title%>
+                </div>
+                <div class="dates-index-package">
+                    <% package.date_activities.each do |date| %>
+                      <div class="date-index-package" style="background-image: url('<%= cl_image_path  date.photos.first.key %>')">
+                        <%= date.title %>
+                      </div>
+                    <% end %>
+                </div>
+              <% end %>
+              <%= link_to package_path(package), method: :delete, data: { confirm: "Are you sure?"} do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+              <%= link_to edit_package_path(package), data: { confirm: "Are you sure?"} do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+            </div>
+          </li>

@@ -5,46 +5,29 @@
     	    Saved Date Activities
     	  </div>
     	  <ul>
-    	    <% @user.favorite_activities.each do |activity| %>
-						<% if activity.activity_type == DateActivity %>
+    	    <% @user.favorite_activities.each do |favorite| %>
+						<% if favorite.activity.class == DateActivity %>
 					
 							<li>
 								<div class="index-card">
 									<div class="date-photo">
-										<%= cl_image_tag activity.activity_type.camelcase.constantize.find(activity.activity_id).photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
+										<%= cl_image_tag favorite.activity.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
 									</div>
 									<div class="date-info">
 										<div class="date-categories">
-											<% activity.activity_type.camelcase.constantize.find(activity.activity_id).categories.take(3).each do |c| %>
+											<% favorite.activity.categories.take(3).each do |c| %>
 											<div class="date-category"><%= c.name %></div>
 											<% end %>
 										</div>
-										<div class="date-title"><%= activity.activity_type.camelcase.constantize.find(activity.activity_id).title %></div>
-										<div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= activity.activity_type.camelcase.constantize.find(activity.activity_id).location %></div>
-										<div class="date-reviews"><%= activity.activity_type.camelcase.constantize.find(activity.activity_id).reviews.count %> Reviews</div>
-										<%= link_to 'Details', dates_show_path(activity.activity_type.camelcase.constantize.find(activity.activity_id)), class: "date-btn" %>
+										<div class="date-title"><%= favorite.activity.title %></div>
+										<div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= favorite.activity.location %></div>
+										<div class="date-reviews"><%= favorite.activity.reviews.count %> Reviews</div>
+										<%= link_to 'Details', dates_show_path(favorite.activity), class: "date-btn" %>
 									</div>
 								</div>
 							</li>
 						<% else %>
-							<li>
-								<div class="index-card">
-									<div class="date-info">
-										<div class="date-categories">
-											<% activity.activity_type.camelcase.constantize.find(activity.activity_id).categories.take(3).each do |c| %>
-											<div class="date-category"><%= c.name %></div>
-											<% end %>
-										</div>
-										<div class="date-title"><%= activity.activity_type.camelcase.constantize.find(activity.activity_id).title %></div>
-										<div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= activity.activity_type.camelcase.constantize.find(activity.activity_id).location %></div>
-										<div class="date-reviews"><%= activity.activity_type.camelcase.constantize.find(activity.activity_id).reviews.count %> Reviews</div>
-										<%= link_to 'Details', dates_show_path(activity.activity_type.camelcase.constantize.find(activity.activity_id)), class: "date-btn" %>
-									</div>
-									<div class="date-photo">
-										<%= cl_image_tag activity.activity_type.camelcase.constantize.find(activity.activity_id).photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
-									</div>
-								</div>
-							</li>
+							<%= render 'package_card', package: favorite.activity  %>
 						<% end %>	
     	    <% end %>
     	  </ul>
