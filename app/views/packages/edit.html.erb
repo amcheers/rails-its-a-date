@@ -3,7 +3,7 @@
         <div class="col-8 px-0">
             <%= simple_form_for [@package] do |f| %>
             <%= f.input :title, label: false, input_html: { class: "title-input" } %>
-            <%= f.submit "Add Package", class: 'btn-package-show'%>
+            <%= f.submit "Update Package", class: 'btn-package-show'%>
             <fieldset class="form-group check_boxes optional package_date_activities form-group-valid">
                 <legend class="col-form-label pt-0"></legend>
                 <div class="category-wrapper"><input type="hidden" name="package[date_activity_ids][]" value="" />
@@ -91,5 +91,5 @@
             </div>
         </div>
     </div>
+    <%= link_to "Back", packages_path, class: "link-back-edit" %>
 </div>
-<%= link_to "Back", packages_path, class: "link-back" %>

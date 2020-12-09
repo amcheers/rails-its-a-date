@@ -60,14 +60,18 @@
 
 .btn-package-show {
   border-radius: 15px;
-  background-color: white;
+  background-color: #85C3DC;
   position: relative;
+  color: #ffffff;
   top: -115px;
   left: 800px;
   margin-top: 50px;
   height: 50px;
   border-width: 1px;
+  transition: 0.5s;
   &:hover {
+    background-color: #ffffff;
+    color: #85C3DC;
     transform: scale(1.01);
   }
 }
@@ -95,11 +99,11 @@
 }
 
 .link-back-edit {
-  font-size: 30px;
+  font-size: 40px;
   color: black;
+  width: 50px;
   margin-top: 20px;
   display: block;
-  margin-bottom: 5px;
   margin-left: 10px;
   &:hover {
     color: rgb(163, 163, 163);
@@ -148,6 +152,7 @@
   padding-top: 20px;
   background-color: #F4F4F4;
   font-family: "Nunito", "Helvetica", "sans-serif";
+  background-color: #F07B89;
 }
 
 .detail-link-pacakge-edit{
@@ -199,6 +204,7 @@
 .date-card-edit{
   height: 430px;
   position: relative;
+  background: white;
 }
 
 #searchWrapper{
@@ -221,4 +227,12 @@ margin: 10px 0px 10px 10px;
 #searchBar{
   border-radius: 10px;
   font-size: 20px;
+}
+
+.modal-footer{
+  background-color: #F07B89;
+}
+
+.modal-header{
+  background-color: #F07B89;
 }
