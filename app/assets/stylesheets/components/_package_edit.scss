@@ -48,7 +48,7 @@
   }
 
   .card-date{
-    height: 400px;
+    height: 430px;
     width: 300px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -60,14 +60,18 @@
 
 .btn-package-show {
   border-radius: 15px;
-  background-color: white;
+  background-color: #85C3DC;
   position: relative;
+  color: #ffffff;
   top: -115px;
   left: 800px;
   margin-top: 50px;
   height: 50px;
   border-width: 1px;
+  transition: 0.5s;
   &:hover {
+    background-color: #ffffff;
+    color: #85C3DC;
     transform: scale(1.01);
   }
 }
@@ -95,11 +99,11 @@
 }
 
 .link-back-edit {
-  font-size: 30px;
+  font-size: 40px;
   color: black;
+  width: 50px;
   margin-top: 20px;
   display: block;
-  margin-bottom: 5px;
   margin-left: 10px;
   &:hover {
     color: rgb(163, 163, 163);
@@ -148,27 +152,14 @@
   padding-top: 20px;
   background-color: #F4F4F4;
   font-family: "Nunito", "Helvetica", "sans-serif";
+  background-color: #F07B89;
 }
 
-.link-package-date-edit{
+.detail-link-pacakge-edit{
+  text-align: center;
   position: absolute;
-  bottom: 10px;
-  left: 39%;
-  font-weight: bolder;
-  font-size: 15px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  color: white;
-  background-color: #85C3DC;
-  border: 0.2px solid grey;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  opacity: 07;
-  transition: 0.2s;
-  &:hover{
-    opacity: 1;
-    text-decoration: none;
-    color: grey;
-  }
+  bottom: 40px;
+  left: 115px;
 }
 
 .modal-body-dates{
@@ -210,9 +201,14 @@
   }
 }
 
+.date-card-edit{
+  height: 430px;
+  position: relative;
+  background: white;
+}
+
 #searchWrapper{
 margin: 10px 0px 10px 10px;
-
 }
 
 .close{
@@ -226,4 +222,17 @@ margin: 10px 0px 10px 10px;
 .modal-body{
   align-items: center;
   text-align: center;
+}
+
+#searchBar{
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.modal-footer{
+  background-color: #F07B89;
+}
+
+.modal-header{
+  background-color: #F07B89;
 }
