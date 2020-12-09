@@ -1,15 +1,14 @@
+
+
 .search-bar-home {
-  position: absolute;
-  right: 443px;
-  bottom: 100px;
   background-color: white;
-  padding-left: 25px;
-  border-radius: 50px;
+  padding-left: 20px;
+  border-radius: 25px;
 }
 
 #btn-search {
-  border-radius: 50px;
-  padding: 20px 20px;
+  border-radius: 25px;
+  padding: 13px 13px;
   border: none;
   color: white;
   background-color: #85C3DC;
@@ -19,12 +18,6 @@
     border: 0.5px solid #85C3DC;
     background-color: white;
   }
-}
-
-#calendar-icon {
-  font-size: 25px;
-  color: grey;
-  padding-right: 10px;
 }
 
 .search-field {
