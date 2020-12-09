@@ -5,7 +5,7 @@ class DatesController < ApplicationController
   def index
     search
     @categories = Category.all
-    @dates = DateActivity.where(confirmed: true).paginate(page: params[:page], per_page: 10)
+    @dates = @dates.paginate(page: params[:page], per_page: 10)
     @markers = @dates.geocoded.map do |date|
       {
         lat: date.latitude,
@@ -50,7 +50,7 @@ class DatesController < ApplicationController
   end
 
   def search
-    @dates = DateActivity.all
+    @dates = DateActivity.where(confirmed: true)
 
     if params.dig(:search, "query_location")
       @dates = @dates.global_search(params.dig(:search, "query_location"))
@@ -64,7 +64,7 @@ class DatesController < ApplicationController
       @dates = @dates.where("price <= ?", params.dig(:search, "price"))
     end
 
-    if params.dig(:search, "category_id") && !params.dig(:search, "category_id").any?
+    if params.dig(:search, "category_id")
       @dates = @dates.joins(:categories).where(categories: { id: params.dig(:search, "category_id") })
     end
 
