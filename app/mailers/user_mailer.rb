@@ -15,7 +15,8 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Request for upload date')
   end
 
-  def developer
+  def developer(user)
+    @user = user
     mail(to: "itsadate11220@gmail.com", subject: 'Request for upload date')
   end
 end
