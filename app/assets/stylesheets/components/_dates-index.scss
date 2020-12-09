@@ -100,3 +100,48 @@
 .form-control{
   background-color: white !important;
 }
+
+.pagination {
+  font-family: inherit;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  border-radius: 2px;
+  width: 600px;
+  background-color: #85C3DC;
+  margin-left: 82px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  border-radius: 10px;
+  color: white;
+}
+
+a.next_page{
+  color: white;
+  &:hover{
+    text-decoration: none;
+    transform: scale(1.03);
+  }
+}
+
+a.previous_page{
+  color: white;
+  &:hover{
+    text-decoration: none;
+    transform: scale(1.03);
+  }
+}
+
+em.current{
+  color: black;
+  transform: scale(1.1);
+}
+
+a{
+  color: white;
+  &:hover{
+    text-decoration: none;
+    color: white;
+    transform: scale(1.1);
+  }
+}
