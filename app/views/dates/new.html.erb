@@ -1,12 +1,16 @@
-
-  <%= simple_form_for @date, url: dashboard_dates_path do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :availability %>
-    <%= f.input :price %>
-    <%= f.input :reservation_url %>
-    <%= f.input :contact_email %>
-    <%= f.submit %>
-  <% end %>
-
+<div class="container-dates-new-form" style="background-image:url('<%= cl_image_path("https://cdn.pixabay.com/photo/2015/07/15/21/27/cupid-846939_960_720.jpg", ) %>')">
+<div class="dates-new-form">
+<%= simple_form_for @date, url: dashboard_dates_path do |f| %>
+  <h1 class="h1-date-new">Create a new Date</h1>
+  <%= f.input :title, placeholder: "Enter title..." %>
+  <%= f.input :description, placeholder: "Enter description..." %>
+  <%= f.input :location, placeholder: "Enter address..." %>
+  <%= f.input :availability, placeholder: "Enter availability..." %>
+  <%= f.input :price, placeholder: "Enter price..." %>
+  <%= f.input :reservation_url, placeholder: "Enter reservation url..." %>
+  <%= f.input :contact_email, placeholder: "Enter email..." %>
+  <%= f.input :photos, as: :file %>
+  <%= f.submit class: "btn-date-new" %>
+<% end %>
+</div>
+</div>

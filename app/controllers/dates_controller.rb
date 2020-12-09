@@ -27,7 +27,7 @@ class DatesController < ApplicationController
   def create
     @date = DateActivity.new(date_params)
     @date.user = current_user
-    if @date.save!
+    if @date.save
       UserMailer.create(@date.user).deliver_now
       UserMailer.developer(@date.user).deliver_now
       redirect_to dashboard_path
