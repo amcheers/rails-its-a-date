@@ -28,6 +28,8 @@ class DatesController < ApplicationController
     @date = DateActivity.new(date_params)
     @date.user = current_user
     if @date.save
+      UserMailer.with(user: @date.user).create.deliver_now
+      UserMailer.developer.deliver_now
       redirect_to dashboard_path
     else
       render 'new'
