@@ -5,7 +5,7 @@ class DatesController < ApplicationController
   def index
     search
     @categories = Category.all
-    @dates = DateActivity.all.paginate(page: params[:page], per_page: 10)
+    @dates = DateActivity.where(confirmed: true).paginate(page: params[:page], per_page: 10)
     @markers = @dates.geocoded.map do |date|
       {
         lat: date.latitude,
