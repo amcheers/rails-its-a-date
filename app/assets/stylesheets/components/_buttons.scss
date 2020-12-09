@@ -39,3 +39,41 @@
     background-color: white;
   }
 }
+
+.customize-btn {
+  font-size: 15px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #85C3DC;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.5s;
+  &:hover{
+    background-color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    color: #85C3DC;
+  }
+}
+
+.customize-btn-show {
+  font-size: 25px;
+  top: 10px;
+  left: 10px;
+  background-color: #85C3DC;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: white;
+  transition: 0.5s;
+  &:hover{
+    background-color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    color: #85C3DC;
+  }
+}
+
