@@ -17,6 +17,19 @@
         transform: scale(1.01);
       }
 }
+.row-index-dashboard {
+    margin: 30px 20px 30px 20px;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.01);
+      }
+}
+
 
 .dates-index-package-3 {
   display: grid;
