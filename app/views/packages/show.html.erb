@@ -1,79 +1,124 @@
 <div class="edit-package-body">
-  <div class="package-show-container">
-      <div class="package-edit-header">
-          <div><%= @package.title %></div>
-      </div>
+
+  <div class="package-banner">
+
+    <% if @package.date_activities.count == 2 %>
+    <div class="package-show-banner-2">
+      <% @package.date_activities.each do |activity| %>
+      <%= cl_image_tag activity.photos.second.key, crop: :fill, class: "package-banner-img" %>
+      <% end %>
+    </div>
+    <% else %>
+    <div class="package-show-banner-3">
+      <% @package.date_activities.shuffle.each do |activity| %>
+      <%= cl_image_tag activity.photos.second.key, class: "package-banner-img" %>
+      <% end %>
+    </div>
+    <% end %>
+
+    <div class="pack-show-header" >
+      <div class="pack-show-header-text"><%= @package.title %></div>
+    </div>
+
+
+
+    <div class="pack-show-like">
       <div class="package-call-to-action">
         <% if user_signed_in? %>
-            <% @package_ids = current_user.favorite_activities.where(activity_type: "Package").pluck(:activity_id) %>
-            <div id="heart-package-show">
-              <%= link_to like_unlike_path(activity_type: "Package", activity_id: @package.id), remote: true, method: 'post' do %>
-              <input type="checkbox" id="checkbox-<%= @package.class %>-<%= @package.id %>" class="heart-checkbox" <%= "checked" if @package_ids.include?(@package.id)%> >
-              <label for="checkbox-<%= @package.id %>">
-                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                    <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
-                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                    <g id="grp7" opacity="0" transform="translate(7 6)">
-                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                    </g>
-                    <g id="grp6" opacity="0" transform="translate(0 28)">
-                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                    </g>
-                    <g id="grp3" opacity="0" transform="translate(52 28)">
-                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                    </g>
-                    <g id="grp2" opacity="0" transform="translate(44 6)">
-                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp5" opacity="0" transform="translate(14 50)">
-                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp4" opacity="0" transform="translate(35 50)">
-                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp1" opacity="0" transform="translate(24)">
-                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                    </g>
-                  </g>
-                </svg>
-              </label>
-              <% end  %>
-            </div>
-            <% end %>
-        <div class="add-wish-show">Add Package to Wishlist</div>
+        <% @package_ids = current_user.favorite_activities.where(activity_type: "Package").pluck(:activity_id) %>
+        <div id="heart-package-show">
+          <%= link_to like_unlike_path(activity_type: "Package", activity_id: @package.id), remote: true, method: 'post' do %>
+          <input type="checkbox" id="checkbox-<%= @package.class %>-<%= @package.id %>" class="heart-checkbox" <%= "checked" if @package_ids.include?(@package.id)%> >
+          <label for="checkbox-<%= @package.id %>">
+            <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+              <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+                <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+                <g id="grp7" opacity="0" transform="translate(7 6)">
+                  <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+                  <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+                </g>
+                <g id="grp6" opacity="0" transform="translate(0 28)">
+                  <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+                  <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+                </g>
+                <g id="grp3" opacity="0" transform="translate(52 28)">
+                  <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+                  <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+                </g>
+                <g id="grp2" opacity="0" transform="translate(44 6)">
+                  <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
+                  <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
+                </g>
+                <g id="grp5" opacity="0" transform="translate(14 50)">
+                  <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
+                  <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
+                </g>
+                <g id="grp4" opacity="0" transform="translate(35 50)">
+                  <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
+                  <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
+                </g>
+                <g id="grp1" opacity="0" transform="translate(24)">
+                  <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
+                  <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
+                </g>
+              </g>
+            </svg>
+          </label>
+          <% end  %>
+        </div>
+        <% end %>
+        <p class="like-show">Save this Package</p>
       </div>
-      <div class="date-activities-package-edit">
-          <% @package.date_activities.each do |date| %>
-          <div class="date_activity-edit">
-              <%= cl_image_tag  date.photos.first.key, :class => "image-package-edit" %>
-              <div class="categories-date-activity-edit">
-                  <div class="categories-edit-package"><% date.categories.take(3).each do |category|%>
-                      <div class="category-edit-package">
-                          <%= category.name %>
-                      </div>
-                      <% end %>
-                  </div>
-              </div>
-              <div class="title-date-activity-edit">
-                  <%= date.title %>
-              </div>
-              <div class="location-date-activity-edit">
-                  <%= date.location %>
-              </div>
-              <div class="description-date-activity-edit">
-                  <%= date.description %>
-              </div>
-              <%= link_to 'Details', dates_show_path(date), class: "link-package-date",target: "_blank" %>
+    </div>
+
+    <div class="pack-show-total-price">
+      <% price_sum = 0 %>
+      <% @package.date_activities.each { |activity| price_sum += activity.price } %>
+      <div class="show-total-price"><i class="fas fa-tags package-show-icons"></i>  <%= price_sum %> <i class="fas fa-euro-sign"></i> in total</div>
+    </div>
+
+  </div>
+
+  <div class="package-show-customize-btn-container">
+    <%= link_to "Customize", edit_package_path(@package), class: "customize-btn-show" %>
+  </div>
+
+  <div class="date-activities-package-edit">
+    <% @package.date_activities.each do |date| %>
+    <div class="date_activity-edit">
+      <%= cl_image_tag  date.photos.first.key, :class => "image-package-edit" %>
+      <div class="categories-date-activity-edit">
+        <div class="categories-edit-package"><% date.categories.take(3).each do |category|%>
+          <div class="category-edit-package">
+            <%= category.name %>
           </div>
           <% end %>
+        </div>
       </div>
+      <div class="title-date-activity-edit">
+        <%= date.title %>
+      </div>
+      <div class="location-date-activity-edit">
+        <i class="fas fa-map-marker package-detail-marker"></i> <%= date.location %>
+      </div>
+      <div class="description-date-activity-edit">
+        <%= date.description %>
+      </div>
+      <%= link_to 'More Details', dates_show_path(date), class: "link-package-date",target: "_blank" %>
+    </div>
+    <% end %>
   </div>
+
+
+  <div class="package-show-map-wrapper">
+    <div id="map" class="package-show-map"
+        style="width: 60vw; height: 400px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+  <div class="back-link"><%= link_to 'Back to All Packages', packages_path, class: "button-contact-show-2" %></div>
+
 </div>

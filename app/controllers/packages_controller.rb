@@ -5,6 +5,15 @@ class PackagesController < ApplicationController
 
   def show
     @package = Package.find(params[:id])
+
+    @markers = @package.date_activities.geocoded.map do |date|
+      {
+        lat: date.latitude,
+        lng: date.longitude,
+        infoWindow: render_to_string(partial: "./dates/info_window", locals: { date: date })
+      }
+    end
+    @markers.reject! { |marker| marker[:lat].nil? || marker[:lng].nil? }
   end
 
   def new
