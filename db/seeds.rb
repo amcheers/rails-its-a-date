@@ -142,9 +142,8 @@ drupa_hash = {
 }
 
 drupa_file_one = URI.open('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
-drupa_file_two = URI.open('https://images.unsplash.com/photo-1522012188892-24beb302783d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80')
-drupa_file_three = URI.open('https://images.unsplash.com/photo-1565636291143-9cc6c6f87445?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
-drupa_file_four = URI.open('https://images.unsplash.com/photo-1466337105551-aa3ab7890939?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+drupa_file_two = URI.open('https://images.unsplash.com/photo-1565636291143-9cc6c6f87445?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+drupa_file_three = URI.open('https://images.unsplash.com/photo-1466337105551-aa3ab7890939?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
 
 drupa = DateActivity.new(drupa_hash)
 
@@ -155,7 +154,6 @@ end
 drupa.photos.attach(io: drupa_file_one, filename: 'drupa_1.png', content_type: 'image/png')
 drupa.photos.attach(io: drupa_file_two, filename: 'drupa_2.png', content_type: 'image/png')
 drupa.photos.attach(io: drupa_file_three, filename: 'drupa_3.png', content_type: 'image/png')
-drupa.photos.attach(io: drupa_file_four, filename: 'drupa_4.png', content_type: 'image/png')
 drupa.save!
 
 puts "Creating Wonder Experience"
@@ -175,8 +173,8 @@ wonder_hash = {
 }
 
 wonder_file_one = URI.open('https://res.cloudinary.com/dmwylcvjz/image/upload/v1606833394/IMG_3216_n7nprn.jpg')
-wonder_file_two = URI.open('https://res.cloudinary.com/dmwylcvjz/image/upload/v1606833394/IMG_1291_ulpj8n.heic')
-wonder_file_three = URI.open('https://res.cloudinary.com/dmwylcvjz/image/upload/v1606833394/IMG_3154_phjvss.heic')
+wonder_file_two = URI.open('https://res.cloudinary.com/dmwylcvjz/image/upload/v1607505823/IMG_3075_iyjipk.jpg')
+wonder_file_three = URI.open('https://res.cloudinary.com/dmwylcvjz/image/upload/v1607505824/IMG_1291_2_qeptal.jpg')
 
 wonder = DateActivity.new(wonder_hash)
 
@@ -329,7 +327,7 @@ cocktail_one_hash = {
 }
 
 cocktail_one_file_one = URI.open('https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=749&q=80')
-cocktail_one_file_two = URI.open('https://unsplash.com/photos/dmOFwtOIhJA')
+cocktail_one_file_two = URI.open('https://images.unsplash.com/photo-1519170644683-24494cb5fe63?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')
 cocktail_one_file_three = URI.open('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80')
 
 cocktail_one = DateActivity.new(cocktail_one_hash)
@@ -357,10 +355,9 @@ cocktail_two_hash = {
   user_id: test_four.id
 }
 
-cocktail_two_file_one = URI.open('https://www.barmokum.nl/wp-content/uploads/8-klein-683x1024.jpg')
-cocktail_two_file_two = URI.open('https://www.barmokum.nl/wp-content/uploads/15-klein-683x1024.jpg')
-cocktail_two_file_three = URI.open('https://www.barmokum.nl/wp-content/uploads/19-klein-1024x683.jpg')
-cocktail_two_file_four = URI.open('https://images.unsplash.com/photo-1468465236047-6aac20937e92?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=331&q=80')
+cocktail_two_file_one = URI.open('https://www.barmokum.nl/wp-content/uploads/15-klein-683x1024.jpg')
+cocktail_two_file_two = URI.open('https://www.barmokum.nl/wp-content/uploads/19-klein-1024x683.jpg')
+cocktail_two_file_three = URI.open('https://images.unsplash.com/photo-1468465236047-6aac20937e92?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=331&q=80')
 
 cocktail_two = DateActivity.new(cocktail_two_hash)
 
@@ -371,7 +368,6 @@ end
 cocktail_two.photos.attach(io: cocktail_two_file_one, filename: 'cocktail_two_1.png', content_type: 'image/png')
 cocktail_two.photos.attach(io: cocktail_two_file_two, filename: 'cocktail_two_2.png', content_type: 'image/png')
 cocktail_two.photos.attach(io: cocktail_two_file_three, filename: 'cocktail_two_3.png', content_type: 'image/png')
-cocktail_two.photos.attach(io: cocktail_two_file_four, filename: 'cocktail_two_4.png', content_type: 'image/png')
 cocktail_two.save!
 
 puts "Done!"
@@ -615,6 +611,33 @@ cocktail_one_three = Review.new(
   )
 cocktail_one_three.activity = cocktail_one
 cocktail_one_three.save!
+
+# Cocktail 2
+puts "Creating Cocktail 2 Reviews"
+
+cocktail_two_one = Review.new(
+  content: "Such a cool cocktail place. The staff is extremely friendly and the bartender is very skilled - the cocktails were delicious.",
+  rating: 4,
+  user_id: test_one.id
+  )
+cocktail_two_one.activity = cocktail_two
+cocktail_two_one.save!
+
+cocktail_two_two = Review.new(
+  content: "This place is something else. You have to know about it to find it. From the outside it doesn’t look more that a random door. When you ring the bell someone will guide you inside to such an amazing speakeasy. The staff is super passionate about making you a drink that will blow you away. Definitely coming back!",
+  rating: 5,
+  user_id: test_two.id
+  )
+cocktail_two_two.activity = cocktail_two
+cocktail_two_two.save!
+
+cocktail_two_three = Review.new(
+  content: "Very cozy bar with a speak easy concept that came from the US. Bartenders are very friendly and know their way around cocktails. Great signature cocktails, but they're also happy to take up the challenge for a more custom sort. A tiny bit expensive would be the only downside of this place.",
+  rating: 4,
+  user_id: test_three.id
+  )
+cocktail_two_three.activity = cocktail_two
+cocktail_two_three.save!
 # -----------------------------------------------------
 # Packages
 
