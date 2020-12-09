@@ -20,6 +20,9 @@
       <li class="nav-item">
         <%= link_to "Packages", packages_path, class: "nav-link #{'active' if params[:controller] == 'packages' && (params[:action] == 'index' || params[:action] == 'show')}" %>
       </li>
+      <li class="nav-item-special">
+        <%= link_to "Upload your Date", new_dashboard_date_path, class: "nav-link" %>
+      </li>
       <li class="nav-item">
         <%= link_to "About Us", "#", class: "nav-link" %>
       </li>
