@@ -1,20 +1,23 @@
-<div class="col-sm-12 col-lg-12 ">
+<div class="container-package">
   <div class="d-flex justify-content-center">
     <h1 class="new-package-header">Create a Package</h1>
   </div>
-  
-    Choose up to 3 categories:
-  
-    <%= simple_form_for @package do |f| %>
-    
-      <div class="mx-100">
-        <%= f.input :title %>
-      </div>
-      <%= f.input :category, collection:  Category.all, as: :check_boxes, input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item', include_hidden: false%>
-      <div class="d-flex justify-content-center">
-        <%= f.submit "Add Package", class: 'date-btn-2'%>
-      </div>
-    <% end %>
+  <div class="d-flex justify-content-center">
+    <div class="create-package-container">
+      <%= simple_form_for @package do |f| %>
+      
+        <div>
+          <%= f.input :title %>
+        </div>
+        <div class="d-flex justify-content-center">
+          <%= f.input :category, collection:  Category.all, as: :check_boxes, input_html: { class: "tag-selector" },
+                    item_wrapper_class: 'tag-item', include_hidden: false%>
+        </div>
+        <div class="d-flex justify-content-center">
+          <%= f.submit "Add Package", class: 'date-btn-2'%>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
