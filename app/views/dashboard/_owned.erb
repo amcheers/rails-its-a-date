@@ -1,21 +1,12 @@
 <div class="dashboard-column-container">
   <div class="dashboard-column">
     <div class="dashboard-heading">
-      Your Uploaded Date Actvities and Packages
+      Your Uploaded Date Actvities
     </div>
     <div class="dash-grid">
-      <% @all_owned.each do |owned| %>
-
-    <% if owned.class == DateActivity %>
-      <%= render "dashboard/owned_dates", owned: owned %>
-
-      <% else %>
-
-      <%= render "dashboard/owned_packages", owned: owned %>
-
-  <% end %>
-  <% end %>
-
-</div>
-</div>
+      <% owned_dates.each do |owned| %>
+        <%= render "dashboard/owned_dates", owned: owned %>
+      <% end %>
+    </div>
+  </div>
 </div>
