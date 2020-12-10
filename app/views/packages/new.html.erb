@@ -1,11 +1,11 @@
-<div class="container-package" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607597478/new_package_bdedum.jpg", ) %>')">
+<div class="container-package" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607639169/timo-stern-EvcUtLF12XQ-unsplash_zquw2f.jpg") %>')">
   <div class="d-flex justify-content-center">
     <h1 class="new-package-header">Create a Package</h1>
   </div>
   <div class="d-flex justify-content-center">
     <div class="create-package-container">
       <%= simple_form_for @package do |f| %>
-      
+
         <div>
           <%= f.input :title %>
         </div>
