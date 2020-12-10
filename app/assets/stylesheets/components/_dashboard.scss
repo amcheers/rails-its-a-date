@@ -1,46 +1,72 @@
-.dashboard-heading {
-  font-family: 'Nerko One', cursive;
-  font-size: x-large;
-  text-align: center;
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 60px;
 }
 
-.dashboard-heading.dashboard-title {
-  font-size: 100px;
+.dashboard-heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 500;
   text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: #85C3DC;
+  color: white;
+  padding: 10px 20px;
+}
+
+.dashboard-title {
+  font-size: 70px;
+  text-align: center;
+  font-weight: 600;
+  color: #F07B89;
+  margin-top: 20px;
 }
 
 .dashboard-column-container {
   border-radius: 15px;
-  border: black solid 5px;
-  margin: 10px;
-  height: 100%;
-  // width: 50%;
+  border: lightgrey solid 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: white;
-  background-size: 100vh;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
 }
 
 .dashboard-container {
+<<<<<<< HEAD
+  width: 90%;
+  margin: 0 auto;
+=======
   background-position: center;
   background-size: 100%;
   min-height: calc(100vh - 100px - 65px); //Minus footer and navbar height
+>>>>>>> master
 }
 
-.dashboard-column ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.dashboard-column li {
-  padding-left: 1.3em;
-}
-.dashboard-column li:before {
-  content: "\f073"; /* FontAwesome Unicode */
-  font-family: "Font Awesome 5 Free";
-  display: inline-block;
-  margin-left: -1.3em; /* same as padding-left set on li */
-  width: 1.3em; /* same as padding-left set on li */
-}
+
+// .dashboard-column ul {
+//   list-style: none;
+//   padding: 0;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+// }
+// .dashboard-column li {
+//   padding-left: 1.3em;
+// }
+// .dashboard-column li:before {
+//   content: "\f073"; /* FontAwesome Unicode */
+//   font-family: "Font Awesome 5 Free";
+//   display: inline-block;
+//   margin-left: -1.3em; /* same as padding-left set on li */
+//   width: 1.3em; /* same as padding-left set on li */
+// }
 
 .dashboard-package {
       margin: 30px 20px 30px 20px;
@@ -51,4 +77,8 @@
     &:hover {
         transform: scale(1.01);
       }
+}
+
+.nav-pills .nav-link.active {
+  background-color: #85C3DC;
 }
