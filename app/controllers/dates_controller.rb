@@ -52,11 +52,11 @@ class DatesController < ApplicationController
   def search
     @dates = DateActivity.where(confirmed: true)
 
-    if params.dig(:search, "query_location")
+    if params.dig(:search, "query_location") && !params.dig(:search, "query_location").blank?
       @dates = @dates.global_search(params.dig(:search, "query_location"))
     end
 
-    if params.dig(:search, "query_title_description")
+    if params.dig(:search, "query_title_description") && !params.dig(:search, "query_title_description").blank?
       @dates = @dates.global_search(params.dig(:search, "query_title_description"))
     end
 
@@ -64,7 +64,7 @@ class DatesController < ApplicationController
       @dates = @dates.where("price <= ?", params.dig(:search, "price"))
     end
 
-    if params.dig(:search, "category_id")
+    if params.dig(:search, "category_id") && params.dig(:search, "category_id") != [""]
       @dates = @dates.joins(:categories).where(categories: { id: params.dig(:search, "category_id") })
     end
 
@@ -72,6 +72,7 @@ class DatesController < ApplicationController
       weekday = Date.parse(params.dig(:search, "date")).strftime("%A")
       @dates = @dates.where("availability->>? != 'closed'", weekday)
     end
+   @dates = @dates.select("DISTINCT ON(date_activities.id) date_activities.*")
   end
 
   private
