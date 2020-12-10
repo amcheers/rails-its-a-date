@@ -1,14 +1,14 @@
 .category-wrapper {
     left: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 20px 20px;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 30px;
   }
-  
+
   .category-item {
     flex: 0 0 30%;
   }
-  
+
   .category-selector {
     position: absolute;
     transform: scale(0);
@@ -18,11 +18,11 @@
     height: 600px;
     margin-bottom: 20px;
   }
-  
+
   .category-selector + label {
     cursor: pointer;
   }
-  
+
   .category-selector:checked + label {
     color: rgb(0, 0, 0) !important;
     filter: none;
@@ -47,10 +47,24 @@
     }
   }
 
+.back-btn-link {
+  padding-bottom: 30px;
+}
+
+  .btn-back{
+  margin-left: 20px;
+  margin-bottom: 40px;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.01);
+    background-color: white;
+    color: black;
+  }
+}
+
   .card-date{
     height: 430px;
     width: 300px;
-    margin-bottom: 20px;
     border-radius: 10px;
     overflow: hidden;
     &:hover{
