@@ -5,10 +5,9 @@
     </div>
     <ul>
       <% @packages.each do |package| %>
-        <% if package.user.id == current_user.id ||  %>
+        <% if package.user.id == current_user.id  %>
           <%= render 'package_card', package: package  %>
         <% end %>
       <% end %>
     </ul>
   </div>
-</div>
