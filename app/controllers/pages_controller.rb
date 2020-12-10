@@ -5,7 +5,6 @@ class PagesController < ApplicationController
     direct_category_search
     @categories = Category.all
     @reviews = Review.take(3)
-
   end
 
   def direct_category_search

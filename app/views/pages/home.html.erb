@@ -92,76 +92,79 @@
         </div>
       </div>
 
+            <%= link_to dates_index_path(search: { category_id: [Category.find_by_name("outdoor").id] }) do %>
+              hallo
+            <% end %>
+
+
+
       <div class="row">
+
+
+
+
         <div class="container d-flex">
           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-             <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@outdoor_id] }) do %>
+
+            <%= link_to dates_index_path(@dates) do %>
               <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8b3V0ZG9vcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
                 <div class="d-flex align-items-center h-100 text-white justify-content-center">
                   <h3 class="text-shadow text-uppercase mb-0">Outdoor</h3>
                 </div>
               </div>
-            <% end %></div>
+            <% end %>
           </div>
 
            <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-              <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@romantic_id] }) do %>
-                <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cm9tYW50aWN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
-                  <div class="d-flex align-items-center h-100 text-white justify-content-center">
-                    <h3 class="text-shadow text-uppercase mb-0">Romantic</h3>
-                  </div>
-                </div>
-              <% end %></div>
-          </div>
 
-           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-            <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@educational_id] }) do %>
-              <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+              <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1474552226712-ac0f0961a954?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8cm9tYW50aWN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+                <a class="tile-link" href="category.html"> </a>
                 <div class="d-flex align-items-center h-100 text-white justify-content-center">
-                  <h3 class="text-shadow text-uppercase mb-0">Educational</h3>
+                  <h3 class="text-shadow text-uppercase mb-0">Romantic</h3>
                 </div>
               </div>
-            <% end %></div>
+
           </div>
 
+           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
+            <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+              <a class="tile-link" href="category.html"> </a>
+              <div class="d-flex align-items-center h-100 text-white justify-content-center">
+                <h3 class="text-shadow text-uppercase mb-0">Educational</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
       <div class="row mt-3">
         <div class="container d-flex">
           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-            <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@dinner_id] }) do %>
-              <div class="card-category shadow-lg border-0 " style="background: center center url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlubmVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
-                <div class="d-flex align-items-center h-100 text-white justify-content-center">
-                  <h3 class="text-shadow text-uppercase mb-0">Dinner</h3>
-                </div>
+            <div class="card-category shadow-lg border-0 " style="background: center center url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlubmVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+              <a class="tile-link" href="category.html"> </a>
+              <div class="d-flex align-items-center h-100 text-white justify-content-center">
+                <h3 class="text-shadow text-uppercase mb-0">Dinner</h3>
               </div>
-            <% end %></div>
+            </div>
           </div>
-
-          <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-            <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@active_id] }) do %>
-              <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFuY2V8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
-                <div class="d-flex align-items-center h-100 text-white justify-content-center">
-                  <h3 class="text-shadow text-uppercase mb-0">Active</h3>
-                </div>
+           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
+            <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1540324155974-7523202daa3f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFuY2V8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+              <a class="tile-link" href="category.html"> </a>
+              <div class="d-flex align-items-center h-100 text-white justify-content-center">
+                <h3 class="text-shadow text-uppercase mb-0">Active</h3>
               </div>
-            <% end %></div>
+            </div>
           </div>
-
-          <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
-            <div class="category-link"><%= link_to dates_index_path(search: { category_id: [@drinks_id] }) do %>
+           <div class="d-flex align-items-lg-stretch col-lg-4 px-2">
             <div class="card-category shadow-lg border-0" style="background: center center url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8ZHJpbmtzfGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) no-repeat; background-size: cover;">
+              <a class="tile-link" href="category.html"> </a>
               <div class="d-flex align-items-center h-100 text-white justify-content-center">
                 <h3 class="text-shadow text-uppercase mb-0">Drinks</h3>
               </div>
             </div>
-            <% end %></div>
           </div>
         </div>
       </div>
   </div>
-
     <div class="color-part2">
       <div class="container mb-5" style="">
         <div class="col-md-8">
@@ -226,6 +229,7 @@
           </div>
         </div>
         <div class="container d-flex">
+
             <% @reviews.each do |review| %>
               <div class="card-review mx-3 border-0 shadow">
                 <div class="testimonial-avatar" style="background-image:url('<%= cl_image_path review.user.photo.key %>')">
@@ -234,7 +238,7 @@
                   <div class="testimonial-quote">
                     <i class="fas fa-quote-right"></i>
                   </div>
-                  <p class="testimonial-text">My wife an I went on a wine tasting. We both had a great time.</p>
+                  <p class="testimonial-text">My wife an I went on a wine tasting for our 5th relationship anniversary. We both had a great time.</p>
                   <strong><%= review.user.full_name %></strong>
                 </div>
               </div>
