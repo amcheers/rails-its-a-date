@@ -1,139 +1,142 @@
 <div class="container-fluid px-0">
-  <div class="row mx-0">
-    <div class="col-lg-6 p-xl-5">
-      <% if params[:query_location].present? %>
-        <h2 class="search-results">Date Activities in <%= params[:query_location] %></h2>
-      <% elsif params[:query_title_description].present? %>
-        <h2 class="search-results">Date Activities including <%= params[:query_title_description] %></h2>
-      <% else %>
-        <h2 class="search-results">Date Activities</h2>
-      <% end %>
-      <hr class="my-4">
-      <div class="row">
-        <div class="col-xl-12 col-md-12">
-          <div class="form-wrapper" style="margin: 0 auto;">
-            <%= simple_form_for :search, method: "get" do |f| %>
+    <div class="row mx-0">
+        <div class="col-lg-6 p-xl-5">
+            <% if params[:query_location].present? %>
+            <h2 class="search-results">Date Activities in <%= params[:query_location] %></h2>
+            <% elsif params[:query_title_description].present? %>
+            <h2 class="search-results">Date Activities including <%= params[:query_title_description] %></h2>
+            <% else %>
+            <h2 class="search-results">Date Activities</h2>
+            <% end %>
+            <hr class="my-4">
             <div class="row">
-              <div class="col-6">
-                <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              </div>
-              <div class="col-6">
+                <div class="col-xl-12 col-md-12">
+                    <div class="form-wrapper" style="margin: 0 auto;">
+                        <%= simple_form_for :search, method: "get" do |f| %>
+                        <div class="row">
+                            <div class="col-6">
+                                <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                            </div>
+                            <div class="col-6">
 
-                <%= f.input :price, label: "Max Price", as: :integer, input_html: { value: params[:price] } %>
-              </div>
-            </div>
-            <%= hidden_field_tag :query_location,
+                                <%= f.input :price, label: "Max Price", as: :integer, input_html: { value: params[:price] } %>
+                            </div>
+                        </div>
+                        <%= hidden_field_tag :query_location,
               params[:query_location]
             %>
-            <%= hidden_field_tag :query_title_description,
+                        <%= hidden_field_tag :query_title_description,
               params[:query_title_description]
             %>
+                        <fieldset class="form-group check_boxes required search_category_id">
+                            <legend class="col-form-label pt-0">Category <abbr title="required">*</abbr></legend>
+                            <input type="hidden" name="search[category_id][]" value="" />
+                            <% @categories.each do |category| %>
+                            <div class="tag-item">
+                                <input class="form-check-input check_boxes required tag-selector" type="checkbox" <%= "checked" if params.dig(:search, "category_id")&.include? category.id.to_s %> value=<%= category.id %> name="search[category_id][]" id="search_category_id_<%= category.id %>" />
+                                <label class="form-check-label collection_check_boxes" for="search_category_id_<%= category.id %>"><%= category.name %></label>
+                            </div>
+                            <% end %>
+                        </fieldset>
 
-            <%= f.input :category_id, collection: @categories, as: :check_boxes, input_html: { class: "tag-selector" },
-            item_wrapper_class: 'tag-item' %>
 
-
-            <button class="date-btn-2 mt-3" type="submit">
-              <i class="fas fa-search mr-1"></i>
-              Search
-            </button>
-            <% end %>
-          </div>
-        </div>
-      </div>
-      <hr class="my-3">
-      <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4">
-        <div class="mr-3">
-          <p class="mb-2 mb-md-0">
-            <strong><%= @dates.count %></strong>
-            results found
-          </p>
-        </div>
-        <div>
-          <label class="form-label mr-2" for="form_sort">Sort by</label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12 hover-animate">
-          <% @dates.each do |date| %>
-          <div class="index-card shadow">
-            <% if user_signed_in? %>
-            <% @date_ids = current_user.favorite_activities.where(activity_type: "DateActivity").pluck(:activity_id) %>
-            <div id="heart">
-              <%= link_to like_unlike_path(activity_type: "DateActivity", activity_id: date.id), remote: true, method: 'post' do %>
-              <input type="checkbox" id="checkbox-<%= date.class %>-<%= date.id %>" class="heart-checkbox" <%= "checked" if @date_ids.include?(date.id)%> >
-              <label for="checkbox-<%= date.id %>">
-                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                  <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                    <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
-                    <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-                    <g id="grp7" opacity="0" transform="translate(7 6)">
-                      <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                      <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                    </g>
-                    <g id="grp6" opacity="0" transform="translate(0 28)">
-                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                      <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                    </g>
-                    <g id="grp3" opacity="0" transform="translate(52 28)">
-                      <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                      <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                    </g>
-                    <g id="grp2" opacity="0" transform="translate(44 6)">
-                      <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                      <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp5" opacity="0" transform="translate(14 50)">
-                      <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                      <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp4" opacity="0" transform="translate(35 50)">
-                      <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                      <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                    </g>
-                    <g id="grp1" opacity="0" transform="translate(24)">
-                      <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                      <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                    </g>
-                  </g>
-                </svg>
-              </label>
-              <% end  %>
+                        <button class="date-btn-2 mt-3" type="submit">
+                            <i class="fas fa-search mr-1"></i>
+                            Search
+                        </button>
+                        <% end %>
+                    </div>
+                </div>
             </div>
-            <% end %>
+            <hr class="my-3">
+            <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4">
+                <div class="mr-3">
+                    <p class="mb-2 mb-md-0">
+                        <strong><%= @dates.count %></strong>
+                        results found
+                    </p>
+                </div>
+                <div>
+                    <label class="form-label mr-2" for="form_sort">Sort by</label>
+                </div>
+            </div>
 
-            <div class="date-photo">
-              <%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
+            <div class="row">
+                <div class="col-sm-12 hover-animate">
+                    <% @dates.each do |date| %>
+                    <div class="index-card shadow">
+                        <% if user_signed_in? %>
+                        <% @date_ids = current_user.favorite_activities.where(activity_type: "DateActivity").pluck(:activity_id) %>
+                        <div id="heart">
+                            <%= link_to like_unlike_path(activity_type: "DateActivity", activity_id: date.id), remote: true, method: 'post' do %>
+                            <input type="checkbox" id="checkbox-<%= date.class %>-<%= date.id %>" class="heart-checkbox" <%= "checked" if @date_ids.include?(date.id)%>>
+                            <label for="checkbox-<%= date.id %>">
+                                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2" />
+                                        <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5" />
+                                        <g id="grp7" opacity="0" transform="translate(7 6)">
+                                            <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
+                                            <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp6" opacity="0" transform="translate(0 28)">
+                                            <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2" />
+                                            <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp3" opacity="0" transform="translate(52 28)">
+                                            <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2" />
+                                            <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp2" opacity="0" transform="translate(44 6)">
+                                            <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2" />
+                                            <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp5" opacity="0" transform="translate(14 50)">
+                                            <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2" />
+                                            <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp4" opacity="0" transform="translate(35 50)">
+                                            <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2" />
+                                            <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2" />
+                                        </g>
+                                        <g id="grp1" opacity="0" transform="translate(24)">
+                                            <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2" />
+                                            <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </label>
+                            <% end  %>
+                        </div>
+                        <% end %>
+
+                        <div class="date-photo">
+                            <%= cl_image_tag date.photos.first.key, height: 200, width: 200, crop: :fill, class: "photo-centered" %>
+                        </div>
+                        <div class="date-info">
+                            <div class="date-categories">
+                                <% date.categories.take(3).each do |c| %>
+                                <div class="date-category"><%= c.name %></div>
+                                <% end %>
+                            </div>
+                            <div class="date-title"><%= date.title %></div>
+                            <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
+                            <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
+                            <%= link_to 'Details', dates_show_path(date), class: "date-btn-3" %>
+                            <div class="date-price"> ~ € <%= date.price %></div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
             </div>
-            <div class="date-info">
-              <div class="date-categories">
-                <% date.categories.take(3).each do |c| %>
-                <div class="date-category"><%= c.name %></div>
-                <% end %>
-              </div>
-              <div class="date-title"><%= date.title %></div>
-              <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= date.location %></div>
-              <div class="date-reviews"><%= date.reviews.count %> Reviews</div>
-              <%= link_to 'Details', dates_show_path(date), class: "date-btn-3" %>
-              <div class="date-price"> ~ € <%= date.price %></div>
-            </div>
-          </div>
-          <% end %>
         </div>
-      </div>
+
+
+
+        <div class="col-lg-6 map-side-lg pr-lg-0">
+            <div id="map" class="map-index shadow-left" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+        </div>
     </div>
 
-
-
-    <div class="col-lg-6 map-side-lg pr-lg-0">
-      <div id="map" class="map-index shadow-left"
-      style="width: 100%; height: 100vh;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-</div>
-
-<%= will_paginate @posts %>
-
+    <%= will_paginate @dates %>
