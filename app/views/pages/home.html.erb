@@ -12,12 +12,12 @@
         <div class="search-bar-home">
           <%= form_tag dates_index_path, method: :get, class: "form-inline" do %>
 
-          <%= text_field_tag :query_location,
+          <%= text_field_tag "search[query_location]",
           params[:query_location],
           class: "search-field",
           placeholder: "Where?"
           %>
-          <%= text_field_tag :query_title_description,
+          <%= text_field_tag "search[query_title_description]",
           params[:query_title_description],
           class: "search-field",
           placeholder: "What?"

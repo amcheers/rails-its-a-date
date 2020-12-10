@@ -50,7 +50,7 @@ class DatesController < ApplicationController
   end
 
   def search
-    @dates = DateActivity.where(confirmed: true)
+    @dates = DateActivity.order(:id).where(confirmed: true)
 
     if params.dig(:search, "query_location") && !params.dig(:search, "query_location").blank?
       @dates = @dates.global_search(params.dig(:search, "query_location"))
