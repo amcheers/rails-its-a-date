@@ -3,17 +3,14 @@ class PagesController < ApplicationController
   def home
     @dates = DateActivity.all
     direct_category_search
-    @categories = Category.all
   end
 
   def direct_category_search
     @outdoor_id = Category.find_by(name: "outdoor").id
-    # @outdoor_dates = DateActivity.all.joins(:categories).where(categories: @outdoor)
-
-    # @romantic = Category.where(name: "romantic")
-    # @educational = Category.where(name: "educational")
-    # @dinner = Category.where(name: "dinner")
-    # @active = Category.where(name: "active")
-    # @drinks = Category.where(name: "drinks")
+    @romantic_id = Category.find_by(name: "romantic").id
+    @educational_id = Category.find_by(name: "educational").id
+    @dinner_id = Category.find_by(name: "dinner").id
+    @active_id = Category.find_by(name: "active").id
+    @drinks_id = Category.find_by(name: "drinks").id
   end
 end
