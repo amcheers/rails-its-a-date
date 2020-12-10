@@ -1,4 +1,4 @@
-<div id="carouselExampleSlidesOnly" style="z-index: 0" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleSlidesOnly" data-interval="3000" style="z-index: 0" class="carousel slide" data-ride="carousel">
   <div class="banner" style="position: absolute; z-index: 1;">
     <div class="container">
       <div class="row justify-content-center">
@@ -32,16 +32,16 @@
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="banner" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607078081/nathan-dumlao-EdULZpOKsUE-unsplash_n2sxii.jpg", ) %>')">
+      <div class="banner" style="background-image:url('<%= image_path("https://images.unsplash.com/photo-1499241142330-28701ea87ff4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1498&q=80", ) %>')">
       </div>
     </div>
 
     <div class="carousel-item">
-      <div class="banner" style="background-image:url('<%= image_path("https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZGlubmVyfGVufDB8MHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", ) %>')">
+      <div class="banner" style="background-image:url('<%= image_path("https://images.unsplash.com/photo-1578144456421-1a81b259aa30?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTA3fHxib2F0JTIwYWN0aXZpdHklMjBibGFjayUyMHBlb3BsZXxlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", ) %>')">
       </div>
     </div>
     <div class="carousel-item">
-      <div class="banner" style="background-image:url('<%= image_path("https://images.unsplash.com/photo-1527261655500-59c476c630c2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDR8fGV2ZW5pbmd8ZW58MHwwfDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60", ) %>')">
+      <div class="banner" style="background-image:url('<%= cl_image_path("https://res.cloudinary.com/dmwylcvjz/image/upload/v1607078081/nathan-dumlao-EdULZpOKsUE-unsplash_n2sxii.jpg", ) %>')">
       </div>
     </div>
   </div>
@@ -203,7 +203,7 @@
       <div class="value-prop">
         <div class="container d-flex">
           <div class="value-prop-item shadow">
-            <div class="value-prop-icon"><i class="far fa-clock"></i></div>
+            <div class="value-prop-icon"><i class="far fa-clock" style="opacity: 1;"></i></div>
             <div class="value-prop-text">Finding the right thing to do on a date can be hard and time consuming, which might even diminish the pleasant anticipation for the date itself.</div>
           </div>
           <div class="value-prop-item shadow">
@@ -229,42 +229,19 @@
           </div>
         </div>
         <div class="container d-flex">
-          <div class="card-review mx-3 border-0 shadow">
-            <div class="testimonial-avatar">
-              <img class="img-fluid" src="https://d19m59y37dris4.cloudfront.net/directory/1-6/img/avatar/avatar-3.jpg" alt="">
-            </div>
-            <div class="text">
-              <div class="testimonial-quote">
-                <i class="fas fa-quote-right"></i>
+            <% @reviews.each do |review| %>
+              <div class="card-review mx-3 border-0 shadow">
+                <div class="testimonial-avatar" style="background-image:url('<%= cl_image_path review.user.photo.key %>')">
+                </div>
+                <div class="text">
+                  <div class="testimonial-quote">
+                    <i class="fas fa-quote-right"></i>
+                  </div>
+                  <p class="testimonial-text">My wife an I went on a wine tasting. We both had a great time.</p>
+                  <strong><%= review.user.full_name %></strong>
+                </div>
               </div>
-              <p class="testimonial-text">I wanted to suprise my date so we went rollerskating in Vondelpark.</p>
-              <strong>Sam Austin</strong>
-            </div>
-          </div>
-          <div class="card-review mx-3 border-0 shadow">
-            <div class="testimonial-avatar">
-              <img class="img-fluid" src="https://d19m59y37dris4.cloudfront.net/directory/1-6/img/avatar/avatar-3.jpg" alt="">
-            </div>
-            <div class="text">
-              <div class="testimonial-quote">
-                <i class="fas fa-quote-right"></i>
-              </div>
-              <p class="testimonial-text">My husband and I went for dinner for our 5th anniversary, it was amazing! </p>
-              <strong>Vera Kulusevski</strong>
-            </div>
-          </div>
-          <div class="card-review mx-3 border-0 shadow">
-            <div class="testimonial-avatar">
-              <img class="img-fluid" src="https://d19m59y37dris4.cloudfront.net/directory/1-6/img/avatar/avatar-3.jpg" alt="">
-            </div>
-            <div class="text">
-              <div class="testimonial-quote">
-                <i class="fas fa-quote-right"></i>
-              </div>
-              <p class="testimonial-text">My wife an I went on a wine tasting. We both had a great time.</p>
-              <strong>Pedro Ramirez</strong>
-            </div>
-          </div>
+            <% end  %>
         </div>
     </div>
 
