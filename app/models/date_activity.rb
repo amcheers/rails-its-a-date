@@ -17,7 +17,8 @@ class DateActivity < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-  against: [:title, :description, :location, :categories],
+  against: [:title, :description, :location],
+  associated_against: {categories: [:name]},
   using: {
     tsearch: { prefix: true }
   }
