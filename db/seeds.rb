@@ -377,7 +377,7 @@ comedy_hash = {
   confirmed: true,
   title: "Comedy Café",
   description: "Comedy Cafe Amsterdam is the spot for stand-up comedy since 1994. More than 23 years, Comedy Cafe Amsterdam programs subsequently every week multiple stand-up comedy shows. Experience together a fabulous night, full of laughter and entertainment of the best stand-up comedians in the Netherlands and abroad.",
-  location: "IJdok 89, 1013 MM Amsterdam",
+  location: "IJdok 89, 1013MM Amsterdam",
   price: 20,
   availability: { "Monday": "19:00 - 23:45", "Tuesday": "19:00 - 23:45", "Wednesday": "19:00 - 23:45", "Thursday": "19:00 - 23:45", "Friday": "19:00 - 23:45", "Saturday": "18:30 - 23:45", "Sunday": "19:00 - 23:45" },
   user_id: test_four.id
@@ -400,14 +400,14 @@ comedy.photos.attach(io: comedy_file_three, filename: 'comedy_3.png', content_ty
 comedy.save!
 
 
-#comedycafe
-puts "Icebar Amsterdam"
+#IcebarAmsterdam
+puts "Creating Icebar Amsterdam"
 
 icebar_hash = {
   confirmed: true,
   title: "Xtracold Icebar",
   description: "XtraCold Icebar offers a chilled out experience for visitors looking for something beyond Amsterdam’s vibrant coffee shop and club scene. Forget waiting in line with fast-track entry to this venue that’s kept as cold as ice, and get into the spirit with three drinks included. Admire artwork, glasses, and more made out of ice, while keeping warm in a provided thermal jacket.",
-  location: "Amstel 194, 1017 AG Amsterdam",
+  location: "Amstel 194, 1017AG Amsterdam",
   price: 25,
   availability: { "Monday": "14:45  - 22:00", "Tuesday": "14:45  - 22:00", "Wednesday": "14:45  - 22:00", "Thursday": "14:45  - 22:00", "Friday": "14:45  - 22:00", "Saturday": "12:40 - 22:00", "Sunday": "14:45  - 22:00" },
   user_id: test_four.id
@@ -421,7 +421,7 @@ icebar_file_four = URI.open('https://media-cdn.tripadvisor.com/media/attractions
 
 icebar = DateActivity.new(icebar_hash)
 
-[indoor, passive, evening].each do |category|
+[indoor, drinks].each do |category|
   icebar.categories << category
 end
 
@@ -431,7 +431,95 @@ icebar.photos.attach(io: icebar_file_three, filename: 'icebar_3.png', content_ty
 icebar.photos.attach(io: icebar_file_four, filename: 'icebar_4.png', content_type: 'image/png')
 icebar.save!
 
+#CanalCruise
+puts "Creating Amsterdam Canal Cruise"
 
+canalcruise_hash = {
+  confirmed: true,
+  title: "Amsterdam Canal Cruise",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Prinsengracht 263, 1016GV Amsterdam",
+  price: 30,
+  availability: { "Monday": "10:00  - 18:00", "Tuesday": "10:00 - 18:00", "Wednesday": "10:00 - 18:00", "Thursday": "10:00 - 18:00", "Friday": "10:00 - 18:00", "Saturday": "10:00 - 18:00", "Sunday": "10:00 - 18:00" },
+  user_id: test_four.id
+}
+
+
+canalcruise_file_one = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/3a/8a/33.jpg')
+canalcruise_file_two = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/3a/8a/b4.jpg')
+canalcruise_file_three = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/e6/b0/16.jpg')
+canalcruise_file_four = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/44/4d/fc.jpg')
+
+canalcruise = DateActivity.new(canalcruise_hash)
+
+[romantic, passive, casual].each do |category|
+  canalcruise.categories << category
+end
+
+canalcruise.photos.attach(io: canalcruise_file_one, filename: 'canalcruise_1.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_two, filename: 'canalcruise_2.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_three, filename: 'canalcruise_3.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_four, filename: 'canalcruise_4.png', content_type: 'image/png')
+canalcruise.save!
+
+#JaapEdenIjsbanen
+puts "Creating Jaap Eden Ijsbanen"
+
+ijsbanen_hash = {
+  confirmed: true,
+  title: "Jaap Eden Ijsbanen",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Radioweg 64, 1098NJ Amsterdam",
+  price: 10,
+  availability: { "Monday": "09:30  - 17:30", "Tuesday": "09:30 - 17:30", "Wednesday": "09:30 - 17:30", "Thursday": "09:30 - 17:30", "Friday": "09:30 - 17:30", "Saturday": "09:30 - 17:30", "Sunday": "09:30 - 17:30" },
+  user_id: test_four.id
+}
+
+
+ijsbanen_file_one = URI.open('https://www.amsterdambedankt.nl/wp-content/uploads/2017/10/Jaapeden.jpg')
+ijsbanen_file_two = URI.open('https://man-man.nl/app/uploads/2017/02/jaap-eden-ijsbaan-manman.jpg')
+ijsbanen_file_three = URI.open('https://media.iamsterdam.com/ndtrc/Images/20120503/76b6a742-0b67-4ec3-8d7e-1ab21064b656.jpg')
+
+ijsbanen = DateActivity.new(ijsbanen_hash)
+
+[outdoor, active].each do |category|
+  ijsbanen.categories << category
+end
+
+ijsbanen.photos.attach(io: ijsbanen_file_one, filename: 'ijsbanen_1.png', content_type: 'image/png')
+ijsbanen.photos.attach(io: ijsbanen_file_two, filename: 'ijsbanen_2.png', content_type: 'image/png')
+ijsbanen.photos.attach(io: ijsbanen_file_three, filename: 'ijsbanen_3.png', content_type: 'image/png')
+ijsbanen.save!
+
+
+#MoakPancakes
+puts "Creating Moak Pancakes"
+
+moakpancakes_hash = {
+  confirmed: true,
+  title: "Moak Pancakes",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Ferdinand Bolstraat 11, 1072LA Amsterdam",
+  price: 20,
+  availability: { "Monday": "08:30 - 15:30", "Tuesday": "08:30 - 15:30", "Wednesday": "08:30 - 15:30", "Thursday": "08:30 - 15:30", "Friday": "08:30 - 15:30", "Saturday": "08:30 - 16:30", "Sunday": "08:30 - 16:30" },
+  user_id: test_four.id
+}
+
+
+moakpancakes_file_one = URI.open('https://www.moakpancakes.nl/wp-content/uploads/Foto-website-1-overview.jpg')
+moakpancakes_file_two = URI.open('https://www.moakpancakes.nl/wp-content/uploads/moak-pancakes-slide5-1200x720.jpg')
+moakpancakes_file_three = URI.open('https://kittysfavorites.nl/wp-content/uploads/2018/05/IMG_5253.jpg')
+
+moakpancakes = DateActivity.new(moakpancakes_hash)
+
+[indoor, morning, romantic].each do |category|
+  moakpancakes.categories << category
+end
+
+moakpancakes.photos.attach(io: moakpancakes_file_one, filename: 'moakpancakes_1.png', content_type: 'image/png')
+moakpancakes.photos.attach(io: moakpancakes_file_two, filename: 'moakpancakes_2.png', content_type: 'image/png')
+moakpancakes.photos.attach(io: moakpancakes_file_three, filename: 'moakpancakes_3.png', content_type: 'image/png')
+moakpancakes.save!
 
 
 
