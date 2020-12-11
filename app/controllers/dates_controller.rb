@@ -82,6 +82,6 @@ class DatesController < ApplicationController
   end
 
   def date_params
-    params.require(:date_activity).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id, :photo)
+    params.require(:date_activity).permit(:title, :description, :price, :reservation_url, :contact_email, :availability, :location, :confirmed, :reservation, :user_id, :photos)
   end
 end
