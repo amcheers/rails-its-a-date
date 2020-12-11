@@ -63,7 +63,13 @@
           <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= DateActivity.find(favorite.activity_id).location %></div>
           <div class="date-reviews"><%= DateActivity.find(favorite.activity_id).reviews.count %> Reviews</div>
           <%= link_to 'Details', dates_show_path(DateActivity.find(favorite.activity_id)), class: "date-btn-3" %>
-          <div class="date-price"> ~ € <%= DateActivity.find(favorite.activity_id).price %></div>
+
+           <% if DateActivity.find(favorite.activity_id).price == 0 %>
+              <div class="date-price"> <i class="fas fa-tags date-detail-marker"></i> FREE </div>
+            <% else %>
+              <div class="date-price"> <i class="fas fa-tags date-detail-marker"></i> <%= DateActivity.find(favorite.activity_id).price %> €</div>
+            <% end %>
+
         </div>
       </div>
       <% end %>
