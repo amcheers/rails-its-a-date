@@ -13,6 +13,7 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
   color: white;
+  width: 115px;
 }
 
 .calltoactions {
@@ -20,6 +21,17 @@
   padding-left: 46px;
   background-color: #F07B89;
   border-radius: 10px;
+  position: absolute;
+}
+
+.date-show-relative {
+  position: relative;
+}
+
+.date-show-absolute {
+  position: absolute;
+  bottom: 20px;
+  right: 168px;
 }
 
 // Text on banner
@@ -99,6 +111,16 @@
     background-color: #85C3DC;
     text-decoration: none;
     color: white;
+  }
+}
+
+.limit-length {
+  overflow: hidden;
+  max-width: 75ch;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &:hover {
+    max-width: 100ch;
   }
 }
 
