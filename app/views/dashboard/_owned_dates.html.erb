@@ -57,6 +57,12 @@
           <div class="date-location"><i class="fas fa-map-marker date-detail-marker"></i> <%= owned.location %></div>
           <div class="date-reviews"><%= owned.reviews.count %> Reviews</div>
           <%= link_to 'Details', dates_show_path(owned), class: "date-btn-3" %>
-          <div class="date-price"> ~ € <%= owned.price %></div>
+
+           <% if owned.price == 0 %>
+              <div class="date-price"> <i class="fas fa-tags date-detail-marker"></i> FREE </div>
+          <% else %>
+              <div class="date-price"> <i class="fas fa-tags date-detail-marker"></i> <%= owned.price %> €</div>
+          <% end %>
+
         </div>
       </div>
