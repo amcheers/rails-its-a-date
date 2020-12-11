@@ -370,6 +370,71 @@ cocktail_two.photos.attach(io: cocktail_two_file_two, filename: 'cocktail_two_2.
 cocktail_two.photos.attach(io: cocktail_two_file_three, filename: 'cocktail_two_3.png', content_type: 'image/png')
 cocktail_two.save!
 
+#comedycafe
+puts "Creating Comedy Café"
+
+comedy_hash = {
+  confirmed: true,
+  title: "Comedy Café",
+  description: "Comedy Cafe Amsterdam is the spot for stand-up comedy since 1994. More than 23 years, Comedy Cafe Amsterdam programs subsequently every week multiple stand-up comedy shows. Experience together a fabulous night, full of laughter and entertainment of the best stand-up comedians in the Netherlands and abroad.",
+  location: "IJdok 89, 1013 MM Amsterdam",
+  price: 20,
+  availability: { "Monday": "19:00 - 23:45", "Tuesday": "19:00 - 23:45", "Wednesday": "19:00 - 23:45", "Thursday": "19:00 - 23:45", "Friday": "19:00 - 23:45", "Saturday": "18:30 - 23:45", "Sunday": "19:00 - 23:45" },
+  user_id: test_four.id
+}
+
+
+comedy_file_one = URI.open('https://cdn2.emesa-static.com/6kUgZXACqb7180V-HH0Y4udiPlA=/750x500/vv/images/products/253/125253/untitled4.png')
+comedy_file_two = URI.open('https://cdn2.emesa-static.com/IhyUAgEZ7AkXnB0C26tJIydsuc8=/750x500/vv/images/products/253/125253/untitled2.png')
+comedy_file_three = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5kp5Zklv2oeJSgFSqD2K6x32DImQoTbL0g&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5kp5Zklv2oeJSgFSqD2K6x32DImQoTbL0g&usqp=CAU')
+
+comedy = DateActivity.new(comedy_hash)
+
+[indoor, passive, evening].each do |category|
+  comedy.categories << category
+end
+
+comedy.photos.attach(io: comedy_file_one, filename: 'comedy_1.png', content_type: 'image/png')
+comedy.photos.attach(io: comedy_file_two, filename: 'comedy_2.png', content_type: 'image/png')
+comedy.photos.attach(io: comedy_file_three, filename: 'comedy_3.png', content_type: 'image/png')
+comedy.save!
+
+
+#comedycafe
+puts "Icebar Amsterdam"
+
+icebar_hash = {
+  confirmed: true,
+  title: "Xtracold Icebar",
+  description: "XtraCold Icebar offers a chilled out experience for visitors looking for something beyond Amsterdam’s vibrant coffee shop and club scene. Forget waiting in line with fast-track entry to this venue that’s kept as cold as ice, and get into the spirit with three drinks included. Admire artwork, glasses, and more made out of ice, while keeping warm in a provided thermal jacket.",
+  location: "Amstel 194, 1017 AG Amsterdam",
+  price: 25,
+  availability: { "Monday": "14:45  - 22:00", "Tuesday": "14:45  - 22:00", "Wednesday": "14:45  - 22:00", "Thursday": "14:45  - 22:00", "Friday": "14:45  - 22:00", "Saturday": "12:40 - 22:00", "Sunday": "14:45  - 22:00" },
+  user_id: test_four.id
+}
+
+
+icebar_file_one = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/70/42/56.jpg')
+icebar_file_two = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/01/ba/68.jpg')
+icebar_file_three = URI.open('https://amsterdamonline247.com/wp-content/uploads/2019/09/Ice-Bar-Amsterdam.jpg')
+icebar_file_four = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/dc/38/9c.jpg')
+
+icebar = DateActivity.new(icebar_hash)
+
+[indoor, passive, evening].each do |category|
+  icebar.categories << category
+end
+
+icebar.photos.attach(io: icebar_file_one, filename: 'icebar_1.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_two, filename: 'icebar_2.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_three, filename: 'icebar_3.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_four, filename: 'icebar_4.png', content_type: 'image/png')
+icebar.save!
+
+
+
+
+
 puts "Done!"
 
 # -----------------------------------------------------
