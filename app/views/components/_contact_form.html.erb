@@ -16,9 +16,9 @@
     <% end  %>
     <% if @date.reservation_url  %>
     <li class="mb-3">
-      <a class="text-gray-00 text-sm text-decoration-none d-flex" href="">
+      <a class="text-gray-00 text-sm text-decoration-none d-flex" href="<%= @date.reservation_url %>">
         <i class="fa fa-globe mr-3 icon"></i>
-        <span class="text-muted d-block"><%= @date.reservation_url %></span>
+        <span class="text-muted d-block limit-length"><%= @date.reservation_url %></span>
       </a>
     </li>
     <% end  %>

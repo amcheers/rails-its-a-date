@@ -57,7 +57,7 @@ class PackagesController < ApplicationController
     if @package_copy.user == @package.user
       @package.destroy
     end
-    redirect_to dashboard_path
+    redirect_to package_path(@package_copy)
   end
 
   def destroy
