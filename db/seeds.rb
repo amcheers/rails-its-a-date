@@ -73,6 +73,156 @@ puts "Done!"
 
 puts "Creating Date Activities"
 
+#comedycafe
+puts "Creating Comedy Café"
+
+comedy_hash = {
+  confirmed: true,
+  title: "Comedy Café",
+  description: "Comedy Cafe Amsterdam is the spot for stand-up comedy since 1994. More than 23 years, Comedy Cafe Amsterdam programs subsequently every week multiple stand-up comedy shows. Experience together a fabulous night, full of laughter and entertainment of the best stand-up comedians in the Netherlands and abroad.",
+  location: "IJdok 89, 1013MM Amsterdam",
+  price: 20,
+  availability: { "Monday": "19:00 - 23:45", "Tuesday": "19:00 - 23:45", "Wednesday": "19:00 - 23:45", "Thursday": "19:00 - 23:45", "Friday": "19:00 - 23:45", "Saturday": "18:30 - 23:45", "Sunday": "19:00 - 23:45" },
+  user_id: test_four.id
+}
+
+
+comedy_file_one = URI.open('https://cdn2.emesa-static.com/6kUgZXACqb7180V-HH0Y4udiPlA=/750x500/vv/images/products/253/125253/untitled4.png')
+comedy_file_two = URI.open('https://cdn2.emesa-static.com/IhyUAgEZ7AkXnB0C26tJIydsuc8=/750x500/vv/images/products/253/125253/untitled2.png')
+comedy_file_three = URI.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5kp5Zklv2oeJSgFSqD2K6x32DImQoTbL0g&usqp=CAUhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu5kp5Zklv2oeJSgFSqD2K6x32DImQoTbL0g&usqp=CAU')
+
+comedy = DateActivity.new(comedy_hash)
+
+[indoor, passive, evening].each do |category|
+  comedy.categories << category
+end
+
+comedy.photos.attach(io: comedy_file_one, filename: 'comedy_1.png', content_type: 'image/png')
+comedy.photos.attach(io: comedy_file_two, filename: 'comedy_2.png', content_type: 'image/png')
+comedy.photos.attach(io: comedy_file_three, filename: 'comedy_3.png', content_type: 'image/png')
+comedy.save!
+
+
+#IcebarAmsterdam
+puts "Creating Icebar Amsterdam"
+
+icebar_hash = {
+  confirmed: true,
+  title: "Xtracold Icebar",
+  description: "XtraCold Icebar offers a chilled out experience for visitors looking for something beyond Amsterdam’s vibrant coffee shop and club scene. Forget waiting in line with fast-track entry to this venue that’s kept as cold as ice, and get into the spirit with three drinks included. Admire artwork, glasses, and more made out of ice, while keeping warm in a provided thermal jacket.",
+  location: "Amstel 194, 1017AG Amsterdam",
+  price: 25,
+  availability: { "Monday": "14:45  - 22:00", "Tuesday": "14:45  - 22:00", "Wednesday": "14:45  - 22:00", "Thursday": "14:45  - 22:00", "Friday": "14:45  - 22:00", "Saturday": "12:40 - 22:00", "Sunday": "14:45  - 22:00" },
+  user_id: test_four.id
+}
+
+
+icebar_file_one = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/70/42/56.jpg')
+icebar_file_two = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/01/ba/68.jpg')
+icebar_file_three = URI.open('https://amsterdamonline247.com/wp-content/uploads/2019/09/Ice-Bar-Amsterdam.jpg')
+icebar_file_four = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/dc/38/9c.jpg')
+
+icebar = DateActivity.new(icebar_hash)
+
+[indoor, drinks].each do |category|
+  icebar.categories << category
+end
+
+icebar.photos.attach(io: icebar_file_one, filename: 'icebar_1.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_two, filename: 'icebar_2.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_three, filename: 'icebar_3.png', content_type: 'image/png')
+icebar.photos.attach(io: icebar_file_four, filename: 'icebar_4.png', content_type: 'image/png')
+icebar.save!
+
+#CanalCruise
+puts "Creating Amsterdam Canal Cruise"
+
+canalcruise_hash = {
+  confirmed: true,
+  title: "Amsterdam Canal Cruise",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Prinsengracht 263, 1016GV Amsterdam",
+  price: 30,
+  availability: { "Monday": "10:00  - 18:00", "Tuesday": "10:00 - 18:00", "Wednesday": "10:00 - 18:00", "Thursday": "10:00 - 18:00", "Friday": "10:00 - 18:00", "Saturday": "10:00 - 18:00", "Sunday": "10:00 - 18:00" },
+  user_id: test_four.id
+}
+
+
+canalcruise_file_one = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/3a/8a/33.jpg')
+canalcruise_file_two = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/3a/8a/b4.jpg')
+canalcruise_file_three = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/e6/b0/16.jpg')
+canalcruise_file_four = URI.open('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/44/4d/fc.jpg')
+
+canalcruise = DateActivity.new(canalcruise_hash)
+
+[romantic, passive, casual].each do |category|
+  canalcruise.categories << category
+end
+
+canalcruise.photos.attach(io: canalcruise_file_one, filename: 'canalcruise_1.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_two, filename: 'canalcruise_2.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_three, filename: 'canalcruise_3.png', content_type: 'image/png')
+canalcruise.photos.attach(io: canalcruise_file_four, filename: 'canalcruise_4.png', content_type: 'image/png')
+canalcruise.save!
+
+#JaapEdenIjsbanen
+puts "Creating Jaap Eden Ijsbanen"
+
+ijsbanen_hash = {
+  confirmed: true,
+  title: "Jaap Eden Ijsbanen",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Radioweg 64, 1098NJ Amsterdam",
+  price: 10,
+  availability: { "Monday": "09:30  - 17:30", "Tuesday": "09:30 - 17:30", "Wednesday": "09:30 - 17:30", "Thursday": "09:30 - 17:30", "Friday": "09:30 - 17:30", "Saturday": "09:30 - 17:30", "Sunday": "09:30 - 17:30" },
+  user_id: test_four.id
+}
+
+
+ijsbanen_file_one = URI.open('https://media-exp1.licdn.com/dms/image/C561BAQEWQIl8SRUBdg/company-background_10000/0?e=2159024400&v=beta&t=n-wI5xeKKNmC_J7Cg2Hl5NsQzGlZnBmtxdeSgYAEw_c')
+ijsbanen_file_two = URI.open('https://man-man.nl/app/uploads/2017/02/jaap-eden-ijsbaan-manman.jpg')
+ijsbanen_file_three = URI.open('https://media.iamsterdam.com/ndtrc/Images/20120503/76b6a742-0b67-4ec3-8d7e-1ab21064b656.jpg')
+
+ijsbanen = DateActivity.new(ijsbanen_hash)
+
+[outdoor, active].each do |category|
+  ijsbanen.categories << category
+end
+
+ijsbanen.photos.attach(io: ijsbanen_file_one, filename: 'ijsbanen_1.png', content_type: 'image/png')
+ijsbanen.photos.attach(io: ijsbanen_file_two, filename: 'ijsbanen_2.png', content_type: 'image/png')
+ijsbanen.photos.attach(io: ijsbanen_file_three, filename: 'ijsbanen_3.png', content_type: 'image/png')
+ijsbanen.save!
+
+
+#MoakPancakes
+puts "Creating Moak Pancakes"
+
+moakpancakes_hash = {
+  confirmed: true,
+  title: "Moak Pancakes",
+  description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.",
+  location: "Ferdinand Bolstraat 11, 1072LA Amsterdam",
+  price: 20,
+  availability: { "Monday": "08:30 - 15:30", "Tuesday": "08:30 - 15:30", "Wednesday": "08:30 - 15:30", "Thursday": "08:30 - 15:30", "Friday": "08:30 - 15:30", "Saturday": "08:30 - 16:30", "Sunday": "08:30 - 16:30" },
+  user_id: test_four.id
+}
+
+
+moakpancakes_file_one = URI.open('https://www.moakpancakes.nl/wp-content/uploads/Foto-website-1-overview.jpg')
+moakpancakes_file_two = URI.open('https://www.moakpancakes.nl/wp-content/uploads/moak-pancakes-slide5-1200x720.jpg')
+moakpancakes_file_three = URI.open('https://kittysfavorites.nl/wp-content/uploads/2018/05/IMG_5253.jpg')
+
+moakpancakes = DateActivity.new(moakpancakes_hash)
+
+[indoor, morning, romantic].each do |category|
+  moakpancakes.categories << category
+end
+
+moakpancakes.photos.attach(io: moakpancakes_file_one, filename: 'moakpancakes_1.png', content_type: 'image/png')
+moakpancakes.photos.attach(io: moakpancakes_file_two, filename: 'moakpancakes_2.png', content_type: 'image/png')
+moakpancakes.photos.attach(io: moakpancakes_file_three, filename: 'moakpancakes_3.png', content_type: 'image/png')
+moakpancakes.save!
 
 # Vondelpark
 puts "Creating Vondelpark"
@@ -101,32 +251,6 @@ vondel.photos.attach(io: vondel_file_two, filename: 'park_2.png', content_type: 
 vondel.photos.attach(io: vondel_file_three, filename: 'park_3.png', content_type: 'image/png')
 vondel.save!
 
-
-# Oosterpark
-puts "Creating Oosterpark"
-
-ooster_hash = {
-  confirmed: true,
-  title: "Walk in Oosterpark",
-  description: "Oosterpark is an English garden, which was designed by Dutch landscape architect Leonard Anthony Springer and was laid out in 1891. It's perfect to get away from the craziness of Amsterdam. Spend your date walking through the park, discovering all of its hidden corners.",
-  location: "Oosterpark 9, 1091AC Amsterdam",
-  price: 0,
-  availability: { "Monday": "allday", "Tuesday": "allday", "Wednesday": "allday", "Thursday": "allday", "Friday": "allday", "Saturday": "allday", "Sunday": "allday" },
-  user_id: test_four.id
-}
-
-ooster_file_one = URI.open('https://images.unsplash.com/photo-1569828740284-df1486353d20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')
-ooster_file_two = URI.open('https://images.unsplash.com/photo-1504810935423-dbbe9a698963?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=282&q=80')
-ooster_file_three = URI.open('https://images.unsplash.com/photo-1445937888010-cc262f556033?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
-
-ooster = DateActivity.new(ooster_hash)
-[outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
-  ooster.categories << category
-end
-ooster.photos.attach(io: ooster_file_one, filename: 'ooster_1.png', content_type: 'image/png')
-ooster.photos.attach(io: ooster_file_two, filename: 'ooster_2.png', content_type: 'image/png')
-ooster.photos.attach(io: ooster_file_three, filename: 'ooster_3.png', content_type: 'image/png')
-ooster.save!
 
 # Drupa Coffee Shop
 puts "Creating Drupa Coffee Roasters"
@@ -186,6 +310,33 @@ wonder.photos.attach(io: wonder_file_one, filename: 'wonder_1.png', content_type
 wonder.photos.attach(io: wonder_file_two, filename: 'wonder_2.png', content_type: 'image/png')
 wonder.photos.attach(io: wonder_file_three, filename: 'wonder_3.png', content_type: 'image/png')
 wonder.save!
+
+# Oosterpark
+puts "Creating Oosterpark"
+
+ooster_hash = {
+  confirmed: true,
+  title: "Walk in Oosterpark",
+  description: "Oosterpark is an English garden, which was designed by Dutch landscape architect Leonard Anthony Springer and was laid out in 1891. It's perfect to get away from the craziness of Amsterdam. Spend your date walking through the park, discovering all of its hidden corners.",
+  location: "Oosterpark 9, 1091AC Amsterdam",
+  price: 0,
+  availability: { "Monday": "allday", "Tuesday": "allday", "Wednesday": "allday", "Thursday": "allday", "Friday": "allday", "Saturday": "allday", "Sunday": "allday" },
+  user_id: test_four.id
+}
+
+ooster_file_one = URI.open('https://images.unsplash.com/photo-1569828740284-df1486353d20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80')
+ooster_file_two = URI.open('https://images.unsplash.com/photo-1504810935423-dbbe9a698963?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=282&q=80')
+ooster_file_three = URI.open('https://images.unsplash.com/photo-1445937888010-cc262f556033?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
+
+ooster = DateActivity.new(ooster_hash)
+[outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
+  ooster.categories << category
+end
+ooster.photos.attach(io: ooster_file_one, filename: 'ooster_1.png', content_type: 'image/png')
+ooster.photos.attach(io: ooster_file_two, filename: 'ooster_2.png', content_type: 'image/png')
+ooster.photos.attach(io: ooster_file_three, filename: 'ooster_3.png', content_type: 'image/png')
+ooster.save!
+
 
 # Electric Ladyland
 puts "Creating Electric Lady"
@@ -369,6 +520,7 @@ cocktail_two.photos.attach(io: cocktail_two_file_one, filename: 'cocktail_two_1.
 cocktail_two.photos.attach(io: cocktail_two_file_two, filename: 'cocktail_two_2.png', content_type: 'image/png')
 cocktail_two.photos.attach(io: cocktail_two_file_three, filename: 'cocktail_two_3.png', content_type: 'image/png')
 cocktail_two.save!
+
 
 puts "Done!"
 
