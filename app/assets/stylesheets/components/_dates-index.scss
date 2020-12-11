@@ -103,14 +103,12 @@
 .pagination {
   font-family: inherit;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
-  border-radius: 2px;
   width: 600px;
   background-color: #85C3DC;
-  margin-left: 82px;
-  margin-bottom: 20px;
-  font-size: 36px;
+  margin-left: 30px;
+  font-size: 27px;
   border-radius: 10px;
   color: white;
 }
@@ -144,3 +142,5 @@ a{
     transform: scale(1.1);
   }
 }
+
+
