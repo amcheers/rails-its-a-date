@@ -1,0 +1,12 @@
+<div class="dashboard-column-container">
+  <div class="dashboard-column">
+    <div class="dashboard-heading">
+      Your Uploaded Date Actvities
+    </div>
+    <div class="dash-grid">
+      <% owned_dates.each do |owned| %>
+        <%= render "dashboard/owned_dates", owned: owned %>
+      <% end %>
+    </div>
+  </div>
+</div>

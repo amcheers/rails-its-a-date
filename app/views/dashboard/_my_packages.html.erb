@@ -1,0 +1,47 @@
+<div class="dashboard-column-container">
+  <div class="dashboard-column">
+    <div class="dashboard-heading">
+      My Packages
+    </div>
+    <div class="dash-grid">
+      <% my_packages.each do |package| %>
+
+
+      <div class="dash-pack-card">
+       <%= link_to package_path(package), class: "link-to-package" do %>
+       <div class="title-package-index">
+         <div class="package-title"><%= package.title%></div>
+         <div><%= link_to "Customize", edit_package_path(package), class: "customize-btn" %></div>
+
+         <div class="delete-btn"><%= link_to package_path(package), method: :delete, data: { confirm: "Are you sure?"} do %>
+              <p><i class="fas fa-trash-alt trash-icon"></i></p>
+            <% end %>
+         </div>
+       </div>
+       <div class="package-info">
+         <div class="nr-of-activities"><i class="fas fa-clipboard-list package-icons"></i> <%= package.date_activities.count %> Actvities</div>
+         <% price_sum = 0 %>
+         <% package.date_activities.each { |activity| price_sum += activity.price } %>
+         <div class="total-price"><i class="fas fa-tags package-icons"></i>  <%= price_sum %> <i class="fas fa-euro-sign"></i> in total</div>
+       </div>
+       <div class="dates-index-package-<%= package.date_activities.count.to_s %>">
+         <% package.date_activities.each do |date| %>
+         <div class="date-index-package" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path  date.photos.first.key %>')">
+          <%= date.title %>
+        </div>
+        <% end %>
+      </div>
+        <% end %>
+    </div>
+
+    <% end %>
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+

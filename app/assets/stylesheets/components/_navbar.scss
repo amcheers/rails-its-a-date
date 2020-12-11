@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -14,8 +15,10 @@
 
 
 .navbar.navbar-expand-sm.navbar-light.navbar-lewagon .nav-link:hover{
-  text-decoration: underline;
-  text-decoration-color: black;
+  // text-decoration: underline;
+  // text-decoration-color: black;
+  border-bottom: 0.5px solid grey;
+  // padding-bottom: 5px;
 }
 
 .navbar.sticky.navbar-expand-sm.navbar-light.navbar-lewagon.transparant .nav-link,
@@ -23,12 +26,15 @@
 .navbar.sticky.navbar-expand-sm.navbar-light.navbar-lewagon.transparant .nav-link:hover {
   color: white;
   transform: none;
+
 }
 
 .navbar.sticky.navbar-expand-sm.navbar-light.navbar-lewagon.transparant .nav-link:hover {
 
-  text-decoration: underline;
-  text-decoration-color: white;
+  // text-decoration: underline;
+  // text-decoration-color: white;
+  border-bottom: 0.5px solid white;
+  // padding-bottom: 5px;
 }
 
 .navbar .nav-link:hover {
@@ -42,6 +48,10 @@
 
 .transparant .nav-link.active {
   border-color: white;
+}
+
+.nav-link.active {
+  border-bottom: 0.5px solid grey;
 }
 
 .sticky {
@@ -64,11 +74,23 @@
   color: grey;
   font-family: 'Raleway', sans-serif;
   &:hover {
-    text-decoration: underline;
-    text-decoration-color: black;
+    // text-decoration: underline;
+    // text-decoration-color: black;
+    //border-bottom: 0.5px solid grey;
+    // padding-bottom: 5px;
   }
   .active {
+    // text-decoration: underline;
+    // text-decoration-color: black;
+    //border-bottom: 0.5px solid grey;
+    // padding-bottom: 5px;
+     &:hover {
+    // text-decoration: underline;
+    // text-decoration-color: black;
+    border-bottom: none;
+
   }
+}
 }
 
 .log-in {
