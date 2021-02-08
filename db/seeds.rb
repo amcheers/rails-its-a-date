@@ -257,7 +257,7 @@ vondel_file_two = URI.open('https://images.unsplash.com/photo-1568480289356-5a75
 vondel_file_three = URI.open('https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80')
 
 vondel = DateActivity.new(vondel_hash)
-[outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
+[social_distancing, outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
   vondel.categories << category
 end
 
@@ -348,7 +348,7 @@ ooster_file_two = URI.open('https://images.unsplash.com/photo-1504810935423-dbbe
 ooster_file_three = URI.open('https://images.unsplash.com/photo-1445937888010-cc262f556033?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80')
 
 ooster = DateActivity.new(ooster_hash)
-[outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
+[social_distancing, outdoor, casual, active, for_free, first_date, morning, afternoon].each do |category|
   ooster.categories << category
 end
 ooster.photos.attach(io: ooster_file_one, filename: 'ooster_1.png', content_type: 'image/png')
