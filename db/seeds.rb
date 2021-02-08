@@ -1,14 +1,80 @@
 require "open-uri"
 
 puts "Cleaning Database"
-Review.destroy_all
-Category.destroy_all
-Package.destroy_all
-DateActivity.destroy_all
-FavoriteActivity.destroy_all
-User.destroy_all
 
+# Review.destroy_all
+# Category.destroy_all
+# Package.destroy_all
+# DateActivity.destroy_all
+# FavoriteActivity.destroy_all
+# User.destroy_all
 
+user_one = User.where(email: "test@user1.com").first
+user_two = User.where(email: "test@user2.com").first
+user_three = User.where(email: "test@user3.com").first
+user_four = User.where(email: "test@user4.com").first
+
+users = [user_one, user_two, user_three, user_four]
+
+comedy = DateActivity.where(description: "Comedy Cafe Amsterdam is the spot for stand-up comedy since 1994. More than 23 years, Comedy Cafe Amsterdam programs subsequently every week multiple stand-up comedy shows. Experience together a fabulous night, full of laughter and entertainment of the best stand-up comedians in the Netherlands and abroad.").first
+ice = DateActivity.where(description: "XtraCold Icebar offers a chilled out experience for visitors looking for something beyond Amsterdam’s vibrant coffee shop and club scene. Forget waiting in line with fast-track entry to this venue that’s kept as cold as ice, and get into the spirit with three drinks included. Admire artwork, glasses, and more made out of ice, while keeping warm in a provided thermal jacket.").first
+canal = DateActivity.where(description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.").first
+jaap = DateActivity.where(description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.").first
+pancakes = DateActivity.where(description: "Cruise down the famous canals of Amsterdam during this 75-minute boat tour. Hop aboard the classic wooden saloon boat and sit back and enjoy the beautiful city pass you by. See landmarks while nibbling on Dutch cheese and having a drink.").first
+
+vondel = DateActivity.where(description: "Vondelpark is a gorgeous place to visit in the middle of the city. It's perfect to get away from the craziness of Amsterdam. Spend your date walking through the park, discovering all of its hidden corners.").first
+drupa = DateActivity.where(description: "Drupa Coffee Roasters are specialty coffee roasters, with a focus on Colombian coffee, located in the trendy Jordaan neighborhood in Amsterdam. Enjoy  some freshly brewed coffee or maybe some pastries on the side.").first
+wonder = DateActivity.where(description: "The Wonder Experience is a colorful, indoor playground for adults and children. The Wonder Experience consists of surreal and colorful rooms 12 created vy artists. Take your date out on an unforgetable experience. You can goof around, take funny and cool pictures and express your inner child together.").first
+ooster = DateActivity.where(description: "Oosterpark is an English garden, which was designed by Dutch landscape architect Leonard Anthony Springer and was laid out in 1891. It's perfect to get away from the craziness of Amsterdam. Spend your date walking through the park, discovering all of its hidden corners.").first
+lady = DateActivity.where(description: "The only Museum of it'd kind in the world, 'Electric Ladyland - the First Museum of Fluorescent Art' houses a large room-sized Fluorescent Environment that the visitor enters, becomes a part of the piece of Art, and then experiences 'Participatory Art'. The guided tour of the museum also includes demonstrations of large collections of Fluorescent Minerals from all over the world. These very common rocks burst into dazzling colors when seen under different wavelengths of 'light.").first
+windmill = DateActivity.where(description: "The windmill Tap Room is located in the same former bathhouse that also houses our first brewery location of the Brouwerij'tij, right under Amsterdam’s biggest windmill. The majority of beers that we brew are available on tap in this tap room. It’s self-service only so order your drink at the bar and find yourself a suitable spot. In summer there’s also long tables outside on our terrace, and in winter you’ll find shelter between the old bathhouse walls. Food wise they offer a basic menu of tasty beer snacks. Enjoy a cold beer with your date and have a great time at this authentic location.").first
+salsa = DateActivity.where(description: "Do you fancy a Cuban salsa course together with your other half? - Everyone is welcome for the salsa courses of El Punto Cubano, to discover the real Cuban Salsa. Each lesson starts with a relaxed and rhythmic warming up in which you get to know different (Afro) Cuban rhythms like Son, Rumba, Pilon, Chachacha, etc. Then you learn in pairs to apply the basic figures and rhythms in the dance. Thereby the pleasure in dancing is the most important. All our lessons are always offered by a Cuban teacher. A course consist of 10 lessons of 60 minutes and costs 100€.").first
+sky = DateActivity.where(description: "The ultimate indoor skydiving center in the Netherlands. Experience an unforgettable free fall in the World's first center with two tunnels! Every package includes flight gear, briefing and certificate. All packages last about 2 hours. From the age of 6 everyone* is welcome to fly and prior flying experience is not required. All your flights will be recorded by our HD video and photo system. These will be offered directly after your flights by email for 10€ per person and will be uploaded to youtube and dropbox. Of course, you can share them right away. Due to safety reasons, you can not bring your own camera or telephone in the tunnel or antechamber.").first
+cocktail_one = DateActivity.where(description: "Find us behind our hidden door in the city centre of Amsterdam and enjoy a night full of delicious and perfectly balanced cocktails, antique barware, good company and vintage surroundings. Discover classic and creative cocktails inbetween dark wood and art deco accents which adorn the Prohibition era-style.").first
+cocktail_two = DateActivity.where(description: "Come and enjoy classy cocktails, but without the pompousness. As much as possible, we use Dutch spirits & liquors and try to benefit from local products and produce. And we’ll accompany it all with some old school hip-hop, funk, soul, jazz, and the occasional typical Dutch ballad.").first
+
+activities = [comedy, ice, canal, jaap, pancakes, vondel, drupa, wonder, ooster, lady, windmill, salsa, sky, cocktail_one, cocktail_two]
+
+puts "destroying reviews"
+rev_act = activities.select { |act| act.reviews }
+rev_act.each do |act|
+  act.reviews.destroy_all
+end
+puts "reviews destroyed!"
+
+puts "destroying categories"
+categ = ["indoor", "outdoor", "casual", "romantic", "active", "passive", "educational", "for free", "first date", "morning", "lunch", "afternoon", "evening", "dinner", "drinks", "social distancing"]
+categ.each do |cat|
+  Category.where(name: cat).first.destroy
+end
+puts "categories destroyed!"
+
+puts "destroying packages"
+Package.where(title: "Wildlife").first.destroy
+Package.where(title: "WinterWonder").first.destroy
+Package.where(title: "Action").first.destroy
+Package.where(title: "Drinking").first.destroy
+Package.where(title: "Suprise").first.destroy
+puts "packages destroyed!"
+
+puts "destroying activities"
+user_four.date_activities.destroy_all
+puts "activities destroyed!"
+
+puts "destroying favorite activities"
+fav_users = users.select { |user| user.favorite_activities }
+fav_users.each do |user|
+  user.favorite_activities.destroy_all
+end
+puts "favorite activities destroyed!"
+
+puts "destroying users"
+users.each do |user|
+  user.destroy
+end
+puts "users destroyed!"
+
+puts "Cleaning Database Done!"
 # ------------------------------------------------------
 # USERS
 puts "Creating Users"
