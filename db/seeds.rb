@@ -5,6 +5,7 @@ Review.destroy_all
 Category.destroy_all
 Package.destroy_all
 DateActivity.destroy_all
+FavoriteActivity.destroy_all
 User.destroy_all
 
 
@@ -64,6 +65,7 @@ afternoon = Category.create!(name: "afternoon")
 evening = Category.create!(name: "evening")
 dinner = Category.create!(name: "dinner")
 drinks = Category.create!(name: "drinks")
+social_distancing = Category.create!(name: "social distancing")
 
 puts "Done!"
 
@@ -83,6 +85,9 @@ comedy_hash = {
   location: "IJdok 89, 1013MM Amsterdam",
   price: 20,
   availability: { "Monday": "19:00 - 23:45", "Tuesday": "19:00 - 23:45", "Wednesday": "19:00 - 23:45", "Thursday": "19:00 - 23:45", "Friday": "19:00 - 23:45", "Saturday": "18:30 - 23:45", "Sunday": "19:00 - 23:45" },
+  contact_email: "reserveringen@comedycafe.nl",
+  url: "www.comedycafe.nl",
+  phone_number: "+31 20 722 0827",
   user_id: test_four.id
 }
 
@@ -113,6 +118,9 @@ icebar_hash = {
   location: "Amstel 194, 1017AG Amsterdam",
   price: 25,
   availability: { "Monday": "14:45  - 22:00", "Tuesday": "14:45  - 22:00", "Wednesday": "14:45  - 22:00", "Thursday": "14:45  - 22:00", "Friday": "14:45  - 22:00", "Saturday": "12:40 - 22:00", "Sunday": "14:45  - 22:00" },
+  contact_email: "hello@xtracold.com",
+  url: "www.xtracold.com",
+  phone_number: "+31 20 320 5700",
   user_id: test_four.id
 }
 
@@ -144,6 +152,9 @@ canalcruise_hash = {
   location: "Prinsengracht 263, 1016GV Amsterdam",
   price: 30,
   availability: { "Monday": "10:00  - 18:00", "Tuesday": "10:00 - 18:00", "Wednesday": "10:00 - 18:00", "Thursday": "10:00 - 18:00", "Friday": "10:00 - 18:00", "Saturday": "10:00 - 18:00", "Sunday": "10:00 - 18:00" },
+  contact_email: "tickets@amsterdamcanalcruises.nl",
+  url: "www.amsterdamcanalcruises.nl",
+  phone_number: "+31 20 676 0302",
   user_id: test_four.id
 }
 
@@ -175,6 +186,9 @@ ijsbanen_hash = {
   location: "Radioweg 64, 1098NJ Amsterdam",
   price: 10,
   availability: { "Monday": "09:30  - 17:30", "Tuesday": "09:30 - 17:30", "Wednesday": "09:30 - 17:30", "Thursday": "09:30 - 17:30", "Friday": "09:30 - 17:30", "Saturday": "09:30 - 17:30", "Sunday": "09:30 - 17:30" },
+  contact_email: "info@jaapeden.nl",
+  url: "www.jaapeden.nl",
+  phone_number: "+31 20 694 9652",
   user_id: test_four.id
 }
 
@@ -205,6 +219,7 @@ moakpancakes_hash = {
   location: "Ferdinand Bolstraat 11, 1072LA Amsterdam",
   price: 20,
   availability: { "Monday": "08:30 - 15:30", "Tuesday": "08:30 - 15:30", "Wednesday": "08:30 - 15:30", "Thursday": "08:30 - 15:30", "Friday": "08:30 - 15:30", "Saturday": "08:30 - 16:30", "Sunday": "08:30 - 16:30" },
+  url: "www.moakpancakes.nl",
   user_id: test_four.id
 }
 
@@ -262,6 +277,8 @@ drupa_hash = {
   location: "Eerste Anjeliersdwarsstraat 6, 1015NR Amsterdam",
   price: 10,
   availability: { "Monday": "10:00 - 16:00", "Tuesday": "10:00 - 16:00", "Wednesday": "10:00 - 16:00", "Thursday": "10:00 - 16:00", "Friday": "10:00 - 16:00", "Saturday": "10:00 - 16:00", "Sunday": "10:00 - 16:00" },
+  url: "www.drupacoffee.com",
+  phone_number: "+31 20 331 2182",
   user_id: test_four.id
 }
 
@@ -293,6 +310,8 @@ wonder_hash = {
   reservation: true,
   reservation_url: "https://tickets.wondrexperience.com/nl/tickets",
   contact_email: "hi@wondrexperience.com",
+  url: "www.wondrexperience.com",
+  phone_number: "+31 85 540 0205",
   user_id: test_four.id
 }
 
@@ -349,8 +368,10 @@ electric_hash = {
   price: 5,
   availability: { "Monday": "closed", "Tuesday": "closed", "Wednesday": "14:00 - 18:00", "Thursday": "14:00 - 18:00", "Friday": "14:00 - 18:00", "Saturday": "14:00 - 18:00", "Sunday": "closed" },
   reservation: true,
-  reservation_url: "http://www.electricladyland.appointy.com",
+  reservation_url: "www.electricladyland.appointy.com",
   contact_email: "electriclady21@hotmail.com",
+  url: "www.electric-lady-land.com",
+  phone_number: "+31 20 420 3776",
   user_id: test_four.id
 }
 
@@ -379,6 +400,9 @@ windmill_hash = {
   location: "Funenkade 7, 1018AL Amsterdam",
   price: 20,
   availability: { "Monday": "12:00 - 20:00", "Tuesday": "12:00 - 20:00", "Wednesday": "12:00 - 20:00", "Thursday": "12:00 - 20:00", "Friday": "12:00 - 20:00", "Saturday": "12:00 - 20:00", "Sunday": "12:00 - 20:00" },
+  contact_email: "info@brouwerijhetij.nl",
+  url: "www.brouwerijhetij.nl/windmill-tap-room/?lang=en",
+  phone_number: "+31 20 261 9801",
   user_id: test_four.id
 }
 
@@ -411,8 +435,10 @@ salsa_hash = {
   price: 100,
   availability: { "Monday": "19:00 - 22:00", "Tuesday": "19:00 - 22:00", "Wednesday": "closed", "Thursday": "19:00 - 22:00", "Friday": "19:00 - 22:00", "Saturday": "closed", "Sunday": "closed" },
   reservation: true,
-  reservation_url: "http://www.puntocubano.nl/",
+  reservation_url: "www.puntocubano.nl/#2",
   contact_email: "info@puntocubano.nl",
+  url: "www.puntocubano.nl",
+  phone_number: "+31 63 383 0994",
   user_id: test_four.id
 }
 
@@ -445,6 +471,8 @@ skydiving_hash = {
   reservation: true,
   reservation_url: "https://cityskydive.nl/en/book-your-first-flights/4",
   contact_email: "service@cityskydive.nl",
+  url: "www.cityskydive.nl",
+  phone_number: "+31 30 207 4141",
   user_id: test_four.id
 }
 
@@ -474,6 +502,9 @@ cocktail_one_hash = {
   location: "Reguliersdwarsstraat 74, 1017BN Amsterdam",
   price: 40,
   availability: { "Monday": "closed", "Tuesday": "closed", "Wednesday": "closed", "Thursday": "17:30 - 00:00", "Friday": "17:30 - 03:00", "Saturday": "17:30 - 03:00", "Sunday": "17:30 - 00:00" },
+  contact_email: "office.door74@gmail.com",
+  url: "www.door74.net",
+  phone_number: "+31 63 404 5122",
   user_id: test_four.id
 }
 
@@ -503,6 +534,8 @@ cocktail_two_hash = {
   location: "Ferdinand Bolstraat 11, 1072LA Amsterdam",
   price: 40,
   availability: { "Monday": "18:00 - 00:30", "Tuesday": "18:00 - 00:30", "Wednesday": "18:00 - 00:30", "Thursday": "18:00 - 00:30", "Friday": "18:00 - 02:00", "Saturday": "18:00 - 02:00", "Sunday": "18:00 - 00:30" },
+  contact_email: "info@barmokum.nl",
+  url: "www.barmokum.nl",
   user_id: test_four.id
 }
 
