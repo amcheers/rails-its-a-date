@@ -30,3 +30,9 @@
 .sign-up {
   font-size: 12px !important;
 }
+
+@media (max-width: 767px) {
+  .log-in-form {
+    width: 80%;
+  }
+}
