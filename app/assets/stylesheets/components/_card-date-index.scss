@@ -94,3 +94,13 @@
     background-color: white;
   }
 }
+
+@media (max-width: 767px) {
+  .index-card {
+    flex-wrap: wrap;
+  }
+
+  .date-categories {
+    margin-top: 10px;
+  }
+}
