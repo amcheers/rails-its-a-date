@@ -135,3 +135,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .container.d-flex {
+    flex-wrap: wrap;
+  }
+
+  .featured-date {
+    margin-bottom: 10px;
+  }
+}
