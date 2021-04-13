@@ -228,3 +228,9 @@ a.text-secondary{
 .position{
   margin-left: 1px;
 }
+
+@media (max-width: 767px) {
+  .bannershow {
+    background-repeat: no-repeat;
+  }
+}
